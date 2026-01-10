@@ -6,61 +6,90 @@
 <title>Crop Information System</title>
 
 <style>
-  body{
-    font-family: Arial, sans-serif;
-    background: #f2f2f2;
-    padding: 20px;
-  }
+body{
+  font-family: Arial, sans-serif;
+  background: #f2f2f2;
+  padding: 20px;
+}
 
-  h2{
-    text-align: center;
-    color: #2e7d32;
-  }
+h2{
+  text-align: center;
+  color: #2e7d32;
+}
 
-  select{
-    display: block;
-    margin: 20px auto;
-    padding: 10px;
-    font-size: 16px;
-    width: 100%;
-    max-width: 350px;
-  }
+/* BUTTON BAR */
+.top-buttons{
+  max-width: 650px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
 
-  table{
-    width: 100%;
-    max-width: 650px;
-    margin: auto;
-    border-collapse: collapse;
-    background: #fff;
-  }
+.top-buttons button{
+  padding: 8px 16px;
+  border: none;
+  background: #2e7d32;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 14px;
+}
 
-  th, td{
-    border: 1px solid #000;
-    padding: 10px;
-  }
+.top-buttons button:hover{
+  background: #1b5e20;
+}
 
-  th{
-    background: #4caf50;
-    color: #fff;
-    text-align: left;
-    width: 40%;
-  }
+select{
+  display: block;
+  margin: 20px auto;
+  padding: 10px;
+  font-size: 16px;
+  width: 100%;
+  max-width: 350px;
+}
 
-  td{
-    width: 60%;
-  }
+table{
+  width: 100%;
+  max-width: 650px;
+  margin: auto;
+  border-collapse: collapse;
+  background: #fff;
+}
 
-  footer{
-    text-align: center;
-    margin-top: 30px;
-    color: #555;
-  }
+th, td{
+  border: 1px solid #000;
+  padding: 10px;
+}
+
+th{
+  background: #4caf50;
+  color: #fff;
+  text-align: left;
+  width: 40%;
+}
+
+td{
+  width: 60%;
+}
+
+footer{
+  text-align: center;
+  margin-top: 30px;
+  color: #555;
+}
 </style>
 </head>
 
 <body>
 
 <h2>Vegetable Crop Details</h2>
+
+<!-- BUTTONS -->
+<div class="top-buttons">
+  <button onclick="location.href='index.html'">🏠 Home</button>
+  <button onclick="history.back()">🔙 Back</button>
+</div>
 
 <select onchange="showData(this.value)">
   <option value="">-- Select Crop --</option>
@@ -95,76 +124,70 @@ const crops = {
     scientific: "Beta vulgaris",
     variety: "Crimson Globe, DDR",
     seed: "5 – 6 kg/ha",
-    spacing: "30 × 20 cm",
+    spacing: "30 × 20",
     days: "70 – 90",
     harvest: "12 – 15 mt/ha"
   },
-
   carrot: {
     scientific: "Daucus carota",
     variety: "New Kuroda",
     seed: "4 – 5 kg/ha",
-    spacing: "30 × 10 cm",
+    spacing: "30 × 10",
     days: "80 – 100",
     harvest: "20 – 25 mt/ha"
   },
-
   tomato: {
     scientific: "Solanum lycopersicum",
     variety: "T-245, KC-1",
     seed: "300 – 400 g/ha",
-    spacing: "60 × 50 cm",
+    spacing: "60 × 50",
     days: "75 – 90",
     harvest: "25 – 30 mt/ha"
   },
-
   chilli: {
     scientific: "Capsicum annuum",
     variety: "MI-2, KA-2",
     seed: "1 – 1.5 kg/ha",
-    spacing: "60 × 45 cm",
+    spacing: "60 × 45",
     days: "90 – 120",
     harvest: "10 – 15 mt/ha"
   },
-
   brinjal: {
     scientific: "Solanum melongena",
     variety: "SM-1, Leel",
     seed: "400 – 500 g/ha",
-    spacing: "60 × 60 cm",
+    spacing: "60 × 60",
     days: "90 – 120",
     harvest: "25 – 30 mt/ha"
   },
-
   onion: {
     scientific: "Allium cepa",
     variety: "Jaffna Local",
     seed: "8 – 10 kg/ha",
-    spacing: "15 × 10 cm",
+    spacing: "15 × 10",
     days: "90 – 120",
     harvest: "15 – 20 mt/ha"
   },
-
   cabbage: {
     scientific: "Brassica oleracea",
     variety: "Green Coronet",
     seed: "500 g/ha",
-    spacing: "45 × 45 cm",
+    spacing: "45 × 45",
     days: "90 – 110",
     harvest: "25 – 30 mt/ha"
   },
-
   cucumber: {
     scientific: "Cucumis sativus",
     variety: "Marketer",
     seed: "2 – 3 kg/ha",
-    spacing: "100 × 50 cm",
+    spacing: "100 × 50",
     days: "50 – 60",
     harvest: "15 – 20 mt/ha"
   }
 };
 
-/* ===== SINGLE UNIVERSAL FUNCTION ===== */
+const ACRE = 4046.86;
+
 function showData(crop){
 
   if(!crops[crop]){
@@ -175,12 +198,17 @@ function showData(crop){
 
   let c = crops[crop];
 
+  // spacing calculation
+  let [row, plant] = c.spacing.split("×").map(v => parseFloat(v.trim()) / 100);
+  let plantsPerAcre = Math.round(ACRE / (row * plant));
+
   let data = `
     <tr><th>Scientific Name</th><td><i>${c.scientific}</i></td></tr>
     <tr><th>Variety</th><td>${c.variety}</td></tr>
     <tr><th>Seed Requirement</th><td>${c.seed}</td></tr>
-    <tr><th>Spacing</th><td>${c.spacing}</td></tr>
-    <tr><th>Days</th><td>${c.days}</td></tr>
+    <tr><th>Spacing</th><td>${c.spacing} cm</td></tr>
+    <tr><th>Plants / Acre</th><td><b>${plantsPerAcre.toLocaleString()}</b></td></tr>
+    <tr><th>Crop Duration (Days)</th><td>${c.days}</td></tr>
     <tr><th>Harvest</th><td>${c.harvest}</td></tr>
   `;
 
@@ -189,4 +217,4 @@ function showData(crop){
 </script>
 
 </body>
-</html>
+  </html>
