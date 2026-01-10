@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Crop Information System</title>
+
+<style>
+  body{
+    font-family: Arial, sans-serif;
+    background: #f2f2f2;
+    padding: 20px;
+  }
+
+  h2{
+    text-align: center;
+    color: #2e7d32;
+  }
+
+  select{
+    display: block;
+    margin: 20px auto;
+    padding: 10px;
+    font-size: 16px;
+    width: 100%;
+    max-width: 350px;
+  }
+
+  table{
+    width: 100%;
+    max-width: 650px;
+    margin: auto;
+    border-collapse: collapse;
+    background: #fff;
+  }
+
+  th, td{
+    border: 1px solid #000;
+    padding: 10px;
+  }
+
+  th{
+    background: #4caf50;
+    color: #fff;
+    text-align: left;
+    width: 40%;
+  }
+
+  td{
+    width: 60%;
+  }
+
+  footer{
+    text-align: center;
+    margin-top: 30px;
+    color: #555;
+  }
+</style>
+</head>
+
+<body>
+
+<h2>Vegetable Crop Details</h2>
+
+<select onchange="showData(this.value)">
+  <option value="">-- Select Crop --</option>
+  <option value="beetroot">Beetroot</option>
+  <option value="carrot">Carrot</option>
+  <option value="tomato">Tomato</option>
+  <option value="chilli">Chilli</option>
+  <option value="brinjal">Brinjal</option>
+  <option value="onion">Onion</option>
+  <option value="cabbage">Cabbage</option>
+  <option value="cucumber">Cucumber</option>
+</select>
+
+<table>
+  <tbody id="tableData">
+    <tr>
+      <td colspan="2" style="text-align:center;">
+        Please select a crop
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<footer>
+  DK Agri – Learning Project
+</footer>
+
+<script>
+/* ===== JSON DATA OBJECT ===== */
+const crops = {
+  beetroot: {
+    scientific: "Beta vulgaris",
+    variety: "Crimson Globe, DDR",
+    seed: "5 – 6 kg/ha",
+    spacing: "30 × 20 cm",
+    days: "70 – 90",
+    harvest: "12 – 15 mt/ha"
+  },
+
+  carrot: {
+    scientific: "Daucus carota",
+    variety: "New Kuroda",
+    seed: "4 – 5 kg/ha",
+    spacing: "30 × 10 cm",
+    days: "80 – 100",
+    harvest: "20 – 25 mt/ha"
+  },
+
+  tomato: {
+    scientific: "Solanum lycopersicum",
+    variety: "T-245, KC-1",
+    seed: "300 – 400 g/ha",
+    spacing: "60 × 50 cm",
+    days: "75 – 90",
+    harvest: "25 – 30 mt/ha"
+  },
+
+  chilli: {
+    scientific: "Capsicum annuum",
+    variety: "MI-2, KA-2",
+    seed: "1 – 1.5 kg/ha",
+    spacing: "60 × 45 cm",
+    days: "90 – 120",
+    harvest: "10 – 15 mt/ha"
+  },
+
+  brinjal: {
+    scientific: "Solanum melongena",
+    variety: "SM-1, Leel",
+    seed: "400 – 500 g/ha",
+    spacing: "60 × 60 cm",
+    days: "90 – 120",
+    harvest: "25 – 30 mt/ha"
+  },
+
+  onion: {
+    scientific: "Allium cepa",
+    variety: "Jaffna Local",
+    seed: "8 – 10 kg/ha",
+    spacing: "15 × 10 cm",
+    days: "90 – 120",
+    harvest: "15 – 20 mt/ha"
+  },
+
+  cabbage: {
+    scientific: "Brassica oleracea",
+    variety: "Green Coronet",
+    seed: "500 g/ha",
+    spacing: "45 × 45 cm",
+    days: "90 – 110",
+    harvest: "25 – 30 mt/ha"
+  },
+
+  cucumber: {
+    scientific: "Cucumis sativus",
+    variety: "Marketer",
+    seed: "2 – 3 kg/ha",
+    spacing: "100 × 50 cm",
+    days: "50 – 60",
+    harvest: "15 – 20 mt/ha"
+  }
+};
+
+/* ===== SINGLE UNIVERSAL FUNCTION ===== */
+function showData(crop){
+
+  if(!crops[crop]){
+    document.getElementById("tableData").innerHTML =
+      `<tr><td colspan="2" style="text-align:center;">Please select a crop</td></tr>`;
+    return;
+  }
+
+  let c = crops[crop];
+
+  let data = `
+    <tr><th>Scientific Name</th><td><i>${c.scientific}</i></td></tr>
+    <tr><th>Variety</th><td>${c.variety}</td></tr>
+    <tr><th>Seed Requirement</th><td>${c.seed}</td></tr>
+    <tr><th>Spacing</th><td>${c.spacing}</td></tr>
+    <tr><th>Days</th><td>${c.days}</td></tr>
+    <tr><th>Harvest</th><td>${c.harvest}</td></tr>
+  `;
+
+  document.getElementById("tableData").innerHTML = data;
+}
+</script>
+
+</body>
+</html>
