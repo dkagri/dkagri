@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Professional CV</title>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+  background:#e6e6e6;
+  padding:20px;
+}
+
+.cv-container{
+  max-width:1000px;
+  margin:auto;
+  display:flex;
+  background:#fff;
+}
+
+/* LEFT COLUMN */
+.left{
+  width:35%;
+  background:#2f3b4c;
+  color:#fff;
+  padding:30px;
+}
+
+.profile{
+  text-align:center;
+  margin-bottom:30px;
+}
+
+.profile img{
+  width:150px;
+  height:150px;
+  border-radius:50%;
+  border:5px solid #44566c;
+}
+
+.section{
+  margin-bottom:30px;
+}
+
+.section h3{
+  border-bottom:2px solid #5c6f88;
+  padding-bottom:5px;
+  margin-bottom:15px;
+  text-transform:uppercase;
+  font-size:16px;
+}
+
+.left p, .left li{
+  font-size:14px;
+  margin-bottom:8px;
+  color:#dcdcdc;
+}
+
+.left ul{
+  list-style:disc;
+  padding-left:20px;
+}
+
+/* RIGHT COLUMN */
+.right{
+  width:65%;
+  padding:40px;
+}
+
+.name{
+  font-size:36px;
+  font-weight:bold;
+  color:#333;
+}
+
+.role{
+  font-size:18px;
+  color:#777;
+  margin-bottom:30px;
+}
+
+.right-section{
+  margin-bottom:30px;
+}
+
+.right-section h3{
+  border-bottom:2px solid #ccc;
+  padding-bottom:5px;
+  margin-bottom:15px;
+  text-transform:uppercase;
+  font-size:18px;
+  color:#333;
+}
+
+.right p{
+  font-size:15px;
+  line-height:1.6;
+  color:#555;
+}
+
+.job{
+  margin-bottom:20px;
+}
+
+.job h4{
+  font-size:16px;
+  color:#333;
+}
+
+.job span{
+  font-size:13px;
+  color:#777;
+}
+
+.job ul{
+  margin-top:10px;
+  padding-left:20px;
+}
+
+.job li{
+  font-size:14px;
+  margin-bottom:6px;
+  color:#555;
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  .cv-container{
+    flex-direction:column;
+  }
+  .left, .right{
+    width:100%;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="cv-container">
+
+  <!-- LEFT SIDE -->
+  <div class="left">
+
+    <div class="profile">
+      <img src="https://via.placeholder.com/150" alt="Profile Photo">
+    </div>
+
+    <div class="section">
+      <h3>Contact</h3>
+      <p>📧 hello@yourmail.com</p>
+      <p>📞 +94 77 123 4567</p>
+      <p>📍 Sri Lanka</p>
+      <p>🌐 www.yourwebsite.com</p>
+    </div>
+
+    <div class="section">
+      <h3>Education</h3>
+      <p><b>Master of Business</b><br>University Name<br>2013 - 2015</p>
+      <br>
+      <p><b>Bachelor Degree</b><br>University Name<br>2010 - 2013</p>
+    </div>
+
+    <div class="section">
+      <h3>Skills</h3>
+      <ul>
+        <li>Marketing Strategy</li>
+        <li>Social Media Marketing</li>
+        <li>ROI Calculations</li>
+        <li>Product Promotion</li>
+        <li>Brand Management</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h3>Language</h3>
+      <p>English</p>
+      <p>Tamil</p>
+      <p>Sinhala</p>
+    </div>
+
+  </div>
+
+  <!-- RIGHT SIDE -->
+  <div class="right">
+
+    <div class="name">Your Name</div>
+    <div class="role">Marketing Manager</div>
+
+    <div class="right-section">
+      <h3>About Me</h3>
+      <p>
+        Experienced Marketing Manager with strong skills in planning,
+        product promotion, digital marketing and team coordination.
+        Passionate about achieving business growth and brand success.
+      </p>
+    </div>
+
+    <div class="right-section">
+      <h3>Work Experience</h3>
+
+      <div class="job">
+        <h4>Marketing Manager - ABC Company</h4>
+        <span>2019 - Present</span>
+        <ul>
+          <li>Managed marketing campaigns and branding strategies</li>
+          <li>Handled social media and digital promotions</li>
+          <li>Improved sales growth and customer engagement</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <h4>Marketing Assistant - XYZ Company</h4>
+        <span>2015 - 2019</span>
+        <ul>
+          <li>Supported marketing operations</li>
+          <li>Maintained online presence</li>
+          <li>Prepared reports and analysis</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="right-section">
+      <h3>References</h3>
+      <p>
+        <b>Mr. John Doe</b><br>
+        CEO - ABC Company<br>
+        📞 +94 77 987 6543
+      </p>
+    </div>
+
+  </div>
+
+</div>
+
+</body>
+</html>
