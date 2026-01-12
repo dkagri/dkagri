@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pesticide Recommendation</title>
+
+<style>
+body{
+    font-family: Arial, sans-serif;
+    background:#f4f7ff;
+    margin:0;
+    padding:15px;
+}
+header{
+    text-align:center;
+    font-size:30px;
+    font-weight:bold;
+    background: lightgreen;
+    color:#1a3d8f;
+    padding: 30px;
+    margin-bottom:20px;
+}
+.top-buttons{
+    display:flex;
+    gap:10px;
+    margin-bottom:40px;
+}
+button{
+    padding:12px;
+    font-size:16px;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+    flex:1;
+}
+.home{background:#28a745;color:white;}
+.back{background:#dc3545;color:white;}
+.main-buttons{
+    display:grid;
+    gap:20px;
+}
+.main-buttons button{
+    background:#6d4c41;
+    color:white;
+    font-size:18px;
+}
+footer{
+    margin-top:50px;
+    text-align:center;
+    color:#555;
+    font-size:14px;
+}
+</style>
+</head>
+
+<body>
+
+<header>Pesticide Recommendation</header>
+
+<div class="top-buttons">
+    <button class="home" onclick="location.href='index.html'">Home</button>
+    <button class="back" onclick="history.back()">Back</button>
+</div>
+
+<div class="main-buttons">
+    <button onclick="location.href='insecticide.html'">Insecticide</button>
+    <button onclick="location.href='fungicide.html'">Fungicide</button>
+    <button onclick="location.href='herbicide.html'">Herbicide</button>
+</div>
+
+<footer>
+    © 2026 DK AGRI. All Rights Reserved.
+</footer>
+
+</body>
+</html>
