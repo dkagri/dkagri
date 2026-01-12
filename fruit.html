@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Fruit Crops Information</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body{
+    font-family: Arial, sans-serif;
+    background:#f4f7f9;
+    margin:0;
+}
+header{
+    background:#2e7d32;
+    color:#fff;
+    padding:15px;
+    text-align:center;
+}
+.container{
+    max-width:900px;
+    margin:auto;
+    padding:20px;
+}
+select{
+    width:100%;
+    padding:10px;
+    font-size:16px;
+}
+table{
+    width:100%;
+    border-collapse:collapse;
+    margin-top:20px;
+    background:#fff;
+}
+th,td{
+    border:1px solid #ccc;
+    padding:10px;
+    text-align:left;
+}
+th{
+    background:#e8f5e9;
+    width:30%;
+}
+.buttons{
+    margin-top:20px;
+    display:flex;
+    justify-content: space-between;
+    margin-left: 20px;
+    margin-right: 20px;
+    gap:10px;
+}
+button{
+    padding:10px 20px;
+    border:none;
+    background:#2e7d32;
+    color:#fff;
+    cursor:pointer;
+    border-radius:5px;
+}
+button:hover{
+    background:#1b5e20;
+}
+footer{
+    text-align:center;
+    margin-top:30px;
+    color:#666;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h2>Fruit Crops – Cultivation Details</h2>
+</header>
+<div class="buttons">
+    <button onclick="location.href='index.html'">Home</button>
+    <button onclick="history.back()">Back</button>
+</div>
+
+<div class="container">
+
+<select id="cropSelect" onchange="showCrop()">
+    <option value="">-- Select Fruit Crop --</option>
+    <option value="mango">Mango</option>
+    <option value="pineapple">Pineapple</option>
+    <option value="avocado">Avocado</option>
+    <option value="banana">Banana</option>
+    <option value="watermelon">Watermelon</option>
+    <option value="durian">Durian</option>
+    <option value="papaya">Papaya</option>
+    <option value="guava">Guava</option>
+    <option value="rambutan">Rambutan</option>
+    <option value="grapes">Grapes</option>
+    <option value="pomegranate">Pomegranate</option>
+    <option value="dragon">Dragon Fruit</option>
+    <option value="orange">Orange</option>
+    <option value="passion">Passion Fruit</option>
+</select>
+
+<div id="details"></div>
+
+
+</div>
+
+<footer>
+    © 2026 DK AGRI | Educational & Extension Use Only
+</footer>
+
+<script>
+const crops = {
+mango:{
+name:"Mangifera indica",
+variety:"Karuthakolomban, Horana hiru,TOM EJC, Dampara, Malwana, Giraamba, Willard, Kesar",
+spacing:"8-10 m × 8-10 m, <br> Willard, Tom EJC 7m × 7m", //vanija palathuru uyan kalamanakaranaya page 27
+plants:"40 plants/acre",
+special:"Pruning,<br> flower induction - Paclobutrazol,<br> fruit fly control",
+yield:"Year = fruit/palnt <br> 5-8 = 450 <br> 9-10 =800 <br> 11-25 = 1250"
+},
+pineapple:{
+name:"Ananas comosus",
+variety:"Murushi, Kew",
+spacing:"2m × 30 or 40 or 50 cm",
+plants:"4000 - 6750",
+special:"Mulching, sucker selection, ethrel application",
+yield:"16mt/ha, 4mt/ha"
+},
+avocado:{
+name:"Persea americana",
+variety:"Pollock, Hass, Grotfarid, Booth-07, Tower-02",
+spacing:"8 m × 8 m or 5m × 5m",
+plants:"62 - 160 plants/acre",
+special:"Good drainage, bee pollination",
+yield:""
+},
+banana:{
+name:"Musa spp.",
+variety:"Embul, Kolikuttu, Amban, Seeni kesal, Cavendish",
+spacing:"Embul 3m×3m,<br> Kolikuttu 2.4m×2.4m,<br> Amban 3.6m×3.6m",
+plants:"1250 plants/acre",
+special:"Desuckering, propping, bunch covering",
+yield:"2.5mt/ha"
+},
+watermelon:{
+name:"Cucumis melo",
+variety:"Sweet Melon, Sugar Baby, Crimson Sweet",
+spacing:"1 m × 1/2 m",
+plants:"4000 plants/acre",
+special:"Bee pollination, vine training",
+yield:"15-20 mt/ha"
+},
+durian:{
+name:"Durio zibethinus",
+variety:"Ambathenna, Kasun",
+spacing:"10 m × 10 m",
+plants:"40 plants/acre",
+special:"Shade, pruning, hand pollination",
+yield:"200 fruits/plant"
+},
+papaya:{
+name:"Carica papaya",
+variety:"Red Lady, Rathna",
+spacing:"2.5 m × 3.5 m",
+plants:"460 plants/acre",
+special:"Male plant removal, drainage",
+yield:"3.5mt/ac/year"
+},
+guava:{
+name:"Psidium guajava",
+variety:"Horana red, Horana white, Pubudu, Lanka Giant, Horana sweet, Red Giant, Horana Rosy",
+spacing:"5-6 m × 5-6 m",
+plants:"110 - 160 plants/acre",
+special:"Pruning, fruit bagging",
+yield:"45-50kg/plant/year"
+},
+rambutan:{
+name:"Nephelium lappaceum",
+variety:"Malwana, Malayan Red, Malayan yello, Java Special, Java labukabola, Java simadjan, Java seedless, Java sinjian",
+spacing:"10 m × 10 m",
+plants:"40 plants/acre",
+special:"Irrigation, cross pollination",
+yield:"200-250 kg/plant/year"
+},
+grapes:{
+name:"Vitis vinifera",
+variety:"Cardinal, Israel blue, Black muscat, Isabella, Semillon, Thompson seedless, French M.I",
+spacing:"2.6 m × 4 m",
+plants:"for 1/8ac 15 plant - Trellies method",
+special:"Trellising, pruning, drip irrigation",
+yield:"Trellies method 5-30kg/plant <br> Fence method 2-8 kg/plant"
+},
+pomegranate:{
+name:"Punica granatum",
+variety:"Himali, Daya, Nayana, Kalpitiya selection",
+spacing:"3 m × 3 m",
+plants:"450 plants/acre",
+special:"Bahaar treatment, pruning",
+yield:"Updating"
+},
+dragon:{
+name:"Hylocereus polyrhizus",
+variety:"Red flesh, White flesh",
+spacing:"2 m × 2 m or 3 m × 3 m or 2 m × 3 m",
+plants:"Posts - 1000 or 440  or 666 / acre (3 plants/post)",
+special:"Concrete post support, night flowering pollination",
+yield:"Updating"
+},
+orange:{
+name:"Citrus sinensis",
+variety:"Bibile sweet, Bibila seedless, ANK SLTANGE 1",
+spacing:"local 6 m × 3 m other 4m × 4m",
+plants:"local 555 plants/ha other 625 plant/ha",
+special:"Updating",
+yield:"Updating"
+},
+passion:{
+name:"Passiflora edulis",
+variety:"Horana gold, Bandarawela purple, Rahangala hybrid",
+spacing:"4.5 m × 2 m",
+plants:"1125plant/ha",
+special:"Trellising, pruning, bee activity",
+yield:"1.5mt/ha"
+}
+};
+
+function showCrop(){
+const c = document.getElementById("cropSelect").value;
+if(!c){ document.getElementById("details").innerHTML=""; return;}
+const d = crops[c];
+document.getElementById("details").innerHTML = `
+<table>
+<tr><th>Scientific Name</th><td><i>${d.name}</i></td></tr>
+<tr><th>Variety</th><td>${d.variety}</td></tr>
+<tr><th>Spacing</th><td>${d.spacing}</td></tr>
+<tr><th>Plants / Acre</th><td>${d.plants}</td></tr>
+<tr><th>Special Management Practices</th><td>${d.special}</td></tr>
+<tr><th>Yield</th><td>${d.yield}</td></tr>
+</table>`;
+}
+</script>
+
+</body>
+</html>
