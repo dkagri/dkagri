@@ -1,0 +1,88 @@
+{
+  "crop": "Rice",
+  "pests": [
+    {
+      "pest_name": "Rice Thrips",
+      "scientific_name": "Stenchaetothrips biformis",
+      "chemicals": [
+        {
+          "common_name": "Buprofezin 25 SC",
+          "trade_name": "Jawwa / Applaud",
+          "moa": "16",
+          "dilution": "32 ml / 16 L",
+          "phi_days": 14
+        },
+        {
+          "common_name": "Pymetrozine 50% WG",
+          "trade_name": "Chess Pymetrozine",
+          "moa": "9",
+          "dilution": " 10 g/ 16 L",
+          "phi_days": 14
+        },
+        {
+          "common_name": "",
+          "trade_name": "",
+          "moa": "",
+          "dilution": " / 16 L",
+          "phi_days": 14
+        },
+        {
+          "common_name": "Thiamethoxam 25 WG",
+          "trade_name": "Actara",
+          "moa": "4A",
+          "dilution": "3 g / 16 L",
+          "phi_days": 14
+        },
+        {
+          "common_name": "Fipronil 50 SC",
+          "trade_name": "Regent",
+          "moa": "2",
+          "dilution": "8 ml / 16 L",
+          "phi_days": 30
+        }
+      ]
+    },
+
+    {
+      "pest_name": "Rice Gall Midge",
+      "scientific_name": "Orseolia oryzae",
+      "chemicals": [
+        {
+          "common_name": "Fipronil 0.3 GR",
+          "trade_name": "Regent",
+          "moa": "2",
+          "dilution": "12 kg / ha",
+          "phi_days": 30
+        },
+        {
+          "common_name": "Cartap Hydrochloride 4 G",
+          "trade_name": "Padan",
+          "moa": "14",
+          "dilution": "10 kg / ha",
+          "phi_days": 21
+        }
+      ]
+    },
+
+    {
+      "pest_name": "Rice Leaf Folder",
+      "scientific_name": "Cnaphalocrocis medinalis",
+      "chemicals": [
+        {
+          "common_name": "Chlorantraniliprole 20 SC",
+          "trade_name": "Coragen",
+          "moa": "28",
+          "dilution": "3 ml / 16 L",
+          "phi_days": 14
+        },
+        {
+          "common_name": "Spinetoram 25 WG",
+          "trade_name": "Delegate",
+          "moa": "5",
+          "dilution": "3 g / 16 L",
+          "phi_days": 7
+        }
+      ]
+    }
+  ]
+}
