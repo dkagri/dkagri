@@ -6,12 +6,26 @@
       "scientific_name": "Stenchaetothrips biformis",
       "chemicals": [
         {
+          "common_name": "Thiamethoxam 70% WS ",
+          "trade_name": "Cruiser",
+          "moa": "4",
+          "dilution": "20g/500ml/100kg seeds",
+          "phi_days": 0
+        },
+        {
+          "common_name": "Imidacloprid 70% WS",
+          "trade_name": "Gaucho",
+          "moa": "4",
+          "dilution": "20g/500ml/100kg seeds",
+          "phi_days": 0
+        },
+        {
           "common_name": "Buprofezin 250 g/l SC",
-          "trade_name": "Applaud / Jawwa",
+          "trade_name": "Jawwa",
           "moa": "16",
           "dilution": "32 ml",
           "phi_days": 14
-        },
+        },        
         {
           "common_name": "Pymetrozine 50 WG",
           "trade_name": "Chess",
@@ -21,7 +35,7 @@
         },
         {
           "common_name": "Imidacloprid 200 g/l SL",
-          "trade_name": "Confidor",
+          "trade_name": "Admire",
           "moa": "4A",
           "dilution": "8 ml",
           "phi_days": 14
@@ -35,16 +49,30 @@
         },
         {
           "common_name": "Thiacloprid 240 g/l SC",
-          "trade_name": "Calypso",
+          "trade_name": "Calypso, Alanto",
           "moa": "4A",
           "dilution": "5 ml",
+          "phi_days": 14
+        }, 
+        {
+          "common_name": "Ethiprole 100 g/l SC ",
+          "trade_name": "Curbix",
+          "moa": "2",
+          "dilution": "16ml",
           "phi_days": 14
         },
         {
           "common_name": "Fipronil 50 g/l SC",
-          "trade_name": "Regent",
+          "trade_name": "Regent, Raygant",
           "moa": "2",
           "dilution": "8 ml",
+          "phi_days": 14
+        },
+        {
+          "common_name": "Carbosulfan 200 g/l SC",
+          "trade_name": "Marshal 20",
+          "moa": "1",
+          "dilution": "32 ml",
           "phi_days": 14
         }
       ]
@@ -55,7 +83,7 @@
       "chemicals": [
         {
           "common_name": "Fipronil 0.3% GR",
-          "trade_name": "Regent",
+          "trade_name": "Fipronil",
           "moa": "2",
           "dilution": "12 kg / ha (granule)",
           "phi_days": 14
@@ -74,34 +102,42 @@
           "phi_days": 7
         },
         {
-          "common_name": "Chlorantraniliprole 20% SC",
-          "trade_name": "Coragen",
+          "common_name": "Flubendiamide 20% WG",
+          "trade_name": "Takumi",
           "moa": "28",
-          "dilution": "3 ml",
-          "phi_days": 10
-        },
-        {
-          "common_name": "Thiamethoxam 20% WG",
-          "trade_name": "Actara",
-          "moa": "4A",
-          "dilution": "5 g",
-          "phi_days": 10
-        },
-        {
-          "common_name": "Spinetoram 25 WG",
-          "trade_name": "Delegate",
-          "moa": "5",
-          "dilution": "5 g",
+          "dilution": "3 g",
           "phi_days": 7
+        },
+        {
+          "common_name": "Chlorantraniliprole 20% +Thiamethoxam 20% WG",
+          "trade_name": "Virtako",
+          "moa": "28+4",
+          "dilution": "5g",
+          "phi_days": 10
+        },
+        {
+          "common_name": "Tebufenozide 200 g/l SC",
+          "trade_name": "Mimic 20",
+          "moa": "18",
+          "dilution": "32 ml",
+          "phi_days": 14
+        },
+        {
+          "common_name": "Methoxyfenozide 240 g/l SC",
+          "trade_name": "Runner",
+          "moa": "18",
+          "dilution": "16ml",
+          "phi_days": 10
         },
         {
           "common_name": "Fipronil 50 g/l SC",
           "trade_name": "Regent",
           "moa": "2",
-          "dilution": "20 ml",
+          "dilution": "8 ml",
           "phi_days": 14
         }
       ]
     }
   ]
-        }
+}
+
