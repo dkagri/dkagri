@@ -27,10 +27,10 @@
           "phi_days": 14
         },        
         {
-          "common_name": "Pymetrozine 50 WG",
-          "trade_name": "Chess",
-          "moa": "9",
-          "dilution": "10 g",
+          "common_name": "Quinalphos 250 g/l EC",
+          "trade_name": "Queen, Sucker, Quick, Quintox, Baurs, Kuinal, Flyfox",
+          "moa": "1",
+          "dilution": "24 ml",
           "phi_days": 14
         },
         {
@@ -130,6 +130,55 @@
           "phi_days": 10
         },
         {
+          "common_name": "Azadirachtin 10 g/l EC",
+          "trade_name": "Neem",
+          "moa": "UN",
+          "dilution": "80 ml",
+          "phi_days": 7
+        },
+        {
+          "common_name": "Chromafenozide 50 g/l SC",
+          "trade_name": "Podex",
+          "moa": "18",
+          "dilution": "16 ml",
+          "phi_days": 14
+        },
+        {
+          "common_name": "Chlorfluazuron 50 g/l EC",
+          "trade_name": "Atabron",
+          "moa": "15",
+          "dilution": "13 ml",
+          "phi_days": 10
+        },
+        {
+          "common_name": "Novaluron 100 g/I EC",
+          "trade_name": "Rimon",
+          "moa": "15",
+          "dilution": "16 ml",
+          "phi_days": 14
+        },
+        {
+          "common_name": "Bistrifluron 100 g/l EC",
+          "trade_name": "Hanaro",
+          "moa": "15",
+          "dilution": "24 ml",
+          "phi_days": 7
+        }, 
+        {
+          "common_name": "Spinetoram 25% WG",
+          "trade_name": "Radiant",
+          "moa": "5",
+          "dilution": "5 g",
+          "phi_days": 14
+        }, 
+        {
+          "common_name": "Acephate 75% SP",
+          "trade_name": "Acephate",
+          "moa": "1",
+          "dilution": "16 g",
+          "phi_days": 14
+        },
+        {
           "common_name": "Fipronil 50 g/l SC",
           "trade_name": "Regent",
           "moa": "2",
@@ -137,7 +186,385 @@
           "phi_days": 14
         }
       ]
+    }, 
+    {
+      "pest_name": "Caseworm",
+      "scientific_name": "Nymphula depunctalis",
+      "chemicals": [
+        {
+          "common_name": "Flubendiamide 24% WG",
+          "trade_name": "Belt",
+          "moa": "28",
+          "dilution": "2.5 g",
+          "phi_days": 7
+        },
+        {
+          "common_name": "Flubendiamide 20% WG",
+          "trade_name": "Takumi",
+          "moa": "28",
+          "dilution": "3 g",
+          "phi_days": 7
+        },
+        {
+          "common_name": "Chlorantraniliprole 20% +Thiamethoxam 20% WG",
+          "trade_name": "Virtako",
+          "moa": "28+4",
+          "dilution": "5g",
+          "phi_days": 10
+        },
+        {
+          "common_name": "Tebufenozide 200 g/l SC",
+          "trade_name": "Mimic 20",
+          "moa": "18",
+          "dilution": "32 ml",
+          "phi_days": 14
+        },
+        {
+          "common_name": "Methoxyfenozide 240 g/l SC",
+          "trade_name": "Runner",
+          "moa": "18",
+          "dilution": "16ml",
+          "phi_days": 10
+        },
+        {
+          "common_name": "Azadirachtin 10 g/l EC",
+          "trade_name": "Neem",
+          "moa": "UN",
+          "dilution": "80 ml",
+          "phi_days": 7
+        },
+        {
+          "common_name": "Chromafenozide 50 g/l SC",
+          "trade_name": "Podex",
+          "moa": "18",
+          "dilution": "16 ml",
+          "phi_days": 14
+        },
+        {
+          "common_name": "Chlorfluazuron 50 g/l EC",
+          "trade_name": "Atabron",
+          "moa": "15",
+          "dilution": "13 ml",
+          "phi_days": 10
+        },
+        {
+          "common_name": "Novaluron 100 g/I EC",
+          "trade_name": "Rimon",
+          "moa": "15",
+          "dilution": "16 ml",
+          "phi_days": 14
+        },
+        {
+          "common_name": "Bistrifluron 100 g/l EC",
+          "trade_name": "Hanaro",
+          "moa": "15",
+          "dilution": "24 ml",
+          "phi_days": 7
+        }, 
+        {
+          "common_name": "Spinetoram 25% WG",
+          "trade_name": "Radiant",
+          "moa": "5",
+          "dilution": "5 g",
+          "phi_days": 14
+        }, 
+        {
+          "common_name": "Acephate 75% SP",
+          "trade_name": "Acephate",
+          "moa": "1",
+          "dilution": "16 g",
+          "phi_days": 14
+        },
+        {
+          "common_name": "Fipronil 50 g/l SC",
+          "trade_name": "Regent",
+          "moa": "2",
+          "dilution": "8 ml",
+          "phi_days": 14
+        }
+      ]
+    }, 
+    {
+      "pest_name": "Stem borer",
+      "scientific_name": "Scirpophaga incertulas",
+      "chemicals": [
+        {
+          "common_name": "Chlorantraniliprole 20% +Thiamethoxam 20% WG",
+          "trade_name": "Virtako",
+          "moa": "28+4",
+          "dilution": "5g",
+          "phi_days": 10
+        },
+        {
+          "common_name": "Fipronil 0.3% GR",
+          "trade_name": "Fipronil",
+          "moa": "2",
+          "dilution": "12 kg / ha (granule)",
+          "phi_days": 14
+        }, 
+        {
+          "common_name": "Carbosulfan 200 g/l SC",
+          "trade_name": "Marshal 20",
+          "moa": "1",
+          "dilution": "48 ml",
+          "phi_days": 14
+        },
+        {
+          "common_name": "Phenthoate 500 g/l EC",
+          "trade_name": "Phenthoate",
+          "moa": "1",
+          "dilution": "32 ml",
+          "phi_days": 14
+        }, 
+        {
+          "common_name": "Quinalphos 250 g/l EC",
+          "trade_name": "Queen, Sucker, Quick, Quintox, Baurs, Kuinal, Flyfox",
+          "moa": "1",
+          "dilution": "48 ml",
+          "phi_days": 14
+        }
+      ]
+    },
+    {
+      "pest_name": "Brown planthopper",
+      "scientific_name": "Nilaparvata lugens",
+      "chemicals": [
+        {
+          "common_name": "Buprofezin 10% WP",
+          "trade_name": "Applaud",
+          "moa": "16",
+          "dilution": "30 g",
+          "phi_days": 14
+        },
+        {
+          "common_name": "Buprofezin 250 g/l SC",
+          "trade_name": "Applaud / Jawwa",
+          "moa": "16",
+          "dilution": "16 ml",
+          "phi_days": 14
+        },
+        {
+          "common_name": "Thiocyclam (Hydrogen oxalate) 50% SP",
+          "trade_name": "Evisect",
+          "moa": "14",
+          "dilution": "40 g",
+          "phi_days": 14
+        },
+        {
+          "common_name": "Thiocyclam (Hydrogen oxalate) 4% GR",
+          "trade_name": "Evisect GR",
+          "moa": "14",
+          "dilution": "Granule – field application",
+          "phi_days": 14
+        },
+        {
+          "common_name": "Pymetrozine 50% WG",
+          "trade_name": "Chess",
+          "moa": "9",
+          "dilution": "10 g",
+          "phi_days": 7
+        },
+        {
+          "common_name": "Chlorantraniliprole 20% + Thiamethoxam 20% WG",
+          "trade_name": "Virtako",
+          "moa": "28 + 4",
+          "dilution": "5 g",
+          "phi_days": 10
+        },
+        {
+          "common_name": "Imidacloprid 70% WG",
+          "trade_name": "Admire",
+          "moa": "4",
+          "dilution": "2.5 g",
+          "phi_days": 14
+        },
+        {
+          "common_name": "Imidacloprid 200 g/l SL",
+          "trade_name": "Confidor",
+          "moa": "4",
+          "dilution": "8 ml",
+          "phi_days": 14
+        },
+        {
+          "common_name": "Thiamethoxam 25% WG",
+          "trade_name": "Actara",
+          "moa": "4",
+          "dilution": "5 g",
+          "phi_days": 14
+        },
+        {
+          "common_name": "Sulfoxaflor 50% WG",
+          "trade_name": "Transform",
+          "moa": "4",
+          "dilution": "8 g",
+          "phi_days": 7
+        },
+        {
+          "common_name": "Etofenprox 100 g/l EC",
+          "trade_name": "Trebon",
+          "moa": "3",
+          "dilution": "24 ml",
+          "phi_days": 7
+        },
+        {
+          "common_name": "Ethiprole 100 g/l SC",
+          "trade_name": "Ethiprole",
+          "moa": "2",
+          "dilution": "24 ml",
+          "phi_days": 14
+        },
+        {
+          "common_name": "Fenobucarb 500 g/l EC",
+          "trade_name": "BPMC",
+          "moa": "1",
+          "dilution": "56 ml",
+          "phi_days": 14
+        },
+        {
+          "common_name": "Carbosulfan 200 g/l SC",
+          "trade_name": "Marshal",
+          "moa": "1",
+          "dilution": "40 ml",
+          "phi_days": 14
+        },
+        {
+          "common_name": "Fipronil 50 g/l SC",
+          "trade_name": "Regent",
+          "moa": "2",
+          "dilution": "24 ml",
+          "phi_days": 14
+        },
+        {
+          "common_name": "Novaluron 100 g/l EC",
+          "trade_name": "Rimon",
+          "moa": "15",
+          "dilution": "16 ml",
+          "phi_days": 14
+        },
+        {
+          "common_name": "Acetamiprid 20% SP",
+          "trade_name": " Mospilan, Azeta, Miyako, Rock, Baurs, Holiyaster Acetamiprid",
+          "moa": "4",
+          "dilution": "16 g",
+          "phi_days": 14
+        },
+        {
+          "common_name": "Acetamiprid 200 g/l SL",
+          "trade_name": "Miyako, Azeta, Mospilan, Rock Acetamiprid",
+          "moa": "4",
+          "dilution": "16 ml",
+          "phi_days": 14
+        }
+      ]
+    },
+    {
+      "pest_name": "Paddy bug",
+      "scientific_name": "Leptocorisa oratorius",
+      "chemicals": [
+        {
+          "common_name": "Thiocyclam (Hydrogen oxalate) 50% SP",
+          "trade_name": "Evisect",
+          "moa": "14",
+          "dilution": "40 g",
+          "phi_days": 14
+        },
+        {
+          "common_name": "Sulfoxaflor 50% WG",
+          "trade_name": "Transform",
+          "moa": "4",
+          "dilution": "5 g",
+          "phi_days": 7
+        },
+        {
+          "common_name": "Ethiprole 100 g/l SC",
+          "trade_name": "Ethiprole",
+          "moa": "2",
+          "dilution": "32 ml",
+          "phi_days": 14
+        },
+        {
+          "common_name": "Carbosulfan 200 g/l SC",
+          "trade_name": "Marshal",
+          "moa": "1",
+          "dilution": "64 ml",
+          "phi_days": 14
+        },
+        {
+          "common_name": "Phenthoate 500 g/l EC",
+          "trade_name": "Phenthoate",
+          "moa": "1",
+          "dilution": "80 ml",
+          "phi_days": 14
+        },
+        {
+          "common_name": "Quinalphos 250 g/l EC",
+          "trade_name": "Queen, Sucker, Quick, Quintox, Baurs, Kuinal, Flyfox",
+          "moa": "1",
+          "dilution": "80 ml",
+          "phi_days": 14
+        }
+      ]
+    },
+    {
+      "pest_name": "Field crab",
+      "scientific_name": "Paratelphusa ceylonensis",
+      "chemicals": [
+        {
+          "common_name": "Fenobucarb 500 g/l EC",
+          "trade_name": "BPMC",
+          "moa": "1",
+          "dilution": "Mix 3 ml per 1 L water",
+          "phi_days": "-"
+        },
+        {
+          "common_name": "Quinalphos 250 g/l EC",
+          "trade_name": "Queen, Sucker, Quick, Quintox, Baurs, Kuinal, Flyfox",
+          "moa": "1",
+          "dilution": "Mix 3 ml per 1 L water",
+          "phi_days": "-"
+        }
+      ]
+    },
+    {
+      "pest_name": "Leaf mites",
+      "scientific_name": "Hemitarsomemus spp., Oligonychus spp., Tetranychus spp.",
+      "chemicals": [
+        {
+          "common_name": "Hexythiazox 50 g/l EC",
+          "trade_name": "Nissorun",
+          "moa": "10",
+          "dilution": "24 ml",
+          "phi_days": 14
+        },
+        {
+          "common_name": "Sulphur 80% WP / WG",
+          "trade_name": "Sulphur",
+          "moa": "UN",
+          "dilution": "128 g",
+          "phi_days": 14
+        }
+      ]
+    },
+    {
+      "pest_name": "Sheath mite / Panicle rice mite",
+      "scientific_name": "Steneotarsonemus spinki",
+      "chemicals": [
+        {
+          "common_name": "Fenpyroximate 50 g/l EC",
+          "trade_name": "Mitigate",
+          "moa": "21",
+          "dilution": "14 ml",
+          "phi_days": 14
+        },
+        {
+          "common_name": "Hexythiazox 50 g/l EC",
+          "trade_name": "Nissorun",
+          "moa": "10",
+          "dilution": "36 ml",
+          "phi_days": 14
+        }
+      ]
     }
   ]
-}
-
+        }
+  
