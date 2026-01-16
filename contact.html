@@ -24,7 +24,6 @@ h2{
   margin:auto;
   display:flex;
   justify-content:space-between;
-  gap:10px;
 }
 
 .top-buttons button{
@@ -34,10 +33,6 @@ h2{
   color:#fff;
   border-radius:6px;
   cursor:pointer;
-}
-
-.top-buttons button:hover{
-  background:#1b5e20;
 }
 
 /* CARD */
@@ -53,107 +48,79 @@ h2{
 /* CONTACT BUTTONS */
 .contact-buttons{
   display:flex;
-  flex-wrap:wrap;
-  gap:15px;
   justify-content:center;
-  margin-top:15px;
-}
-
-.contact-buttons a{
-  text-decoration:none;
+  gap:15px;
+  flex-wrap:wrap;
 }
 
 .contact-buttons button{
   min-width:200px;
   padding:12px;
-  font-size:16px;
   border:none;
   border-radius:6px;
-  cursor:pointer;
   color:#fff;
-}
-
-.whatsapp{ background:#25D366; }
-.email{ background:#1976d2; }
-
-.contact-buttons button:hover{
-  opacity:0.9;
-}
-
-/* FORM */
-form{
-  margin-top:20px;
-}
-
-label{
-  font-weight:bold;
-  display:block;
-  margin-top:10px;
-}
-
-input, textarea{
-  width:100%;
-  padding:10px;
-  margin-top:5px;
-  border:1px solid #ccc;
-  border-radius:5px;
-  font-size:15px;
-}
-
-textarea{
-  resize:vertical;
-  min-height:120px;
-}
-
-.submit-btn{
-  margin-top:15px;
-  background:#2e7d32;
-  color:#fff;
-  padding:12px;
-  border:none;
-  border-radius:6px;
   cursor:pointer;
-  font-size:16px;
-  width:100%;
 }
 
-.submit-btn:hover{
-  background:#1b5e20;
-}
+.whatsapp{background:#25D366;}
+.email{background:#1976d2;}
 
-/* ADVERTISEMENT GRID */
-.ads-container{
-  display:flex;
-  gap:20px;
-  flex-wrap:wrap;
-}
+/* ================= SLIDER ================= */
 
-.ad-card{
-  flex:1 1 calc(33.33% - 20px); /* Desktop – 3 in one row */
+.ads-main{
+  max-width:1200px;
+  margin:30px auto;
   background:#fff;
-  padding:15px;
+  padding:20px;
   border-radius:8px;
   box-shadow:0 2px 6px rgba(0,0,0,0.1);
+  overflow:hidden;
 }
 
-@media (max-width:900px){
-  .ad-card{
-    flex:1 1 calc(50% - 20px); /* Tablet – 2 in one row */
-  }
+.slider-window{
+  overflow:hidden;
 }
 
-@media (max-width:600px){
-  .ad-card{
-    flex:1 1 100%; /* Mobile – 1 per row */
-  }
+.ads-track{
+  display:flex;
+  transition:transform 0.6s ease-in-out;
+}
+
+/* single ad */
+.ad-card{
+  min-width:33.33%;
+  padding:10px;
+}
+
+.ad-box{
+  height:100%;
+  border:2px dashed #4caf50;
+  padding:15px;
+  border-radius:8px;
+  background:#f9fff9;
+  text-align:center;
+}
+
+.ad-box img{
+  max-width:100%;
+  border-radius:6px;
+  margin:10px 0;
+}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .ad-card{min-width:50%;}
+}
+@media(max-width:600px){
+  .ad-card{min-width:100%;}
 }
 
 /* FOOTER */
 footer{
   text-align:center;
   margin-top:30px;
-  color:#555;
   font-size:14px;
+  color:#555;
 }
 </style>
 </head>
@@ -167,81 +134,91 @@ footer{
   <button onclick="history.back()">🔙 Back</button>
 </div>
 
-<!-- CONTACT INFO -->
 <div class="card">
   <h3 style="text-align:center;color:#388e3c;">Get in Touch</h3>
-  <p style="text-align:center;">Agricultural information, training & extension support</p>
+  <p style="text-align:center;">Agricultural information & support</p>
 
   <div class="contact-buttons">
-    <a href="https://wa.me/94758656258?text=Hello%20DK%20Agri" target="_blank">
+    <a href="https://wa.me/94758656258" target="_blank">
       <button class="whatsapp">📱 WhatsApp</button>
     </a>
-
-    <a href="mailto:dkagri@example.com?subject=Agri%20Inquiry">
+    <a href="mailto:dkagri@example.com">
       <button class="email">📧 Email</button>
     </a>
   </div>
-
 </div>
 
-<!-- ADVERTISEMENT -->
-<div class="card">
-  <h3 style="color:#2e7d32;text-align:center;">Advertisement</h3>
+<!-- ===== AUTO SLIDING ADS ===== -->
+<div class="ads-main">
+<h3 style="text-align:center;color:#2e7d32;">Advertisement</h3>
 
-  <div class="ads-container">
+<div class="slider-window">
+<div class="ads-track" id="adsTrack">
 
-    <!-- AD 1 -->
-    <div class="ad-card">
-      <div class="ad-box">
-        <p><b>CV MAKING</b></p>
-        <p>PDF TO WEBSITE</p>
-        <img src="cv.jpg" alt="CV Making">
-        <p style="font-size:13px;color:#666;">Contact us</p>
-        <div class="contact-buttons">
-          <a href="https://wa.me/94758656258?text=Hello%20DK%20Agri" target="_blank">
-            <button class="whatsapp">📱 WhatsApp</button>
-          </a>
-        </div>
-      </div>
+  <div class="ad-card">
+    <div class="ad-box">
+      <h4>CV MAKING</h4>
+      <p>PDF to Website</p>
+      <img src="cv.jpg">
+      <button class="whatsapp">WhatsApp</button>
     </div>
-
-    <!-- AD 2 -->
-    <div class="ad-card">
-      <div class="ad-box">
-        <p><b>SHOP MAKING</b></p>
-        <p>MAKE AN ONLINE SHOP</p>
-        <img src="shop.jpg" alt="Shop Making">
-        <p style="font-size:13px;color:#666;">Contact us</p>
-        <div class="contact-buttons">
-          <a href="https://wa.me/94758656258?text=Hello%20DPK%20CREATION" target="_blank">
-            <button class="whatsapp">📱 WhatsApp</button>
-          </a>
-        </div>
-      </div>
-    </div>
-
-  
   </div>
+
+  <div class="ad-card">
+    <div class="ad-box">
+      <h4>SHOP MAKING</h4>
+      <p>Online Shop</p>
+      <img src="shop.jpg">
+      <button class="whatsapp">WhatsApp</button>
+    </div>
+  </div>
+
+  <div class="ad-card">
+    <div class="ad-box">
+      <h4>WEBSITE DESIGN</h4>
+      <p>Business & Agri</p>
+      <img src="web.jpg">
+      <button class="whatsapp">WhatsApp</button>
+    </div>
+  </div>
+
+  <!-- duplicate for infinite effect -->
+  <div class="ad-card">
+    <div class="ad-box">
+      <h4>CV MAKING</h4>
+      <p>PDF to Website</p>
+      <img src="cv.jpg">
+      <button class="whatsapp">WhatsApp</button>
+    </div>
+  </div>
+
+</div>
+</div>
 </div>
 
 <footer>
-  © 2026 DK Agri – Educational & Extension Use
+© 2026 DK Agri – Educational & Extension Use
 </footer>
 
 <script>
-function sendMessage(e){
-  e.preventDefault();
-  const name=document.getElementById("name").value;
-  const msg=document.getElementById("message").value;
+const track = document.getElementById("adsTrack");
+let index = 0;
 
-  const mailto =
-    "mailto:dkagri@example.com"
-    +"?subject=Message from "+encodeURIComponent(name)
-    +"&body="+encodeURIComponent(msg);
+function slideAds(){
+  const cards = document.querySelectorAll(".ad-card");
+  const visible = window.innerWidth <= 600 ? 1 : window.innerWidth <= 900 ? 2 : 3;
+  index++;
 
-  window.location.href = mailto;
+  if(index > cards.length - visible){
+    index = 0;
+  }
+
+  const width = cards[0].offsetWidth;
+  track.style.transform = `translateX(-${index * width}px)`;
 }
+
+setInterval(slideAds,3000);
 </script>
 
 </body>
-            </html>
+</html>
