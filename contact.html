@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact – DK Agri</title>
+
+<style>
+body{
+  font-family: Arial, sans-serif;
+  background:#f4f6f7;
+  margin:0;
+  padding:15px;
+}
+
+h2{
+  text-align:center;
+  color:#2e7d32;
+}
+
+/* TOP BUTTONS */
+.top-buttons{
+  max-width:850px;
+  margin:auto;
+  display:flex;
+  justify-content:space-between;
+  gap:10px;
+}
+
+.top-buttons button{
+  padding:8px 18px;
+  border:none;
+  background:#2e7d32;
+  color:#fff;
+  border-radius:6px;
+  cursor:pointer;
+}
+
+.top-buttons button:hover{
+  background:#1b5e20;
+}
+
+/* CARD */
+.card{
+  max-width:850px;
+  margin:20px auto;
+  background:#fff;
+  padding:20px;
+  border-radius:8px;
+  box-shadow:0 2px 6px rgba(0,0,0,0.1);
+}
+
+/* CONTACT BUTTONS */
+.contact-buttons{
+  display:flex;
+  flex-wrap:wrap;
+  gap:15px;
+  justify-content:center;
+  margin-top:15px;
+}
+
+.contact-buttons a{
+  text-decoration:none;
+}
+
+.contact-buttons button{
+  min-width:200px;
+  padding:12px;
+  font-size:16px;
+  border:none;
+  border-radius:6px;
+  cursor:pointer;
+  color:#fff;
+}
+
+.whatsapp{ background:#25D366; }
+.email{ background:#1976d2; }
+
+.contact-buttons button:hover{
+  opacity:0.9;
+}
+
+/* FORM */
+form{
+  margin-top:20px;
+}
+
+label{
+  font-weight:bold;
+  display:block;
+  margin-top:10px;
+}
+
+input, textarea{
+  width:100%;
+  padding:10px;
+  margin-top:5px;
+  border:1px solid #ccc;
+  border-radius:5px;
+  font-size:15px;
+}
+
+textarea{
+  resize:vertical;
+  min-height:120px;
+}
+
+.submit-btn{
+  margin-top:15px;
+  background:#2e7d32;
+  color:#fff;
+  padding:12px;
+  border:none;
+  border-radius:6px;
+  cursor:pointer;
+  font-size:16px;
+  width:100%;
+}
+
+.submit-btn:hover{
+  background:#1b5e20;
+}
+
+/* ADVERTISEMENT */
+.ad-box{
+  margin-top:20px;
+  padding:15px;
+  border:2px dashed #4caf50;
+  text-align:center;
+  border-radius:8px;
+  background:#f9fff9;
+}
+
+.ad-box img{
+  max-width:100%;
+  height:auto;
+  border-radius:6px;
+}
+
+/* FOOTER */
+footer{
+  text-align:center;
+  margin-top:30px;
+  color:#555;
+  font-size:14px;
+}
+</style>
+</head>
+
+<body>
+
+<h2>Contact Us</h2>
+
+<div class="top-buttons">
+  <button onclick="location.href='index.html'">🏠 Home</button>
+  <button onclick="history.back()">🔙 Back</button>
+</div>
+
+<!-- CONTACT INFO -->
+<div class="card">
+  <h3 style="text-align:center;color:#388e3c;">Get in Touch</h3>
+  <p style="text-align:center;">Agricultural information, training & extension support</p>
+
+  <div class="contact-buttons">
+    <a href="https://wa.me/94758656258?text=Hello%20DK%20Agri" target="_blank">
+      <button class="whatsapp">📱 WhatsApp</button>
+    </a>
+
+    <a href="mailto:dkagri@example.com?subject=Agri%20Inquiry">
+      <button class="email">📧 Email</button>
+    </a>
+  </div>
+
+</div>
+
+<!-- ADVERTISEMENT -->
+<div class="card">
+  <h3 style="color:#2e7d32;">Advertisement</h3>
+  <div class="ad-box">
+    <p><b>CV MAKING</b></p>
+    <p>PDF TO WEBSIDE</p>
+    <img src="cv.jpg" alt="Advertisement">
+    <p style="font-size:13px;color:#666;">Contact us</p>
+      <div class="contact-buttons">
+    <a href="https://wa.me/94758656258?text=Hello%20DK%20Agri" target="_blank">
+      <button class="whatsapp">📱 WhatsApp</button>
+    </a>
+
+  </div>
+
+  </div>
+    <div class="ad-box">
+    <p><b>SHOP MAKING</b></p>
+    <p>MAKE A ONLINE SHOP</p>
+    <img src="SHOP.jpg" alt="Advertisement">
+    <p style="font-size:13px;color:#666;">Contact us</p>
+      <div class="contact-buttons">
+    <a href="https://wa.me/94758656258?text=Hello%20DPK%20CREATION" target="_blank">
+      <button class="whatsapp">📱 WhatsApp</button>
+    </a>
+
+  </div>
+
+  </div>
+
+</div>
+
+<footer>
+  © 2026 DK Agri – Educational & Extension Use
+</footer>
+
+<script>
+function sendMessage(e){
+  e.preventDefault();
+  const name=document.getElementById("name").value;
+  const msg=document.getElementById("message").value;
+
+  const mailto =
+    "mailto:dkagri@example.com"
+    +"?subject=Message from "+encodeURIComponent(name)
+    +"&body="+encodeURIComponent(msg);
+
+  window.location.href = mailto;
+}
+</script>
+
+</body>
+</html>

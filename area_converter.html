@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Area Converter</title>
+
+<style>
+body{
+    font-family: Arial, sans-serif;
+    background:#f4f7f9;
+    margin:0;
+}
+header{
+    background:#2e7d32;
+    color:white;
+    text-align:center;
+    padding:15px;
+}
+.container{
+    max-width:420px;
+    margin:30px auto;
+    background:white;
+    padding:20px;
+    border-radius:10px;
+    box-shadow:0 0 10px rgba(0,0,0,0.1);
+}
+label{
+    font-weight:bold;
+    margin-top:10px;
+    display:block;
+}
+input, select, button{
+    width:100%;
+    padding:10px;
+    margin-top:8px;
+    font-size:16px;
+}
+button{
+    background:#2e7d32;
+    color:white;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+}
+button:hover{
+    background:#1b5e20;
+}
+.result{
+    margin-top:30px;
+    font-weight:bold;
+    font-size: 28px;
+    color:white;
+    background: #6d4c41;
+    padding: 20px;
+}
+.nav-buttons{
+    display:flex;
+    gap:10px;
+    margin-bottom:15px;
+}
+footer{
+    background:#e0e0e0;
+    text-align:center;
+    padding:10px;
+    font-size:14px;
+    margin-top:30px;
+}
+</style>
+
+<script>
+function convertArea(){
+    let value = document.getElementById("value").value;
+    let from = document.getElementById("from").value;
+    let to = document.getElementById("to").value;
+
+    if(value === ""){
+        alert("Please enter a value");
+        return;
+    }
+
+    let sqm;
+
+    // Convert to Square Meter
+    if(from === "sqm") sqm = value;
+    if(from === "sqft") sqm = value * 0.092903;
+    if(from === "acre") sqm = value * 4046.86;
+    if(from === "hectare") sqm = value * 10000;
+    if(from === "perch") sqm = value * 25.2929;
+
+    let result;
+
+    // Convert from Square Meter
+    if(to === "sqm") result = sqm;
+    if(to === "sqft") result = sqm / 0.092903;
+    if(to === "acre") result = sqm / 4046.86;
+    if(to === "hectare") result = sqm / 10000;
+    if(to === "perch") result = sqm / 25.2929;
+
+    document.getElementById("result").innerHTML =
+        value + " " + from.toUpperCase() + " = " + result.toFixed(4) + " " + to.toUpperCase();
+}
+</script>
+</head>
+
+<body>
+
+<header>
+    <h2>Area Converter</h2>
+</header>
+
+<div class="container">
+
+    <div class="nav-buttons">
+        <button onclick="location.href='index.html'">Home</button>
+        <button onclick="history.back()">Back</button>
+    </div>
+
+    <label>Enter Value</label>
+    <input type="number" id="value" placeholder="Enter area value">
+
+    <label>From</label>
+    <select id="from">
+        <option value="sqm">Square Meter (m²)</option>
+        <option value="sqft">Square Feet (ft²)</option>
+        <option value="perch">Perch</option>
+        <option value="acre">Acre</option>
+        <option value="hectare">Hectare</option>
+    </select>
+
+    <label>To</label>
+    <select id="to">
+        <option value="sqm">Square Meter (m²)</option>
+        <option value="sqft">Square Feet (ft²)</option>
+        <option value="perch">Perch</option>
+        <option value="acre">Acre</option>
+        <option value="hectare">Hectare</option>
+    </select>
+
+    <button onclick="convertArea()">Convert</button>
+
+    <div class="result" id="result"></div>
+
+</div>
+
+<footer>
+    © 2026 DK AGRI | Educational & Extension Use Only
+</footer>
+
+</body>
+</html>
