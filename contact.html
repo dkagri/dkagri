@@ -121,20 +121,31 @@ textarea{
   background:#1b5e20;
 }
 
-/* ADVERTISEMENT */
-.ad-box{
-  margin-top:20px;
-  padding:15px;
-  border:2px dashed #4caf50;
-  text-align:center;
-  border-radius:8px;
-  background:#f9fff9;
+/* ADVERTISEMENT GRID */
+.ads-container{
+  display:flex;
+  gap:20px;
+  flex-wrap:wrap;
 }
 
-.ad-box img{
-  max-width:100%;
-  height:auto;
-  border-radius:6px;
+.ad-card{
+  flex:1 1 calc(33.33% - 20px); /* Desktop – 3 in one row */
+  background:#fff;
+  padding:15px;
+  border-radius:8px;
+  box-shadow:0 2px 6px rgba(0,0,0,0.1);
+}
+
+@media (max-width:900px){
+  .ad-card{
+    flex:1 1 calc(50% - 20px); /* Tablet – 2 in one row */
+  }
+}
+
+@media (max-width:600px){
+  .ad-card{
+    flex:1 1 100%; /* Mobile – 1 per row */
+  }
 }
 
 /* FOOTER */
@@ -175,34 +186,42 @@ footer{
 
 <!-- ADVERTISEMENT -->
 <div class="card">
-  <h3 style="color:#2e7d32;">Advertisement</h3>
-  <div class="ad-box">
-    <p><b>CV MAKING</b></p>
-    <p>PDF TO WEBSIDE</p>
-    <img src="cv.jpg" alt="Advertisement">
-    <p style="font-size:13px;color:#666;">Contact us</p>
-      <div class="contact-buttons">
-    <a href="https://wa.me/94758656258?text=Hello%20DK%20Agri" target="_blank">
-      <button class="whatsapp">📱 WhatsApp</button>
-    </a>
+  <h3 style="color:#2e7d32;text-align:center;">Advertisement</h3>
 
+  <div class="ads-container">
+
+    <!-- AD 1 -->
+    <div class="ad-card">
+      <div class="ad-box">
+        <p><b>CV MAKING</b></p>
+        <p>PDF TO WEBSITE</p>
+        <img src="cv.jpg" alt="CV Making">
+        <p style="font-size:13px;color:#666;">Contact us</p>
+        <div class="contact-buttons">
+          <a href="https://wa.me/94758656258?text=Hello%20DK%20Agri" target="_blank">
+            <button class="whatsapp">📱 WhatsApp</button>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- AD 2 -->
+    <div class="ad-card">
+      <div class="ad-box">
+        <p><b>SHOP MAKING</b></p>
+        <p>MAKE AN ONLINE SHOP</p>
+        <img src="shop.jpg" alt="Shop Making">
+        <p style="font-size:13px;color:#666;">Contact us</p>
+        <div class="contact-buttons">
+          <a href="https://wa.me/94758656258?text=Hello%20DPK%20CREATION" target="_blank">
+            <button class="whatsapp">📱 WhatsApp</button>
+          </a>
+        </div>
+      </div>
+    </div>
+
+  
   </div>
-
-  </div>
-    <div class="ad-box">
-    <p><b>SHOP MAKING</b></p>
-    <p>MAKE A ONLINE SHOP</p>
-    <img src="shop.jpg" alt="Advertisement">
-    <p style="font-size:13px;color:#666;">Contact us</p>
-      <div class="contact-buttons">
-    <a href="https://wa.me/94758656258?text=Hello%20DPK%20CREATION" target="_blank">
-      <button class="whatsapp">📱 WhatsApp</button>
-    </a>
-
-  </div>
-
-  </div>
-
 </div>
 
 <footer>
@@ -225,4 +244,4 @@ function sendMessage(e){
 </script>
 
 </body>
-  </html>
+            </html>
