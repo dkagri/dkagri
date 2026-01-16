@@ -3,104 +3,119 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Agriculture</title>
+<title>DK Agri – Home</title>
 
 <style>
 *{
-  box-sizing: border-box;
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
 }
 
 body{
-  margin: 0;
   font-family: Arial, sans-serif;
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
 
-  background-image: url('first.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  min-height: 100vh;
-
-  display: flex;
-  flex-direction: column;
+  background:url('first.jpg') center/cover no-repeat fixed;
 }
 
-/* Overlay */
+/* OVERLAY */
 body::before{
-  content: "";
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.4);
-  z-index: -1;
+  content:"";
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.55);
+  z-index:-1;
 }
 
+/* HEADER */
 header{
-  background: green;
-  color: white;
-  text-align: center;
-  padding: 30px 15px;
+  background:linear-gradient(135deg,#2e7d32,#1b5e20);
+  color:#fff;
+  text-align:center;
+  padding:45px 20px;
+  box-shadow:0 4px 10px rgba(0,0,0,0.4);
 }
 
 header h1{
-  margin: 0;
+  font-size:38px;
+  letter-spacing:1px;
 }
 
 header p{
-  margin-top: 8px;
-  font-size: 14px;
+  margin-top:10px;
+  font-size:15px;
+  opacity:0.9;
 }
 
 /* MAIN SECTION */
 .infomation{
-  background: rgba(200,230,201,0.95);
-  padding: 30px 20px;
-  margin: 20px;
-  border-radius: 12px;
+  max-width:1200px;
+  margin:30px auto;
+  padding:35px;
 
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 20px;
+  background:rgba(236,247,236,0.97);
+  border-radius:16px;
+
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:25px;
 }
 
 /* CARD */
 .card{
-  background: white;
-  border-radius: 10px;
-  padding: 25px 15px;
-  text-align: center;
-  transition: 0.3s;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  background:#fff;
+  border-radius:14px;
+  padding:30px 20px;
+  text-align:center;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  box-shadow:0 8px 18px rgba(0,0,0,0.18);
+  transition:0.35s;
 }
 
 .card:hover{
-  background: #1e88e5;
-  transform: translateY(-5px);
+  background:#1e88e5;
+  transform:translateY(-8px) scale(1.02);
+  box-shadow:0 12px 25px rgba(0,0,0,0.35);
 }
 
+/* LINK */
 .card a{
-  text-decoration: none;
-  color: #1e88e5;
-  font-weight: bold;
-  font-size: 16px;
-  display: block;
+  text-decoration:none;
+  font-size:18px;
+  font-weight:bold;
+  color:#1e88e5;
+  transition:0.3s;
 }
 
 .card:hover a{
-  color: white;
+  color:#fff;
 }
 
 /* FOOTER */
 footer{
-  background: black;
-  color: white;
-  text-align: center;
-  padding: 12px;
-  margin-top: auto;
+  margin-top:auto;
+  background:#000;
+  color:#fff;
+  text-align:center;
+  padding:14px;
+  font-size:14px;
 }
 
 /* MOBILE */
-@media (max-width:600px){
+@media(max-width:600px){
   header h1{
-    font-size: 22px;
+    font-size:26px;
+  }
+  .infomation{
+    padding:20px;
+    margin:20px;
   }
 }
 </style>
@@ -109,7 +124,7 @@ footer{
 <body>
 
 <header>
-  <h1>Welcome</h1>
+  <h1>Welcome to DK Agri</h1>
   <p>AGRICULTURE INFORMATION SYSTEM</p>
 </header>
 
@@ -118,9 +133,9 @@ footer{
   <div class="card">
     <a href="crop.html">🌾 Crops</a>
   </div>
-  
+
   <div class="card">
-    <a href="pesticide.html">🐛 pesticide</a>
+    <a href="pesticide.html">🐛 Pesticide</a>
   </div>
 
   <div class="card">
@@ -135,9 +150,8 @@ footer{
     <a href="presentation.html">📊 Presentation</a>
   </div>
 
-  
   <div class="card">
-    <a href="contact.html">📞 Contact us</a>
+    <a href="contact.html">📞 Contact Us</a>
   </div>
 
 </section>
@@ -147,4 +161,4 @@ footer{
 </footer>
 
 </body>
-</html>
+      </html>
