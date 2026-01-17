@@ -6,18 +6,12 @@
 <title>DK Agri – Home</title>
 
 <style>
-*{
-  box-sizing:border-box;
-  margin:0;
-  padding:0;
-}
-
+*{ box-sizing:border-box; margin:0; padding:0; }
 body{
-  font-family: Arial, sans-serif;
+  font-family:Arial,sans-serif;
   min-height:100vh;
   display:flex;
   flex-direction:column;
-
   background:url('first.jpg') center/cover no-repeat fixed;
 }
 
@@ -36,39 +30,27 @@ header{
   color:#fff;
   text-align:center;
   padding:45px 20px;
-  box-shadow:0 4px 10px rgba(0,0,0,0.4);
 }
+header h1{ font-size:38px; }
+header p{ margin-top:10px; font-size:15px; opacity:0.9; }
 
-header h1{
-  font-size:38px;
-  letter-spacing:1px;
-}
-
-header p{
-  margin-top:10px;
-  font-size:15px;
-  opacity:0.9;
-}
-
-/* MAIN SECTION */
+/* MAIN CARDS */
 .infomation{
   max-width:1200px;
-  margin:30px auto;
+  margin:30px auto 10px;
   padding:35px;
-
   background:rgba(236,247,236,0.97);
   border-radius:16px;
 
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  grid-template-columns:repeat(3,1fr);
   gap:25px;
 }
 
-/* CARD */
 .card{
   background:#fff;
   border-radius:14px;
-  padding:30px 20px;
+  padding:35px 20px;
   text-align:center;
 
   display:flex;
@@ -81,21 +63,117 @@ header p{
 
 .card:hover{
   background:#1e88e5;
-  transform:translateY(-8px) scale(1.02);
-  box-shadow:0 12px 25px rgba(0,0,0,0.35);
+  transform:translateY(-8px);
 }
 
-/* LINK */
 .card a{
   text-decoration:none;
   font-size:18px;
   font-weight:bold;
   color:#1e88e5;
-  transition:0.3s;
+}
+.card:hover a{ color:#fff; }
+
+/* ADVERTISEMENT SECTION */
+.desktop-ads{
+  max-width:1200px;
+  margin:30px auto 40px;
+  padding:25px;
+  background:#fff;
+  border-radius:16px;
+  box-shadow:0 8px 20px rgba(0,0,0,0.2);
 }
 
-.card:hover a{
+.desktop-ads h3{
+  text-align:center;
+  color:#2e7d32;
+  margin-bottom:20px;
+}
+
+/* Ads grid (desktop view) */
+.ads-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+}
+
+/* Ad boxes */
+.ad-box{
+  border:2px dashed #4caf50;
+  padding:20px;
+  text-align:center;
+  border-radius:12px;
+  background:#f9fff9;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  height:100%;
+}
+
+.ad-box img{
+  max-width:100%;
+  border-radius:8px;
+  margin:10px 0;
+}
+
+/* Desktop only buttons below all ads */
+.desktop-buttons{
+  text-align:center;
+  margin-top:20px;
+}
+
+.desktop-buttons button{
+  min-width:160px;
+  padding:12px;
+  font-size:16px;
+  border:none;
+  border-radius:6px;
+  cursor:pointer;
   color:#fff;
+  margin:0 8px;
+}
+@media (max-width:600px){
+  .email{
+    display:none;
+  }
+}
+.whatsapp{ background:#25D366; }
+.email{ background:#1976d2; }
+.call{background:#e53935;}
+.desktop-buttons button:hover{ opacity:0.9; }
+
+/* MOBILE / TABLET AUTO-SLIDE */
+@media (max-width:991px){
+  .ads-grid{
+    grid-template-columns:1fr;
+    position:relative;
+    overflow:hidden;
+    height:600px;
+  }
+  .ad-box{
+    position:absolute;
+    width:100%;
+    top:0;
+    left:0;
+    transition:opacity 0.5s ease-in-out;
+    opacity:0;
+  }
+  .ad-box.active{
+    opacity:1;
+    position:relative;
+  }
+}
+
+/* TABLET CARDS */
+@media (max-width:991px){
+  .infomation{ grid-template-columns:repeat(2,1fr); }
+}
+
+/* MOBILE CARDS */
+@media (max-width:600px){
+  header h1{ font-size:26px; }
+  .infomation{ grid-template-columns:1fr; padding:20px; margin:20px; }
 }
 
 /* FOOTER */
@@ -106,17 +184,6 @@ footer{
   text-align:center;
   padding:14px;
   font-size:14px;
-}
-
-/* MOBILE */
-@media(max-width:600px){
-  header h1{
-    font-size:26px;
-  }
-  .infomation{
-    padding:20px;
-    margin:20px;
-  }
 }
 </style>
 </head>
@@ -129,36 +196,101 @@ footer{
 </header>
 
 <section class="infomation">
+  <div class="card"><a href="crop.html">🌾 Crops</a></div>
+  <div class="card"><a href="pesticide.html">🐛 Pesticide</a></div>
+  <div class="card"><a href="spacing.html">📏 Crop Spacing Calculator</a></div>
+  <div class="card"><a href="area_converter.html">🚜 Area Converter</a></div>
+  <div class="card"><a href="presentation.html">📊 Presentation</a></div>
+  <div class="card"><a href="contact.html">📞 Contact Us</a></div>
+</section>
 
-  <div class="card">
-    <a href="crop.html">🌾 Crops</a>
+<!-- ADVERTISEMENT -->
+<section class="desktop-ads">
+  <h3>Our Services </h3>
+
+  <div class="ads-grid">
+    <div class="ad-box active">
+      <h4>CV MAKING</h4>
+      <p>PDF to Website</p>
+      <img src="cv.jpg" alt="CV Making">
+    </div>
+
+    <div class="ad-box">
+      <h4>ONLINE SHOP</h4>
+      <p>E-Commerce Website</p>
+      <img src="shop.jpg" alt="Online Shop">
+    </div>
+
+    <div class="ad-box">
+      <h4>Gourmet Delight</h4>
+      <p>Restaurant Website</p>
+      <img src="hotel.jpg" alt="Restaurant">
+    </div>
+
+
+    <div class="ad-box">
+      <h4>FOOD BLOG</h4>
+      <p>Recipe Website</p>
+      <img src="food.jpg" alt="Food Blog">
+    </div>
+ 
+     <div class="ad-box">
+      <h4>WEBSITE DESIGN</h4>
+      <p>Business</p>
+      <img src="all.jpg" alt="Website Design">
+    </div>
+
+     <div class="ad-box">
+       <h4>Text Artistry</h4>
+       <p>Type Setting</p>
+      <img src="type.jpg" alt="Type Setting">
+    </div>
+
+ 
   </div>
 
-  <div class="card">
-    <a href="pesticide.html">🐛 Pesticide</a>
-  </div>
+  <!-- Desktop buttons below all ads -->
+  <div class="desktop-buttons">
+    <a href="https://wa.me/94725989935" target="_blank"><button class="whatsapp">📱 WhatsApp</button></a>
+        <a href="tel:+94725989935">
+  <button class="call">📞 Call</button>
+</a>
 
-  <div class="card">
-    <a href="spacing.html">📏 Crop Spacing Calculator</a>
+    <a href="mailto:dpkcreation@gmail.com"><button class="email">📧 Email</button></a>
   </div>
-
-  <div class="card">
-    <a href="area_converter.html">🚜 Area Converter</a>
-  </div>
-
-  <div class="card">
-    <a href="presentation.html">📊 Presentation</a>
-  </div>
-
-  <div class="card">
-    <a href="contact.html">📞 Contact Us</a>
-  </div>
-
 </section>
 
 <footer>
 © 2026 DK AGRI | Educational & Extension Use Only
 </footer>
 
+<script>
+// MOBILE AUTO-SLIDE ADS
+const ads = document.querySelectorAll('.ads-grid .ad-box');
+let current = 0;
+
+function showNextAd(){
+  ads.forEach((ad,i)=> ad.classList.remove('active'));
+  ads[current].classList.add('active');
+  current = (current + 1) % ads.length;
+}
+
+// Only run auto-slide on mobile/tablet
+function checkSlide(){
+  if(window.innerWidth <= 991){
+    showNextAd();
+    setInterval(showNextAd, 4000); // every 4 seconds
+  } else {
+    ads.forEach(ad=> ad.classList.add('active')); // show all ads in desktop
+  }
+}
+
+window.addEventListener('load', checkSlide);
+window.addEventListener('resize', ()=>{
+  ads.forEach(ad=> ad.classList.remove('active'));
+  checkSlide();
+});
+</script>
+
 </body>
-      </html>
+  </html>
