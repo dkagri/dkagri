@@ -8,145 +8,219 @@
 <style>
 body{
   font-family: Arial, sans-serif;
-  background: #f2f2f2;
-  padding: 20px;
+  background:#f4f6f7;
+  margin:0;
+  padding:15px;
 }
 
 h2{
-  text-align: center;
-  color: #2e7d32;
+  text-align:center;
+  color:#2e7d32;
+  margin-bottom:10px;
 }
 
-/* BUTTON BAR */
+/* TOP BUTTONS */
 .top-buttons{
-  max-width: 750px;
-  margin: auto;
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 15px;
+  max-width:900px;
+  margin:auto;
+  display:flex;
+  justify-content:space-between;
+  gap:10px;
 }
 
 .top-buttons button{
-  padding: 8px 16px;
-  border: none;
-  background: #2e7d32;
-  color: #fff;
-  cursor: pointer;
-  border-radius: 5px;
+  padding:8px 18px;
+  border:none;
+  background:#2e7d32;
+  color:#fff;
+  border-radius:6px;
+  cursor:pointer;
 }
 
-select{
-  display: block;
-  margin: 20px auto;
-  padding: 10px;
-  font-size: 16px;
-  width: 100%;
-  max-width: 400px;
-}
-th{
-  background: #4caf50;
-  color: #fff;
-  width: 40%;
-  text-align: left;
+.top-buttons button:hover{
+  background:#1b5e20;
 }
 
-footer{
-  text-align: center;
-  margin-top: 30px;
-  color: #555;
+/* DROPDOWN SECTIONS */
+.section{
+  max-width:900px;
+  margin:20px auto;
+  background:#fff;
+  border-radius:8px;
+  box-shadow:0 2px 6px rgba(0,0,0,0.1);
 }
+
+.section-header{
+  padding:14px;
+  background:#e8f5e9;
+  color:#2e7d32;
+  font-weight:bold;
+  cursor:pointer;
+  display:flex;
+  justify-content:space-between;
+}
+
+.section-content{
+  display:none;
+  padding:15px;
+}
+
+/* TABLE */
 table{
-    width:100%;
-    border-collapse:collapse;
-    background:white;
+  width:100%;
+  border-collapse:collapse;
+  margin-top:10px;
 }
 
 th, td{
-    border:1px solid #ccc;
-    padding:12px;
-    text-align:center;
+  border:1px solid #ccc;
+  padding:10px;
+  text-align:center;
 }
 
+th{
+  background:#4caf50;
+  color:#fff;
+}
+
+/* PESTICIDE BUTTONS */
+.pest-buttons{
+  display:flex;
+  justify-content:center;
+  gap:15px;
+  margin-top:15px;
+}
+
+.pest-buttons button{
+  background:#388e3c;
+  color: white;
+  padding: 18px;
+  font-size: 18px;
+}
+
+/* FOOTER */
+footer{
+  text-align:center;
+  margin-top:30px;
+  color:#555;
+  font-size:14px;
+}
 </style>
 </head>
 
 <body>
 
-<h2>Paddy Details</h2>
+<h2>Paddy (Rice) – Crop Information</h2>
 
 <div class="top-buttons">
   <button onclick="location.href='index.html'">🏠 Home</button>
   <button onclick="history.back()">🔙 Back</button>
 </div>
-<br> <hr>
-<ul>
-  <li>Scientific name - <i>Oryza sativa</i></li><br>
-  <li>Family - Poaceae </li><br>
-  <li>Stages</li>
-    <ol>
-      <li>Germination to emergence Stage</li>
-      <li>Seedling Stage</li>
-      <li>Tillering Stage</li>
-      <li>Stem elongation Stage</li>
-      <li>Panicle initiation to booting Stage</li>
-      <li>Heading Stage  </li>
-      <li>Flowering Stage</li>
-      <li>Milk grain Stage</li>
-      <li>Dough grain Stage</li>
-      <li>Mature grain </li>
-    </ol>
-</ul>
 
-    <h2>Seed Requirement According to Nursery </h2>
-
-<div class="container">
-
-<table>
-<tr>
-    <th></th>
-    <th>Wet bed</th>
-    <th>Dry bed</th>
-    <th>Dapog</th>
-    <th>Parachute</th>
-</tr>
-
-
-<tr>
-    <td>Seed Requirement (kg/ac)</td>
-    <td>20 </td>
-    <td>20–30 </td>
-    <td>25 </td>
-    <td>4 / 8 / 12 </td>
-</tr>
-
-<tr>
-    <td>Planting age (days)</td>
-    <td>14–21 </td>
-    <td>14–21 </td>
-    <td>12–14 </td>
-    <td>10–12 </td>
-</tr>
-
-<tr>
-    <td>Labor required from nursery to establishment (man-days / ac)</td>
-    <td>24–30 </td>
-    <td>24–30 </td>
-    <td>6–8 </td>
-    <td>6–8 </td>
-</tr>
-</table>
-
+<!-- BASIC DETAILS -->
+<div class="section">
+  <div class="section-header" onclick="toggleSection(this)">
+    Basic Crop Details <span>▼</span>
+  </div>
+  <div class="section-content">
+    <ul>
+      <li><b>Scientific name:</b> <i>Oryza sativa</i></li><br>
+      <li><b>Family:</b> Poaceae</li>
+    </ul>
+  </div>
 </div>
 
+<!-- GROWTH STAGES -->
+<div class="section">
+  <div class="section-header" onclick="toggleSection(this)">
+    Growth Stages <span>▼</span>
+  </div>
+  <div class="section-content">
+    <ol>
+      <li>Germination to emergence</li>
+      <li>Seedling stage</li>
+      <li>Tillering stage</li>
+      <li>Stem elongation stage</li>
+      <li>Panicle initiation to booting</li>
+      <li>Heading stage</li>
+      <li>Flowering stage</li>
+      <li>Milk grain stage</li>
+      <li>Dough grain stage</li>
+      <li>Mature grain stage</li>
+    </ol>
+  </div>
+</div>
+
+<!-- SEED REQUIREMENT -->
+<div class="section">
+  <div class="section-header" onclick="toggleSection(this)">
+    Seed Requirement According to Nursery <span>▼</span>
+  </div>
+  <div class="section-content">
+    <table>
+      <tr>
+        <th></th>
+        <th>Wet bed</th>
+        <th>Dry bed</th>
+        <th>Dapog</th>
+        <th>Parachute</th>
+      </tr>
+      <tr>
+        <td>Seed requirement (kg/ac)</td>
+        <td>20</td>
+        <td>20–30</td>
+        <td>25</td>
+        <td>4 / 8 / 12</td>
+      </tr>
+      <tr>
+        <td>Planting age (days)</td>
+        <td>14–21</td>
+        <td>14–21</td>
+        <td>12–14</td>
+        <td>10–12</td>
+      </tr>
+      <tr>
+        <td>Labour (man-days/ac)</td>
+        <td>24–30</td>
+        <td>24–30</td>
+        <td>6–8</td>
+        <td>6–8</td>
+      </tr>
+    </table>
+  </div>
+</div>
+
+<!-- PESTICIDE -->
+<div class="section">
+  <div class="section-header" onclick="toggleSection(this)">
+    Pesticide Recommendation <span>▼</span>
+  </div>
+  <div class="section-content">
+    <div class="pest-buttons">
+      <button onclick="location.href='paddy-insecticide.html'">Insecticide</button>
+      <button onclick="location.href='paddy-fungicide.html'">Fungicide</button>
+      <button onclick="location.href='paddy-herbicide.html'">Herbicide</button>
+    </div>
+  </div>
+</div>
 
 <footer>
-  DK Agri – Learning Project
+  © 2026 DK Agri – Educational & Extension Use
 </footer>
 
 <script>
-
-
+function toggleSection(header){
+  const content = header.nextElementSibling;
+  const arrow = header.querySelector("span");
+  if(content.style.display === "block"){
+    content.style.display = "none";
+    arrow.innerHTML = "▼";
+  }else{
+    content.style.display = "block";
+    arrow.innerHTML = "▲";
+  }
+}
 </script>
 
 </body>
-</html>
+    </html>
