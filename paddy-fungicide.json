@@ -1,0 +1,109 @@
+{
+  "crop": "RICE",
+  "diseases": [
+    {
+      "disease_name": "Blast",
+      "scientific_name": "Magnaporthe grisea",
+      "chemicals": [
+        {
+          "common_name": "Tebuconazole 250 g/l EW",
+          "trade_name": "Folicur Tebuconazole, Lankem Tebuconazole, Orius Tebuconazole",
+          "moa": "3",
+          "dilution": "10 ml",
+          "phi_days": "21",
+          "remarks": "Fungicide spray should be directed to the leaf sheath."
+        },
+        {
+          "common_name": "Isoprothiolane 400 g/l EC",
+          "trade_name": "Fuji-One 40 EC",
+          "moa": "6",
+          "dilution": "20 ml",
+          "phi_days": "14",
+          "remarks": "Fungicide spray should be directed to the leaf sheath."
+        },
+        {
+          "common_name": "Carbendazim 50% WP/WG",
+          "trade_name": "Billet Carbendazim, Oasis Carbendazim, Hayleys Carbendazim, Alan Carbendazim, CG Carbendazim",
+          "moa": "1",
+          "dilution": "11 g",
+          "phi_days": "14",
+          "remarks": "Fungicide spray should be directed to the leaf sheath."
+        },
+        {
+          "common_name": "Carbendazim 500 g/l SC",
+          "trade_name": "Carbin Carbendazim",
+          "moa": "1",
+          "dilution": "11 ml",
+          "phi_days": "14",
+          "remarks": "Fungicide spray should be directed to the leaf sheath."
+        },
+        {
+          "common_name": "Tricyclazole 75% WP",
+          "trade_name": "Guruzole",
+          "moa": "16.1",
+          "dilution": "10 g",
+          "phi_days": "14",
+          "remarks": "Fungicide spray should be directed to the leaf sheath. Also used for seed soaking (2-4 g/5 ml/1 kg seed) before incubation."
+        },
+        
+        {
+          "common_name": "Tricyclazole 75% WP",
+          "trade_name": "Guruzole",
+          "moa": "16.1",
+          "dilution": "seed treatment 2-4 g/5 ml/1 kg seed",
+          "phi_days": "14",
+          "remarks": "Fungicide spray should be directed to the leaf sheath. Also used for seed soaking (2-4 g/5 ml/1 kg seed) before incubation."
+        }
+
+      ]
+    },
+    {
+      "disease_name": "Sheath blight",
+      "scientific_name": "Rhizoctonia solani",
+      "chemicals": [
+        {
+          "common_name": "Tebuconazole 250 g/l EW",
+          "trade_name": "Folicur Tebuconazole, Lankem Tebuconazole, Orius Tebuconazole",
+          "moa": "3",
+          "dilution": "10 ml",
+          "phi_days": "21"
+        },
+        {
+          "common_name": "Pencycuron 25% WP",
+          "trade_name": "Monceren WP 25%",
+          "moa": "20",
+          "dilution": "32 g",
+          "phi_days": "14"
+        },
+        {
+          "common_name": "Hexaconazole 50 g/l EC",
+          "trade_name": "Hexa Hexaconazole, Lazer Hexaconazole, Baurs Hexaconazole, CIC Hexaconazole, Emzole Hexaconazole, Hayleys Hexaconazole",
+          "moa": "3",
+          "dilution": "32 ml",
+          "phi_days": "21"
+        },
+        {
+          "common_name": "Thiophanate-methyl 70% WP",
+          "trade_name": "Morison Thiophanate Methyl, Topsin M 70",
+          "moa": "1",
+          "dilution": "16 g",
+          "phi_days": "21"
+        },
+        {
+          "common_name": "Propiconazole 250 g/l EC",
+          "trade_name": "Sira Propiconazole, Lankem Propiconazole, Oasis Propiconazole, Bumper Propiconazole",
+          "moa": "3",
+          "dilution": "16 ml",
+          "phi_days": "21"
+        },
+        {
+          "common_name": "Flutolanil 50% WP",
+          "trade_name": "Moncut",
+          "moa": "7",
+          "dilution": "32 g",
+          "phi_days": "14"
+        }
+      ]
+    }
+  ]
+}

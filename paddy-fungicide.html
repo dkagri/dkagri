@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Rice Fungicide Management</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+<style>
+body{
+    font-family: Arial, sans-serif;
+    background:#f4f7ff;
+    padding:15px;
+}
+h2{
+    text-align:center;
+    color:#1a3d8f;
+}
+select{
+    width:100%;
+    padding:10px;
+    font-size:16px;
+    margin:15px 0;
+}
+table{
+    width:100%;
+    border-collapse:collapse;
+    background:#fff;
+}
+th,td{
+    border:1px solid #ccc;
+    padding:8px;
+    text-align:center;
+}
+th{
+    background:#e1ebff;
+}
+.buttons{
+    display:flex;
+    gap:10px;
+    margin-bottom:10px;
+}
+button{
+    flex:1;
+    padding:12px;
+    font-size:16px;
+    border:none;
+    border-radius:6px;
+    cursor:pointer;
+    color:#fff;
+}
+.home{background:#198754;}
+.back{background:#dc3545;}
+.pdf{background:#0d6efd;}
+footer{
+    margin-top:25px;
+    text-align:center;
+    font-size:14px;
+    color:#555;
+}
+</style>
+</head>
+
+<body>
+
+<h2>🌾 Rice Fungicide Control Chart</h2>
+
+<div class="buttons">
+    <button class="home" onclick="location.reload()">Home</button>
+    <button class="back" onclick="history.back()">Back</button>
+    <button class="pdf" onclick="exportPDF()">Export PDF</button>
+</div>
+
+<select id="DiseaseSelect">
+    <option value="">-- Select Disease --</option>
+</select>
+
+<h3 id="scientificName"></h3>
+
+<table id="chemTable" style="display:none;">
+<thead>
+<tr>
+    <th>#</th>
+    <th>Chemical (Common name + Formulation)</th>
+    <th>Trade Name</th>
+    <th>MOA</th>
+    <th>Dilution</th>
+    <th>PHI (Days)</th>
+</tr>
+</thead>
+<tbody></tbody>
+</table>
+
+<footer>
+    © 2026 DK AGRI | Educational & Extension Use Only
+</footer>
+
+<script>
+let diseaseData;
+let currentdisease;
+
+fetch("paddy-fungicide.json")
+.then(res => res.json())
+.then(data => {
+    diseaseData = data;
+    const select = document.getElementById("DiseaseSelect");
+    data.diseases.forEach((disease, index) => {
+        const opt = document.createElement("option");
+        opt.value = index;
+        opt.textContent = disease.disease_name;
+        select.appendChild(opt);
+    });
+});
+
+document.getElementById("DiseaseSelect").addEventListener("change", function(){
+    const index = this.value;
+    const table = document.getElementById("chemTable");
+    const tbody = table.querySelector("tbody");
+    tbody.innerHTML = "";
+
+    if(index === ""){
+        table.style.display="none";
+        document.getElementById("scientificName").innerText="";
+        return;
+    }
+
+    currentdisease = diseaseData.diseases[index];
+    document.getElementById("scientificName").innerText =
+        "Scientific Name: " + currentdisease.scientific_name;
+
+    currentdisease.chemicals.forEach((c, i) => {
+        tbody.innerHTML += `
+        <tr>
+            <td>${i+1}</td>
+            <td>${c.common_name}</td>
+            <td>${c.trade_name}</td>
+            <td>${c.moa}</td>
+            <td>${c.dilution}</td>
+            <td>${c.phi_days}</td>
+        </tr>`;
+    });
+
+    table.style.display="table";
+});
+
+function exportPDF(){
+    if(!currentdiseases){
+        alert("Please select Disease first");
+        return;
+    }
+
+    const { jsPDF } = window.jspdf;
+    const doc = new jsPDF();
+
+    doc.setFontSize(40);
+    doc.setTextColor(220);
+    doc.text("DK AGRI", 25, 150, {angle:45});
+
+    doc.setTextColor(0);
+    doc.setFontSize(14);
+    doc.text("Rice disease Chemical Control Chart", 20, 20);
+    doc.setFontSize(11);
+    doc.text("disease: " + currentdisease.disease_name, 20, 30);
+    doc.text("Scientific Name: " + currentdisease.scientific_name, 20, 38);
+
+    let y = 50;
+    doc.setFontSize(9);
+
+    currentdisease.chemicals.forEach((c, i) => {
+        doc.text(`${i+1}. ${c.common_name} | ${c.trade_name} | PHI ${c.phi_days} days`, 20, y);
+        y += 6;
+    });
+
+    doc.save("DK_AGRI_Rice_disease_Chemicals.pdf");
+}
+</script>
+
+</body>
+</html>
