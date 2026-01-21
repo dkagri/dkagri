@@ -1,0 +1,1167 @@
+{
+  "category": "Fungicide",
+  "vegetables": [
+    {
+  "crop": "BEAN AND YARD-LONG BEAN",
+  "diseases": [
+    {
+      "disease_name": "Angular leaf spot",
+      "scientific_name": "Isariopsis griseola",
+      "chemicals": [
+        {
+          "common_name": "Propiconazole 250 g/l EC",
+          "trade_name": "Sira, Lankem, Oasis, Bumper",
+          "moa": "3",
+          "dilution_16l": "6 ml",
+          "phi_days": "21"
+        },
+        {
+          "common_name": "Hexaconazole 50 g/l EC",
+          "trade_name": "Hexa, Lazer, Baurs, Erase, Agsta, Hero, Eraser, CIC, Emzole, Hayleys",
+          "moa": "3",
+          "dilution_16l": "6 ml",
+          "phi_days": "21"
+        },
+        {
+          "common_name": "Hexaconazole 50 g/l SC",
+          "trade_name": "Emzole Hexaconazole, Hiper Hexaconazole",
+          "moa": "3",
+          "dilution_16l": "6 ml",
+          "phi_days": "21"
+        },
+        {
+          "common_name": "Propineb 70% WP",
+          "trade_name": "Protocol, Trazol, Antracol, Rain",
+          "moa": "MO3",
+          "dilution_16l": "32 g",
+          "phi_days": "14"
+        },
+        {
+          "common_name": "Metiram 55% + Pyraclostrobin 5% WG",
+          "trade_name": "Baurs Pyraclostrobin +, Cabrio Top, Lankem Cabrio Top",
+          "moa": "MO3 + 11",
+          "dilution_16l": "32 g",
+          "phi_days": "14"
+        },
+        {
+          "common_name": "Tebuconazole 250 g/l EW",
+          "trade_name": "Folicur, Lankem, Orius",
+          "moa": "3",
+          "dilution_16l": "6 ml",
+          "phi_days": "21"
+        },
+        {
+          "common_name": "Tebuconazole 200 g/l + Azoxystrobin 120 g/l SC",
+          "trade_name": "Custodia 320 SC",
+          "moa": "11 + 3",
+          "dilution_16l": "5.6 ml",
+          "phi_days": "14"
+        }
+      ]
+    },
+    {
+      "disease_name": "Rust",
+      "scientific_name": "Uromyces appendiculatus",
+      "chemicals": [
+        {
+          "common_name": "Propiconazole 250 g/l EC",
+          "trade_name": "Sira, Lankem, Oasis, Bumper",
+          "moa": "3",
+          "dilution_16l": "6 ml",
+          "phi_days": "21"
+        },
+        {
+          "common_name": "Hexaconazole 50 g/l EC",
+          "trade_name": "Hexa, Lazer, Baurs, Erase, Agstar, Hero, Eraser, CIC, Emzole, Hayleys",
+          "moa": "3",
+          "dilution_16l": "6 ml",
+          "phi_days": "21"
+        },
+        {
+          "common_name": "Hexaconazole 50 g/l SC",
+          "trade_name": "Emzole, Hiper",
+          "moa": "3",
+          "dilution_16l": "6 ml",
+          "phi_days": "21"
+        },
+        {
+          "common_name": "Tebuconazole 250 g/l EW",
+          "trade_name": "Folicure, Lankem, Orius",
+          "moa": "3",
+          "dilution_16l": "6 ml",
+          "phi_days": "21"
+        },
+        {
+          "common_name": "Propineb 70% WP",
+          "trade_name": "Protocol, Trazol, Antracol, Rain",
+          "moa": "MO3",
+          "dilution_16l": "32 g",
+          "phi_days": "14"
+        },
+        {
+          "common_name": "Metiram 55% + Pyraclostrobin 5% WG",
+          "trade_name": "Baurs Pyraclostrobin +, Cabrio Top, Lankem Cabrio Top",
+          "moa": "MO3 + 11",
+          "dilution_16l": "32 g",
+          "phi_days": "14"
+        },
+        {
+          "common_name": "Tebuconazole 200 g/l + Azoxystrobin 120 g/l SC",
+          "trade_name": "Custodia 320 SC",
+          "moa": "11 + 3",
+          "dilution_16l": "6.4 ml",
+          "phi_days": "14"
+        }
+      ]
+    },
+    {
+      "disease_name": "Anthracnose",
+      "scientific_name": "Colletotrichum lindemuthianum",
+      "chemicals": [
+        {
+          "common_name": "Propiconazole 250 g/l EC",
+          "trade_name": "Sira, Lankem, Oasis, Bumper",
+          "moa": "3",
+          "dilution_16l": "6 ml",
+          "phi_days": "21"
+        },
+        {
+          "common_name": "Hexaconazole 50 g/l EC",
+          "trade_name": "Hexa, Lazer, Baurs, Erase, Agstar, Hero, Eraser, CIC, Emzole, Hayleys",
+          "moa": "3",
+          "dilution_16l": "6 ml",
+          "phi_days": "21"
+        },
+        {
+          "common_name": "Hexaconazole 50 g/l SC",
+          "trade_name": "Emzole, Hiper",
+          "moa": "3",
+          "dilution_16l": "6 ml",
+          "phi_days": "21"
+        },
+        {
+          "common_name": "Tebuconazole 250 g/l EW",
+          "trade_name": "Folicur, Lankem, Orius",
+          "moa": "3",
+          "dilution_16l": "6 ml",
+          "phi_days": "21"
+        },
+        {
+          "common_name": "Propineb 70% WP",
+          "trade_name": "Protocol, Trazol, Antracol, Rain",
+          "moa": "MO3",
+          "dilution_16l": "32 g",
+          "phi_days": "14"
+        },
+        {
+          "common_name": "Metiram 55% + Pyraclostrobin 5% WG",
+          "trade_name": "Baurs Pyraclostrobin +, Cabrio Top, Lankem Cabrio Top",
+          "moa": "MO3 + 11",
+          "dilution_16l": "32 g",
+          "phi_days": "14"
+        }
+      ]
+    },
+    {
+      "disease_name": "Root rot",
+      "scientific_name": "Fusarium spp.",
+      "chemicals": [
+        {
+          "common_name": "Thiram 80% WP",
+          "trade_name": "Oasis Thiram, Plantchem Thiram, CG Thiram, Scope Thiram, Powersol Thiram",
+          "moa": "MO3",
+          "dilution_16l": "(70g/50l/10m2)",
+          "phi_days": "Not specified"
+        },
+        {
+          "common_name": "Thiophanate-methyl 70% WP",
+          "trade_name": "Morison Thiophanate Methyl, Topsin M 70",
+          "moa": "1",
+          "dilution_16l": "(30g/50l/10m2)",
+          "phi_days": "Not specified"
+        },
+        {
+          "common_name": "Thiophanate-methyl 50% + Thiram 30% WP",
+          "trade_name": "Homai",
+          "moa": "1 + MO3",
+          "dilution_16l": "(50g/50l/10m2)",
+          "phi_days": "Not specified"
+        },
+        {
+          "common_name": "Flutolanil 50% WP",
+          "trade_name": "Moncut",
+          "moa": "7",
+          "dilution_16l": "(30g/50l/10m2)",
+          "phi_days": "Not specified"
+        },
+        {
+          "common_name": "Carbendazim 500 g/l SC",
+          "trade_name": "Carbin Carbendazim",
+          "moa": "1",
+          "dilution_16l": "(35ml/50l/10m2)",
+          "phi_days": "Not specified"
+        },
+        {
+          "common_name": "Carbendazim 50% WP",
+          "trade_name": "Billet Carbendazim, Oasis Carbendazim, Hayleys Carbendazim, Alan Carbendazim, CG Carbendazim",
+          "moa": "1",
+          "dilution_16l": "(35g/50l/10m2)",
+          "phi_days": "Not specified"
+        }
+      ]
+    }
+  ]
+    },
+    
+    {
+  "crop": "CABBAGE",
+  "diseases": [
+    {
+      "disease_name": "Downy mildew",
+      "scientific_name": "Peronospora parasitica",
+      "chemicals": [
+        {
+          "common_name": "Captan 50% WP",
+          "trade_name": "Pentagan, CG Captan, Captaf, Baurs, Ceypetco, ICS, Captogon, Oasis, Zagro",
+          "moa": "MO4",
+          "dilution_16l": "32 g",
+          "phi_days": "14"
+        },
+        {
+          "common_name": "Captan 80% WG",
+          "trade_name": "Baur's captan",
+          "moa": "MO4",
+          "dilution_16l": "20 g",
+          "phi_days": "14"
+        },
+        {
+          "common_name": "Mancozeb 75% WG",
+          "trade_name": "Zeero Mancozeb, Mancozeb DF",
+          "moa": "MO3",
+          "dilution_16l": "32 g",
+          "phi_days": "14"
+        },
+        {
+          "common_name": "Mancozeb 80% WP",
+          "trade_name": "Mancozeb, Hayleys, Right, AgStar, Mancozeb 80% WP Jumbo, Lankem, Farmers, Dynamic, Ceypetco, Samit, Dizeb, Dithane, Mackzeb, SunAgro, Unipower, Grand, Marco",
+          "moa": "MO3",
+          "dilution_16l": "32 g",
+          "phi_days": "14"
+        },
+        {
+          "common_name": "Maneb 80% WP",
+          "trade_name": "Mannar Maneb, Baurs Maneb",
+          "moa": "MO3",
+          "dilution_16l": "32 g",
+          "phi_days": "14"
+        }
+      ]
+    },
+    {
+      "disease_name": "Fusarium Rot",
+      "scientific_name": "Fusarium spp.",
+      "chemicals": [
+        {
+          "common_name": "Thiophanate-methyl 50% + Thiram 30% WP",
+          "trade_name": "Homai",
+          "moa": "1 + MO3",
+          "dilution_16l": "16 g",
+          "phi_days": "14"
+        },
+        {
+          "common_name": "Captan 50% WP",
+          "trade_name": "Pentagan, CG Captan, Captaf, Baurs, Ceypetco, ICS, Captogon, Oasis, Zagro",
+          "moa": "MO4",
+          "dilution_16l": "32 g",
+          "phi_days": "14"
+        }
+      ]
+    },
+    {
+      "disease_name": "Ring spot",
+      "scientific_name": "Mycosphaerella brassicicola",
+      "chemicals": [
+        {
+          "common_name": "Propiconazole 250 g/l EC",
+          "trade_name": "Sira, Lankem, Oasis, Bumper",
+          "moa": "3",
+          "dilution_16l": "6 ml",
+          "phi_days": "21"
+        },
+        {
+          "common_name": "Hexaconazole 50 g/l EC",
+          "trade_name": "Hexa, Lazer, Baurs, Erase, Agstar, Hero, Eraser, CIC, Emzole, Hayleys",
+          "moa": "3",
+          "dilution_16l": "6 ml",
+          "phi_days": "21"
+        },
+        {
+          "common_name": "Hexaconazole 50 g/l SC",
+          "trade_name": "Emzole Hexaconazole, Hiper Hexaconazole",
+          "moa": "3",
+          "dilution_16l": "6 ml",
+          "phi_days": "21"
+        },
+        {
+          "common_name": "Tebuconazole 250 g/l EW",
+          "trade_name": "Folicur Tebuconazole, Lankem Tebuconazole, Orius Tebuconazole",
+          "moa": "3",
+          "dilution_16l": "6 ml",
+          "phi_days": "21"
+        },
+        {
+          "common_name": "Epoxiconazole 125 g/l SC",
+          "trade_name": "Opus",
+          "moa": "3",
+          "dilution_16l": "6 ml",
+          "phi_days": "21"
+        }
+      ]
+    }
+  ]
+},
+    
+    {
+  "crop": "CAPSICUM/BELL PEPPER",
+  "diseases": [
+    {
+      "disease_name": "Foot rot/collar rot",
+      "scientific_name": "Sclerotium rolfsii, Fusarium solani",
+      "chemicals": [
+        {
+          "common_name": "Thiram 80% WP",
+          "trade_name": "Oasis, Plantchem, CG, Scope, Powersol",
+          "moa": "MO3",
+          "dilution_16l": "70 g/50 l/10 m2",
+          "phi_days": "14"
+        },
+        {
+          "common_name": "Thiophanate-methyl 70% WP",
+          "trade_name": "Morison Thiophanate Methyl, Topsin M 70",
+          "moa": "1",
+          "dilution_16l": "30 g/50 l/10 m2",
+          "phi_days": "14"
+        },
+        {
+          "common_name": "Thiophanate-methyl 50% + Thiram 30% WP",
+          "trade_name": "Homai",
+          "moa": "1 + MO3",
+          "dilution_16l": "50 g/50 l/10 m2",
+          "phi_days": "14"
+        }
+      ]
+    },
+    {
+      "disease_name": "Anthracnose",
+      "scientific_name": "Colletotrichum spp.",
+      "chemicals": [
+        {
+          "common_name": "Thiophanate-methyl 70% WP",
+          "trade_name": "Morison Thiophanate Methyl, Topsin M 70",
+          "moa": "1",
+          "dilution_16l": "16 g",
+          "phi_days": "21"
+        },
+        {
+          "common_name": "Metiram 55% + Pyraclostrobin 5% WG",
+          "trade_name": "Baurs Pyraclostrobin +, Cabrio Top, Lankem Cabrio Top",
+          "moa": "MO3 + 11",
+          "dilution_16l": "32 g",
+          "phi_days": "14"
+        },
+        {
+          "common_name": "Fluazinam 500 g/l SC",
+          "trade_name": "Tizca Fluazinam, Nando Fluazinam",
+          "moa": "29",
+          "dilution_16l": "16 ml",
+          "phi_days": "14"
+        },
+        {
+          "common_name": "Chlorothalonil 500 g/l SC",
+          "trade_name": "Ronil, Baurs, Daconil",
+          "moa": "MO5",
+          "dilution_16l": "48 ml",
+          "phi_days": "14"
+        },
+        {
+          "common_name": "Chlorothalonil 75% WP",
+          "trade_name": "Ole, Max, Agstar",
+          "moa": "MO5",
+          "dilution_16l": "32 g",
+          "phi_days": "14"
+        },
+        {
+          "common_name": "Tebuconazole 50% + Trifloxystrobin 25% WG",
+          "trade_name": "Nativo 75 WG",
+          "moa": "11 + 3",
+          "dilution_16l": "10 g",
+          "phi_days": "21"
+        }
+      ]
+    },
+    {
+      "disease_name": "Blossom blight",
+      "scientific_name": "Choanephora spp.",
+      "chemicals": [
+        {
+          "common_name": "Mancozeb 75% WG",
+          "trade_name": "Zeero Mancozeb, Mancozeb DF",
+          "moa": "MO3",
+          "dilution_16l": "32 g",
+          "phi_days": "14"
+        },
+        {
+          "common_name": "Mancozeb 80% WP",
+          "trade_name": "Mancozeb, Dithane Mancozeb, Lankem Mancozeb",
+          "moa": "MO3",
+          "dilution_16l": "32 g",
+          "phi_days": "14"
+        },
+        {
+          "common_name": "Maneb 80% WP",
+          "trade_name": "Mannar Maneb, Baurs Maneb",
+          "moa": "MO3",
+          "dilution_16l": "32 g",
+          "phi_days": "14"
+        },
+        {
+          "common_name": "Propineb 70% WP",
+          "trade_name": "Protocol Propineb, Antracol Propineb",
+          "moa": "MO3",
+          "dilution_16l": "32 g",
+          "phi_days": "14"
+        },
+        {
+          "common_name": "Chlorothalonil 500 g/l SC",
+          "trade_name": "Ronil Chlorothalonil, Daconil Chlorothalonil",
+          "moa": "MO5",
+          "dilution_16l": "48 ml",
+          "phi_days": "14"
+        },
+        {
+          "common_name": "Chlorothalonil 75% WP",
+          "trade_name": "Ole Chlorothalonil, Max Chlorothalonil",
+          "moa": "MO5",
+          "dilution_16l": "32 g",
+          "phi_days": "14"
+        }
+      ]
+    },
+    {
+      "disease_name": "Powdery mildew",
+      "scientific_name": "Laveillula taurica",
+      "chemicals": [
+        {
+          "common_name": "Thiophanate-methyl 70% WP",
+          "trade_name": "Morison Thiophanate Methyl, Topsin M 70",
+          "moa": "1",
+          "dilution_16l": "16 g",
+          "phi_days": "21"
+        },
+        {
+          "common_name": "Chlorothalonil 500 g/l SC",
+          "trade_name": "Ronil Chlorothalonil, Daconil Chlorothalonil",
+          "moa": "MO5",
+          "dilution_16l": "48 ml",
+          "phi_days": "14"
+        },
+        {
+          "common_name": "Chlorothalonil 75% WP",
+          "trade_name": "Ole Chlorothalonil, Max Chlorothalonil",
+          "moa": "MO5",
+          "dilution_16l": "32 g",
+          "phi_days": "14"
+        }
+      ]
+    },
+    {
+      "disease_name": "Phytophthora blight",
+      "scientific_name": "Phytophthora capsici",
+      "chemicals": [
+        {
+          "common_name": "Mancozeb 75% WG",
+          "trade_name": "Zeero Mancozeb, Mancozeb DF",
+          "moa": "MO3",
+          "dilution_16l": "32 g",
+          "phi_days": "14"
+        },
+        {
+          "common_name": "Mancozeb 80% WP",
+          "trade_name": "Mancozeb, Dithane Mancozeb",
+          "moa": "MO3",
+          "dilution_16l": "32 g",
+          "phi_days": "14"
+        },
+        {
+          "common_name": "Maneb 80% WP",
+          "trade_name": "Mannar Maneb, Baurs Maneb",
+          "moa": "MO3",
+          "dilution_16l": "32 g",
+          "phi_days": "14"
+        },
+        {
+          "common_name": "Propineb 70% WP",
+          "trade_name": "Protocol Propineb, Antracol Propineb",
+          "moa": "MO3",
+          "dilution_16l": "32 g",
+          "phi_days": "14"
+        },
+        {
+          "common_name": "Mancozeb 64% + Metalaxyl 8% WG",
+          "trade_name": "Ridol Metalaxyl+, CIC Mancozeb +",
+          "moa": "MO3 + 4",
+          "dilution_16l": "40 g",
+          "phi_days": "14"
+        },
+        {
+          "common_name": "Mancozeb 64% + Metalaxyl-M 4% WG",
+          "trade_name": "Ridomil Gold Metalaxyl+",
+          "moa": "MO3 + 4",
+          "dilution_16l": "40 g",
+          "phi_days": "14"
+        },
+        {
+          "common_name": "Chlorothalonil 500 g/l SC",
+          "trade_name": "Ronil Chlorothalonil, Daconil Chlorothalonil",
+          "moa": "MO5",
+          "dilution_16l": "48 ml",
+          "phi_days": "14"
+        },
+        {
+          "common_name": "Chlorothalonil 75% WP",
+          "trade_name": "Ole Chlorothalonil, Max Chlorothalonil",
+          "moa": "MO5",
+          "dilution_16l": "32 g",
+          "phi_days": "14"
+        }
+      ]
+    }
+  ]
+},
+  
+    {
+  "crop": "CARROT",
+  "diseases": [
+    {
+      "disease_name": "Alternaria blight",
+      "scientific_name": "Alternaria spp.",
+      "chemicals": [
+        {
+          "common_name": "Mancozeb 75% WG",
+          "trade_name": "Zeero Mancozeb, Mancozeb DF",
+          "moa": "MO3",
+          "dilution_16l": "32 g",
+          "phi_days": "14"
+        },
+        {
+          "common_name": "Mancozeb 80% WP",
+          "trade_name": "Mancozeb",
+          "moa": "MO3",
+          "dilution_16l": "32 g",
+          "phi_days": "14"
+        },
+        {
+          "common_name": "Maneb 80% WP",
+          "trade_name": "Mannar Maneb, Baurs Maneb",
+          "moa": "MO3",
+          "dilution_16l": "32 g",
+          "phi_days": "14"
+        },
+        {
+          "common_name": "Propineb 70% WP",
+          "trade_name": "Protocol Propineb, Trazol Propineb, Antracol Propineb, Rain Propineb",
+          "moa": "MO3",
+          "dilution_16l": "32 g",
+          "phi_days": "14"
+        },
+        {
+          "common_name": "Chlorothalonil 500 g/l SC",
+          "trade_name": "Ronil Chlorothalonil, Baurs Chlorothalonil, Daconil Chlorothalonil",
+          "moa": "MO5",
+          "dilution_16l": "48 ml",
+          "phi_days": "14"
+        },
+        {
+          "common_name": "Chlorothalonil 75% WP",
+          "trade_name": "Ole, Max, Bright, Agstar, Thaloni",
+          "moa": "MO5",
+          "dilution_16l": "32 g",
+          "phi_days": "14"
+        }
+      ]
+    },
+    {
+      "disease_name": "Powdery mildew",
+      "scientific_name": "Erysiphe spp.",
+      "chemicals": [
+        {
+          "common_name": "Chlorothalonil 500 g/l SC",
+          "trade_name": "Ronil, Baurs, Daconil",
+          "moa": "MO5",
+          "dilution_16l": "48 ml",
+          "phi_days": "14"
+        },
+        {
+          "common_name": "Chlorothalonil 75% WP",
+          "trade_name": "Ole, Max, Bright, Agstar, Thaloni",
+          "moa": "MO5",
+          "dilution_16l": "32 g",
+          "phi_days": "14"
+        },
+        {
+          "common_name": "Thiophanate-methyl 70% WP",
+          "trade_name": "Morison Thiophanate Methyl, Topsin M 70",
+          "moa": "1",
+          "dilution_16l": "16 g",
+          "phi_days": "21"
+        }
+      ]
+    }
+  ]
+},
+
+    {
+  "crop": "CUCURBITS (SNAKE GOURD, BITTER GOURD, RIDGE GOURD, CUCUMBER, PUMPKIN & GHERKIN)",
+  "diseases": [
+    {
+      "disease_name": "Downy mildew",
+      "scientific_name": "Pseudoperonospora cubensis",
+      "chemicals": [
+        {
+          "common_name": "Mancozeb 64% + Metalaxyl-M 4% WG",
+          "trade_name": "Ridomil Gold Metalaxyl+",
+          "moa": "MO3 + 4",
+          "dilution_16l": "40 g",
+          "phi_days": "14"
+        },
+        {
+          "common_name": "Mancozeb 64% + Metalaxyl 8% WP",
+          "trade_name": "Ridol Metalaxyl+, CIC Mancozeb +, Mancozeb+Metalaxyl, Laxy Mancozeb+, Metalaxyl Ridoaxyl Metalaxyl +, Rid-All Mancozeb +",
+          "moa": "MO3 + 4",
+          "dilution_16l": "40 g",
+          "phi_days": "14"
+        },
+        {
+          "common_name": "Metiram 55% + Pyraclostrobin 5% WG",
+          "trade_name": "Baurs Pyraclostrobin +, Cabrio Top, Lankem Cabrio Top",
+          "moa": "MO3 + 11",
+          "dilution_16l": "32 g",
+          "phi_days": "14"
+        },
+        {
+          "common_name": "Propineb 70% WP",
+          "trade_name": "Protocol Propineb, Trazol Propineb, Antracol Propineb, Rain Propineb",
+          "moa": "MO3",
+          "dilution_16l": "32 g",
+          "phi_days": "14"
+        },
+        {
+          "common_name": "Azoxystrobin 250 g/l SC",
+          "trade_name": "Amistar 250 SC, Pole Azoxystrobin, Codrix Azoxystrobin",
+          "moa": "11",
+          "dilution_16l": "16 ml",
+          "phi_days": "14"
+        },
+        {
+          "common_name": "Captan 50% WP",
+          "trade_name": "Pentagan, CG, Captaf, Baurs, Ceypetco, ICS, Captogon, Oasis, Zagro",
+          "moa": "MO4",
+          "dilution_16l": "32 g",
+          "phi_days": "14"
+        },
+        {
+          "common_name": "Captan 80% WG",
+          "trade_name": "Baur's captan",
+          "moa": "MO4",
+          "dilution_16l": "20 g",
+          "phi_days": "14"
+        },
+        {
+          "common_name": "Tebuconazole 200 g/l + Azoxystrobin 120 g/l SC",
+          "trade_name": "Custodia 320 SC",
+          "moa": "11+3",
+          "dilution_16l": "6 ml",
+          "phi_days": "14"
+        }
+      ]
+    },
+    {
+      "disease_name": "Powdery mildew",
+      "scientific_name": "Erysiphe spp.",
+      "chemicals": [
+        {
+          "common_name": "Chlorothalonil 500 g/l SC",
+          "trade_name": "Ronil, Baurs, Daconil",
+          "moa": "MO5",
+          "dilution_16l": "48 ml",
+          "phi_days": "14"
+        },
+        {
+          "common_name": "Chlorothalonil 75% WP",
+          "trade_name": "Ole, Max, Bright, Agstar, Thaloni",
+          "moa": "MO5",
+          "dilution_16l": "32 g",
+          "phi_days": "14"
+        },
+        {
+          "common_name": "Flutriafol 250 g/l SC",
+          "trade_name": "Pointer Flutriafol, Impact Flutriafol",
+          "moa": "3",
+          "dilution_16l": "16 ml",
+          "phi_days": "14"
+        },
+        {
+          "common_name": "Potassium bicarbonate 82% SP",
+          "trade_name": "Kaligreen",
+          "moa": "Not specified",
+          "dilution_16l": "24 g",
+          "phi_days": "01"
+        },
+        {
+          "common_name": "Metiram 55% + Pyraclostrobin 5% WG",
+          "trade_name": "Baurs Pyraclostrobin +, Cabrio Top, Lankem Cabrio Top",
+          "moa": "MO3 + 11",
+          "dilution_16l": "32 g",
+          "phi_days": "14"
+        },
+        {
+          "common_name": "Azoxystrobin 250 g/l SC",
+          "trade_name": "Amistar 250 SC, Pole Azoxystrobin, Codrix Azoxystrobin",
+          "moa": "11",
+          "dilution_16l": "16 ml",
+          "phi_days": "14"
+        },
+        {
+          "common_name": "Captan 50% WP",
+          "trade_name": "Pentagan, CG, Capta, Baurs, Ceypetco, ICS, Captogon, Oasis, Zagro",
+          "moa": "MO4",
+          "dilution_16l": "32 g",
+          "phi_days": "14"
+        },
+        {
+          "common_name": "Captan 80% WG",
+          "trade_name": "Baur's captan",
+          "moa": "MO4",
+          "dilution_16l": "20 g",
+          "phi_days": "14"
+        }
+      ]
+    },
+    {
+      "disease_name": "Alternaria blight",
+      "scientific_name": "Alternaria spp.",
+      "chemicals": [
+        {
+          "common_name": "Mancozeb 75% WG",
+          "trade_name": "Zeero Mancozeb, Mancozeb DF",
+          "moa": "MO3",
+          "dilution_16l": "32 g",
+          "phi_days": "14"
+        },
+        {
+          "common_name": "Mancozeb 80% WP",
+          "trade_name": "Mancozeb, Hayleys Mancozeb, Dithane Mancozeb, Lankem Mancozeb, Samit Mancozeb",
+          "moa": "MO3",
+          "dilution_16l": "32 g",
+          "phi_days": "14"
+        },
+        {
+          "common_name": "Maneb 80% WP",
+          "trade_name": "Mannar Maneb, Baurs Maneb",
+          "moa": "MO3",
+          "dilution_16l": "32 g",
+          "phi_days": "14"
+        },
+        {
+          "common_name": "Propineb 70% WP",
+          "trade_name": "Protocol Propineb, Trazol Propineb, Antracol Propineb, Rain Propineb",
+          "moa": "MO3",
+          "dilution_16l": "32 g",
+          "phi_days": "14"
+        },
+        {
+          "common_name": "Chlorothalonil 500 g/l SC",
+          "trade_name": "Ronil, Baurs, Daconil",
+          "moa": "MO5",
+          "dilution_16l": "48 ml",
+          "phi_days": "14"
+        },
+        {
+          "common_name": "Chlorothalonil 75% WP",
+          "trade_name": "Ole, Max, Bright, Agstar, Thaloni",
+          "moa": "MO5",
+          "dilution_16l": "32 g",
+          "phi_days": "14"
+        }
+      ]
+    }
+  ]
+},
+
+    {
+  "crop": "TOMATO",
+  "diseases": [
+    {
+      "disease_name": "Leaf mold",
+      "scientific_name": "Cladosporium fulvum",
+      "chemicals": [
+        {
+          "common_name": "Thiophanate-methyl 70% WP",
+          "trade_name": "Morison Thiophanate Methyl, Topsin M 70",
+          "moa": "1",
+          "dilution_16l": "16 g",
+          "phi_days": "21"
+        },
+        {
+          "common_name": "Chlorothalonil 500 g/l SC",
+          "trade_name": "Ronil, Baurs, Daconil",
+          "moa": "MO5",
+          "dilution_16l": "48 ml",
+          "phi_days": "14"
+        },
+        {
+          "common_name": "Chlorothalonil 75% WP",
+          "trade_name": "Ole, Max, Bright, Agstar, Thaloni",
+          "moa": "MO5",
+          "dilution_16l": "32 g",
+          "phi_days": "14"
+        }
+      ]
+    },
+    {
+      "disease_name": "Early blight",
+      "scientific_name": "Alternaria solani",
+      "chemicals": [
+        {
+          "common_name": "Mancozeb 75% WG",
+          "trade_name": "Zeero Mancozeb, Mancozeb DF",
+          "moa": "MO3",
+          "dilution_16l": "32 g",
+          "phi_days": "14"
+        },
+        {
+          "common_name": "Mancozeb 80% WP",
+          "trade_name": "Mancozeb, Hayleys, Dithane, Lankem",
+          "moa": "MO3",
+          "dilution_16l": "32 g",
+          "phi_days": "14"
+        },
+        {
+          "common_name": "Chlorothalonil 500 g/l SC",
+          "trade_name": "Ronil, Baurs, Daconil",
+          "moa": "MO5",
+          "dilution_16l": "48 ml",
+          "phi_days": "14"
+        },
+        {
+          "common_name": "Chlorothalonil 75% WP",
+          "trade_name": "Ole, Max, Bright, Agstar, Thaloni",
+          "moa": "MO5",
+          "dilution_16l": "32 g",
+          "phi_days": "14"
+        },
+        {
+          "common_name": "Maneb 80% WP",
+          "trade_name": "Mannar Maneb, Baurs Maneb",
+          "moa": "MO3",
+          "dilution_16l": "32 g",
+          "phi_days": "14"
+        },
+        {
+          "common_name": "Propineb 70% WP",
+          "trade_name": "Protocol, Trazol, Antracol, Rain",
+          "moa": "MO3",
+          "dilution_16l": "32 g",
+          "phi_days": "14"
+        },
+        {
+          "common_name": "Mancozeb 64% + Metalaxyl 8% WP",
+          "trade_name": "Ridol Metalaxyl+, CIC Mancozeb +, Mancozeb+Metalaxyl",
+          "moa": "MO3 + 4",
+          "dilution_16l": "40 g",
+          "phi_days": "14"
+        },
+        {
+          "common_name": "Mancozeb 64% + Metalaxyl-M 4% WG",
+          "trade_name": "Ridomil Gold Metalaxyl+",
+          "moa": "MO3 + 4",
+          "dilution_16l": "40 g",
+          "phi_days": "14"
+        },
+        {
+          "common_name": "Captan 50% WP",
+          "trade_name": "Pentagan, CG, Captaf, Baurs",
+          "moa": "MO4",
+          "dilution_16l": "32 g",
+          "phi_days": "14"
+        },
+        {
+          "common_name": "Captan 80% WG",
+          "trade_name": "Baur's captan",
+          "moa": "MO4",
+          "dilution_16l": "20 g",
+          "phi_days": "14"
+        },
+        {
+          "common_name": "Isoprothiolane 400 g/l EC",
+          "trade_name": "Fuji-One 40 EC",
+          "moa": "6",
+          "dilution_16l": "40 ml",
+          "phi_days": "14"
+        },
+        {
+          "common_name": "Mancozeb 60% + Dimethomorph 9% WP",
+          "trade_name": "Acrobat MZ, Agrofarm Dimethomorph + Baurs Dimethomorph",
+          "moa": "MO3 + 40",
+          "dilution_16l": "80 g",
+          "phi_days": "14"
+        },
+        {
+          "common_name": "Metiram 55% + Pyraclostrobin 5% WG",
+          "trade_name": "Baurs Pyraclostrobin +, Cabrio Top, Lankem Cabrio Top",
+          "moa": "MO3 + 11",
+          "dilution_16l": "32 g",
+          "phi_days": "14"
+        },
+        {
+          "common_name": "Azoxystrobin 120 g/l + Tebuconazole 200 g/l SC",
+          "trade_name": "Custodia 320 SC",
+          "moa": "11 + 3",
+          "dilution_16l": "5.6 ml",
+          "phi_days": "14"
+        },
+        {
+          "common_name": "Difenoconazole 250 g/l EC",
+          "trade_name": "Score",
+          "moa": "3",
+          "dilution_16l": "24 ml",
+          "phi_days": "14"
+        },
+        {
+          "common_name": "Fluazinam 500 g/l SC",
+          "trade_name": "Tizca Fluazinam, Nando Fluazinam",
+          "moa": "29",
+          "dilution_16l": "16 ml",
+          "phi_days": "14"
+        }
+      ]
+    },
+    {
+      "disease_name": "Late blight",
+      "scientific_name": "Phytophthora infestans",
+      "chemicals": [
+        {
+          "common_name": "Mancozeb 75% WG",
+          "trade_name": "Zeero Mancozeb, Mancozeb DF",
+          "moa": "MO3",
+          "dilution_16l": "32 g",
+          "phi_days": "14"
+        },
+        {
+          "common_name": "Mancozeb 80% WP",
+          "trade_name": "Mancozeb, Hayleys, Dithane, Lankem",
+          "moa": "MO3",
+          "dilution_16l": "32 g",
+          "phi_days": "14"
+        },
+        {
+          "common_name": "Chlorothalonil 500 g/l SC",
+          "trade_name": "Ronil, Baurs, Daconil",
+          "moa": "MO5",
+          "dilution_16l": "48 ml",
+          "phi_days": "14"
+        },
+        {
+          "common_name": "Chlorothalonil 75% WP",
+          "trade_name": "Ole Chlorothalonil, Max Chlorothalonil",
+          "moa": "MO5",
+          "dilution_16l": "32 g",
+          "phi_days": "14"
+        },
+        {
+          "common_name": "Maneb 80% WP",
+          "trade_name": "Mannar Maneb, Baurs Maneb",
+          "moa": "MO3",
+          "dilution_16l": "32 g",
+          "phi_days": "14"
+        },
+        {
+          "common_name": "Propineb 70% WP",
+          "trade_name": "Protocol Propineb, Antracol Propineb",
+          "moa": "MO3",
+          "dilution_16l": "32 g",
+          "phi_days": "14"
+        },
+        {
+          "common_name": "Mancozeb 64% + Metalaxyl 8% WP",
+          "trade_name": "Ridol Metalaxyl+, CIC Mancozeb +",
+          "moa": "MO3 + 4",
+          "dilution_16l": "40 g",
+          "phi_days": "14"
+        },
+        {
+          "common_name": "Mancozeb 64% + Metalaxyl-M 4% WG",
+          "trade_name": "Ridomil Gold Metalaxyl+",
+          "moa": "4 + MO3",
+          "dilution_16l": "40 g",
+          "phi_days": "14"
+        },
+        {
+          "common_name": "Propamocarb 607 g/l SL",
+          "trade_name": "Previcur 607 SL",
+          "moa": "28",
+          "dilution_16l": "64 ml",
+          "phi_days": "14"
+        },
+        {
+          "common_name": "Mancozeb 60% + Dimethomorph 9% WP",
+          "trade_name": "Acrobat MZ",
+          "moa": "MO3 + 40",
+          "dilution_16l": "80 g",
+          "phi_days": "14"
+        },
+        {
+          "common_name": "Metiram 55% + Pyraclostrobin 5% WG",
+          "trade_name": "Cabrio Top, Lankem Cabrio Top",
+          "moa": "MO3 + 11",
+          "dilution_16l": "32 g",
+          "phi_days": "14"
+        },
+        {
+          "common_name": "Azoxystrobin 120 g/l + Tebuconazole 200 g/l SC",
+          "trade_name": "Custodia 320 SC",
+          "moa": "11 + 3",
+          "dilution_16l": "5.6 ml",
+          "phi_days": "14"
+        },
+        {
+          "common_name": "Isoprothiolane 400 g/l EC",
+          "trade_name": "Fuji-One 40 EC",
+          "moa": "6",
+          "dilution_16l": "40 ml",
+          "phi_days": "14"
+        },
+        {
+          "common_name": "Fluazinam 500 g/l SC",
+          "trade_name": "Tizca Fluazinam, Nando Fluazinam",
+          "moa": "29",
+          "dilution_16l": "16 ml",
+          "phi_days": "14"
+        },
+        {
+          "common_name": "Azoxystrobin 250 g/l SC",
+          "trade_name": "Amistar 250 SC, Pole Azoxystrobin",
+          "moa": "11",
+          "dilution_16l": "16 ml",
+          "phi_days": "14"
+        },
+        {
+          "common_name": "Difenoconazole 250 g/l EC",
+          "trade_name": "Score",
+          "moa": "3",
+          "dilution_16l": "24 ml",
+          "phi_days": "14"
+        }
+      ]
+    },
+    {
+      "disease_name": "Foot rot / Root rot",
+      "scientific_name": "Rhizoctonia spp., Fusarium spp.",
+      "chemicals": [
+        {
+          "common_name": "Pencycuron 25% WP",
+          "trade_name": "Monceren WP 25%",
+          "moa": "20",
+          "dilution_16l": "100 g/50 l/10 m2",
+          "phi_days": "14"
+        },
+        {
+          "common_name": "Thiram 80% WP",
+          "trade_name": "Oasis Thiram, Plantchem Thiram, CG Thiram",
+          "moa": "MO3",
+          "dilution_16l": "70 g/50 l/10 m2",
+          "phi_days": "14"
+        },
+        {
+          "common_name": "Thiophanate-methyl 50% + Thiram 30% WP",
+          "trade_name": "Homai",
+          "moa": "1 + MO3",
+          "dilution_16l": "50 g/50 l/10 m2",
+          "phi_days": "14"
+        },
+        {
+          "common_name": "Carbendazim 50% WP",
+          "trade_name": "Billet Carbendazim, Oasis Carbendazim, Hayleys Carbendazim",
+          "moa": "1",
+          "dilution_16l": "70 g/50 l/10 m2",
+          "phi_days": "14"
+        },
+        {
+          "common_name": "Carbendazim 500 g/l SC",
+          "trade_name": "Carbin Carbendazim",
+          "moa": "1",
+          "dilution_16l": "70 ml/50 l/10 m2",
+          "phi_days": "14"
+        }
+      ]
+    }
+  ]
+},
+
+    {
+  "crop": "DISEASES IN NURSERIES (TOMATO, CHILLI, CAPSICUM, BRINJAL, CABBAGE)",
+  "diseases": [
+    {
+      "disease_name": "Damping-off",
+      "scientific_name": "Pythium spp., Phytophthora spp., Rhizoctonia spp., Sclerotium spp., Fusarium spp.",
+      "chemicals": [
+        {
+          "common_name": "Captan 50% WP",
+          "trade_name": "Pentagan, CG, Captaf, Baurs, Ceypetco, ICS, Captogon, Oasis, Zagro",
+          "moa": "MO4",
+          "dilution_16l": "Seed Treatment: 6 g/kg | Soil: 60 g/50 l/10 m2",
+          "phi_days": "14"
+        },
+        {
+          "common_name": "Captan 80% WG",
+          "trade_name": "Baur's captan",
+          "moa": "MO4",
+          "dilution_16l": "Seed Treatment: 4 g/kg | Soil: 40 g/50 l/10 m2",
+          "phi_days": "14"
+        },
+        {
+          "common_name": "Thiram 80% WP",
+          "trade_name": "Oasis, Plantchem, CG, Scope, Powersol",
+          "moa": "MO3",
+          "dilution_16l": "Seed Treatment: 5 g/kg | Soil: 70 g/50 l/10 m2",
+          "phi_days": "14"
+        },
+        {
+          "common_name": "Thiophanate-methyl 50% + Thiram 30% WP",
+          "trade_name": "Homai",
+          "moa": "1 + MO3",
+          "dilution_16l": "Seed Treatment: 4 g/kg | Soil: 50 g/50 l/10 m2",
+          "phi_days": "14"
+        },
+        {
+          "common_name": "Hymexazole 360 g/l SL",
+          "trade_name": "Tachigaren",
+          "moa": "32",
+          "dilution_16l": "Seed Treatment: 2 ml/kg | Soil: 20 ml/50 l/10 m2",
+          "phi_days": "14"
+        },
+        {
+          "common_name": "Flutolanil 50% WP",
+          "trade_name": "Moncut",
+          "moa": "7",
+          "dilution_16l": "Soil: 30 g/50 l/10 m2",
+          "phi_days": "14"
+        }
+      ]
+    }
+  ]
+}
+
+  ]
+
+}
