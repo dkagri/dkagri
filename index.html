@@ -74,49 +74,6 @@ header p{ margin-top:10px; font-size:15px; opacity:0.9; }
 }
 .card:hover a{ color:#fff; }
 
-/* ADVERTISEMENT SECTION */
-.desktop-ads{
-  max-width:1200px;
-  margin:30px auto 40px;
-  padding:25px;
-  background:#fff;
-  border-radius:16px;
-  box-shadow:0 8px 20px rgba(0,0,0,0.2);
-}
-
-.desktop-ads h3{
-  text-align:center;
-  color:#2e7d32;
-  margin-bottom:20px;
-}
-
-/* Ads grid (desktop view) */
-.ads-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:20px;
-}
-
-/* Ad boxes */
-.ad-box{
-  border:2px dashed #4caf50;
-  padding:20px;
-  text-align:center;
-  border-radius:12px;
-  background:#f9fff9;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-  height:100%;
-}
-
-.ad-box img{
-  max-width:100%;
-  border-radius:8px;
-  margin:10px 0;
-}
-
 /* Desktop only buttons below all ads */
 .desktop-buttons{
   text-align:center;
@@ -142,28 +99,6 @@ header p{ margin-top:10px; font-size:15px; opacity:0.9; }
 .email{ background:#1976d2; }
 .call{background:#e53935;}
 .desktop-buttons button:hover{ opacity:0.9; }
-
-/* MOBILE / TABLET AUTO-SLIDE */
-@media (max-width:991px){
-  .ads-grid{
-    grid-template-columns:1fr;
-    position:relative;
-    overflow:hidden;
-    height:600px;
-  }
-  .ad-box{
-    position:absolute;
-    width:100%;
-    top:0;
-    left:0;
-    transition:opacity 0.5s ease-in-out;
-    opacity:0;
-  }
-  .ad-box.active{
-    opacity:1;
-    position:relative;
-  }
-}
 
 /* TABLET CARDS */
 @media (max-width:991px){
@@ -201,64 +136,11 @@ footer{
   <div class="card"><a href="spacing.html">📏 Crop Spacing Calculator</a></div>
   <div class="card"><a href="area_converter.html">🚜 Area Converter</a></div>
   <div class="card"><a href="presentation.html">📊 Presentation</a></div>
+  <div class="card"><a href="extention.html">🗃️ Extension</a></div>
   <div class="card"><a href="contact.html">📞 Contact Us</a></div>
 </section>
 
 <!-- ADVERTISEMENT -->
-<section class="desktop-ads">
-  <h3>Our Services </h3>
-
-  <div class="ads-grid">
-    <div class="ad-box active">
-      <h4>CV MAKING</h4>
-      <p>PDF to Website</p>
-      <img src="cv.jpg" alt="CV Making">
-    </div>
-
-    <div class="ad-box">
-      <h4>ONLINE SHOP</h4>
-      <p>E-Commerce Website</p>
-      <img src="shop.jpg" alt="Online Shop">
-    </div>
-
-    <div class="ad-box">
-      <h4>Gourmet Delight</h4>
-      <p>Restaurant Website</p>
-      <img src="hotel.jpg" alt="Restaurant">
-    </div>
-
-
-    <div class="ad-box">
-      <h4>FOOD BLOG</h4>
-      <p>Recipe Website</p>
-      <img src="food.jpg" alt="Food Blog">
-    </div>
- 
-     <div class="ad-box">
-      <h4>WEBSITE DESIGN</h4>
-      <p>Business</p>
-      <img src="all.jpg" alt="Website Design">
-    </div>
-
-     <div class="ad-box">
-       <h4>Text Artistry</h4>
-       <p>Type Setting</p>
-      <img src="type.jpg" alt="Type Setting">
-    </div>
-
- 
-  </div>
-
-  <!-- Desktop buttons below all ads -->
-  <div class="desktop-buttons">
-    <a href="https://wa.me/94725989935" target="_blank"><button class="whatsapp">📱 WhatsApp</button></a>
-        <a href="tel:+94725989935">
-  <button class="call">📞 Call</button>
-</a>
-
-    <a href="mailto:dpkcreation@gmail.com"><button class="email">📧 Email</button></a>
-  </div>
-</section>
 
 <footer>
 © 2026 DK AGRI | Educational & Extension Use Only
@@ -277,9 +159,9 @@ function showNextAd(){
 
 // Only run auto-slide on mobile/tablet
 function checkSlide(){
-  if(window.innerWidth <= 991){
+  if(window.innerWidth <= 800){
     showNextAd();
-    setInterval(showNextAd, 4000); // every 4 seconds
+    setInterval(showNextAd, 5000); // every 5 seconds
   } else {
     ads.forEach(ad=> ad.classList.add('active')); // show all ads in desktop
   }
