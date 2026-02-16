@@ -1,422 +1,246 @@
-<!DOCTYPE html>  <html lang="si">  
-<head>  
-<meta charset="UTF-8">  
-<meta name="viewport" content="width=device-width, initial-scale=1.0">  
-<title>Agriculture Monitoring System</title>  
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Sinhala:wght@400;600&display=swap" rel="stylesheet">  
-<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
-
-<style>  
-body{ font-family:'Noto Sans Sinhala', sans-serif; background:#eef3f7; margin:0; padding:15px; }  
-.header{ text-align:center; background:#1b5e20; color:white; padding:15px; border-radius:8px; }  
-.filters{ text-align:center; margin:15px 0; }  
-select{ padding:8px; margin:5px; border-radius:5px; border:1px solid #ccc; min-width:200px; }  
-
-.btn-download {
-    background: #2e7d32;
-    color: white;
-    padding: 8px 15px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-family: 'Noto Sans Sinhala', sans-serif;
-    margin-top: 10px;
+<!DOCTYPE html>  <html lang="si">    <head>    
+<meta charset="UTF-8">    
+<meta name="viewport" content="width=device-width, initial-scale=1.0">    
+<title>Agriculture Monitoring System</title>    
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Sinhala:wght@400;600&display=swap" rel="stylesheet">    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>  
+<script>  
+var password = "dk2026";   // 🔐 உங்கள் password இங்கே மாற்றவும்  
+var userInput = prompt("Enter Password to View Presentation:");  if(userInput !== password){
+alert("Incorrect Password! Access Denied.");
+window.location.href = "index.html";  // Home page க்கு திரும்பும்
 }
-.btn-download:hover { background: #1b5e20; }
-
-.table-container { 
-    overflow: auto; 
-    max-height: 70vh; 
-    border: 1px solid #ccc; 
-    background: white;
-}
-
-table{ width: 100%; border-collapse:collapse; font-size:12px; table-layout: fixed; }  
-
-th, td{ 
-    border:1px solid #ddd; 
-    padding:8px; 
-    text-align: left; 
-    word-wrap: break-word; /* වචන දිග වැඩි නම් කැඩීම */
-    overflow-wrap: break-word;
-    white-space: normal; /* පේළි කැඩීමට ඉඩ දීම */
-    vertical-align: top;
-}  
-
-th{ 
-    background:#2e7d32; 
-    color:white; 
-    position:sticky; 
-    top:0; 
-    font-weight: 600;
-    z-index: 10;
-}  
-
-/* තීරුවල පළල පාලනය කිරීම */
-th:nth-child(1), td:nth-child(1) { width: 120px; } /* කාර්යාලය */
-th:nth-child(2), td:nth-child(2) { width: 100px; } /* උපදේශක කොට්ඨාශය */
-th:nth-child(n+3), td:nth-child(n+3) { width: 100px; } /* අනෙකුත් තීරු */
-
-tr:nth-child(even){ background:#f9f9f9; }
-tr:hover { background: #f1f1f1; }
-
-/* PASSWORD SCREEN */
-#loginOverlay{
-  position:fixed;
-  inset:0;
-  background:linear-gradient(135deg,#1b5e20,#2e7d32);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  z-index:9999;
-}
-
-.login-box{
-  background:white;
-  padding:30px;
-  border-radius:10px;
-  text-align:center;
-  width:300px;
-  box-shadow:0 8px 20px rgba(0,0,0,0.3);
-}
-
-.login-box h3{
-  margin-bottom:10px;
-  color:#1b5e20;
-}
-
-.login-box input{
-  width:100%;
-  padding:8px;
-  margin:10px 0;
-  border-radius:5px;
-  border:1px solid #ccc;
-}
-
-.login-box button{
-  width:100%;
-  padding:8px;
-  border:none;
-  border-radius:5px;
-  background:#2e7d32;
-  color:white;
-  cursor:pointer;
-}
-
-.login-box button:hover{
-  background:#1b5e20;
-}
-
-#errorMsg{
-  color:red;
-  font-size:13px;
-  margin-top:8px;
-}
-.password-wrapper{
-  position:relative;
-  width:100%;
-}
-
-.password-wrapper input{
-  width:100%;
-  padding:8px 35px 8px 8px;
-  border-radius:5px;
-  border:1px solid #ccc;
-}
-
-.toggle-password{
-  position:absolute;
-  right:10px;
-  top:50%;
-  transform:translateY(-50%);
-  cursor:pointer;
-  font-size:16px;
-  user-select:none;
-}
-</style>  
-</head>  
-<body>  
-<!-- PASSWORD OVERLAY -->
-<div id="loginOverlay">
-  <div class="login-box">
-    <h3>Agriculture Monitoring System</h3>
-    <p>Authorized Access Only</p>
-    <div class="password-wrapper">
-  <input type="password" id="passwordInput" placeholder="Enter Password">
-  <span id="toggleIcon" class="toggle-password" onclick="togglePassword()">👁</span>
-</div>
-    <button id="loginBtn">Login</button>
-    <p id="errorMsg"></p>
-  </div>
-</div>
-<div class="header">  
-    <h2>2023/24 මහ කන්න - කෘෂිකර්ම ප්‍රගති වාර්තාව</h2>  
-</div>  
-
-<div class="filters">  
-    <select id="officeFilter">  
-        <option value="">කාර්යාලය තෝරන්න</option>  
-    </select>  
-    <select id="advisorFilter" disabled>  
-        <option value="">කෘෂි උපදේශක කොට්ඨාශය තෝරන්න</option>  
-    </select>  
-    <select id="programFilter" disabled>  
-        <option value="">බෝගය / වැඩසටහන තෝරන්න</option>  
-    </select>  
-    <br>
-    <button class="btn-download" onclick="downloadExcel()">Excel (Download)</button>
-</div>  
-
-<div class="table-container">  
-    <table id="dataTable">  
-        <thead></thead>  
-        <tbody></tbody>  
-    </table>  
-</div>  
-
-<script>
-
-const SHEET_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vR90nMLFyEAtmCd-pIkxWotKfFEE2Q-wVGqPyU4QfY8eUhEtWEYOqQuSGcCz3j_uNLDLu6qyNBvzyo8/pub?output=csv";
-
-let globalRows = [];
-
-const correctPassword = "dk2026"; // உங்கள் password இங்கு மாற்றவும்
-
-// ================= LOGIN CHECK =================
-window.addEventListener("DOMContentLoaded", function(){
-
-    if(sessionStorage.getItem("loggedIn") === "true"){
-        document.getElementById("loginOverlay").style.display = "none";
-        loadSheetData();
-    }
-
-    document.getElementById("loginBtn").addEventListener("click", loginCheck);
-
-    document.getElementById("passwordInput").addEventListener("keypress", function(e){
-        if(e.key === "Enter"){
-            loginCheck();
-        }
-    });
-
-});
-
-function loginCheck(){
-    const input = document.getElementById("passwordInput").value;
-
-    if(input === correctPassword){
-        sessionStorage.setItem("loggedIn","true");
-        document.getElementById("loginOverlay").style.display = "none";
-        loadSheetData();
-    }else{
-        alert("தவறான Password!");
-    }
-}
-
-// ================= SHOW / HIDE PASSWORD =================
-
-function togglePassword(){
-    const pwd = document.getElementById("passwordInput");
-    const icon = document.getElementById("toggleIcon");
-
-    if(pwd.type === "password"){
-        pwd.type = "text";
-        icon.innerHTML = "🙈";
-    }else{
-        pwd.type = "password";
-        icon.innerHTML = "👁";
-    }
-}
-
-// ================= LOAD GOOGLE SHEET =================
-
-function loadSheetData(){
-
-fetch(SHEET_URL)
-.then(res=>res.text())
-.then(data=>{
-
-    const allLines = data.split(/\r?\n/).filter(line => line.trim() !== "");
-    globalRows = allLines.map(line => parseCSVLine(line));
-
-    const headers = globalRows[0];
-
-    const officeTitle = "කාර්යාලය/සහකාර කෘෂිකර්ම අධ්‍යක්ෂ කොටස";
-    const advisorTitle = "කෘෂි උපදේශක කොට්ඨාශය";
-    const programTitle = "බෝගය / වැඩසටහන";
-
-    const officeIndex = headers.indexOf(officeTitle);
-    const programIndex = headers.indexOf(programTitle);
-    const advisorIndices = headers.reduce((acc, h, i) =>
-        (h === advisorTitle ? acc.concat(i) : acc), []);
-
-    const officeFilter = document.getElementById("officeFilter");
-    const advisorFilter = document.getElementById("advisorFilter");
-    const programFilter = document.getElementById("programFilter");
-
-    // ============ Populate Office Filter ============
-
-    const offices = [...new Set(
-        globalRows.slice(1).map(r => r[officeIndex])
-    )].filter(o => o);
-
-    offices.sort().forEach(o=>{
-        let opt = document.createElement("option");
-        opt.value = o;
-        opt.textContent = o;
-        officeFilter.appendChild(opt);
-    });
-
-    // ============ Office Change ============
-
-    officeFilter.addEventListener("change", function(){
-
-        advisorFilter.innerHTML = '<option value="">කෘෂි උපදේශක කොට්ඨාශය තෝරන්න</option>';
-        programFilter.innerHTML = '<option value="">බෝගය / වැඩසටහන තෝරන්න</option>';
-        programFilter.disabled = true;
-
-        if(!this.value){
-            advisorFilter.disabled = true;
-            applyFilters();
-            return;
-        }
-
-        advisorFilter.disabled = false;
-
-        let filteredAdvisors = new Set();
-
-        globalRows.slice(1)
-        .filter(r => r[officeIndex] === this.value)
-        .forEach(r=>{
-            advisorIndices.forEach(idx=>{
-                if(r[idx]) filteredAdvisors.add(r[idx]);
-            });
-        });
-
-        [...filteredAdvisors].sort().forEach(a=>{
-            let opt = document.createElement("option");
-            opt.value = a;
-            opt.textContent = a;
-            advisorFilter.appendChild(opt);
-        });
-
-        applyFilters();
-    });
-
-    advisorFilter.addEventListener("change", applyFilters);
-    programFilter.addEventListener("change", applyFilters);
-
-    // ============ Apply Filters ============
-
-    function applyFilters(){
-
-        const officeVal = officeFilter.value;
-        const advisorVal = advisorFilter.value;
-        const programVal = programFilter.value;
-
-        const filtered = globalRows.filter((r,i)=>{
-
-            if(i === 0) return true;
-
-            const matchOffice = !officeVal || r[officeIndex] === officeVal;
-
-            const matchAdvisor = !advisorVal ||
-                advisorIndices.some(idx => r[idx] === advisorVal);
-
-            const matchProgram = !programVal ||
-                r[programIndex] === programVal;
-
-            return matchOffice && matchAdvisor && matchProgram;
-        });
-
-        renderUnifiedTable(
-            filtered,
-            headers,
-            officeIndex,
-            advisorIndices,
-            programIndex,
-            officeTitle,
-            advisorTitle
-        );
-    }
-
-    renderUnifiedTable(
-        globalRows,
-        headers,
-        officeIndex,
-        advisorIndices,
-        programIndex,
-        officeTitle,
-        advisorTitle
-    );
-
-});
-}
-
-// ================= CSV PARSER =================
-
-function parseCSVLine(line){
-    const result = [];
-    let current = '';
-    let inQuotes = false;
-
-    for(let i=0;i<line.length;i++){
-        const char = line[i];
-
-        if(char === '"' ){
-            inQuotes = !inQuotes;
-        }else if(char === ',' && !inQuotes){
-            result.push(current);
-            current = '';
-        }else{
-            current += char;
-        }
-    }
-
-    result.push(current);
-    return result;
-}
-
-// ================= TABLE RENDER =================
-
-function renderUnifiedTable(rows, headers, officeIndex, advisorIndices, programIndex, officeTitle, advisorTitle){
-
-    const tableContainer = document.querySelector(".table-container");
-    tableContainer.innerHTML = "";
-
-    const table = document.createElement("table");
-    table.border = "1";
-
-    const thead = document.createElement("thead");
-    const headRow = document.createElement("tr");
-
-    headers.forEach(h=>{
-        const th = document.createElement("th");
-        th.textContent = h;
-        headRow.appendChild(th);
-    });
-
-    thead.appendChild(headRow);
-    table.appendChild(thead);
-
-    const tbody = document.createElement("tbody");
-
-    rows.slice(1).forEach(r=>{
-        const tr = document.createElement("tr");
-
-        r.forEach(cell=>{
-            const td = document.createElement("td");
-            td.textContent = cell;
-            tr.appendChild(td);
-        });
-
-        tbody.appendChild(tr);
-    });
-
-    table.appendChild(tbody);
-    tableContainer.appendChild(table);
-}
-
 </script>
-</body>  
-  </html>
+
+<style>    
+body{ font-family:'Noto Sans Sinhala', sans-serif; background:#eef3f7; margin:0; padding:15px; }    
+.header{ text-align:center; background:#1b5e20; color:white; padding:15px; border-radius:8px; }    
+.filters{ text-align:center; margin:15px 0; }    
+select{ padding:8px; margin:5px; border-radius:5px; border:1px solid #ccc; min-width:200px; }    
   
+.btn-download {  
+    background: #2e7d32;  
+    color: white;  
+    padding: 8px 15px;  
+    border: none;  
+    border-radius: 5px;  
+    cursor: pointer;  
+    font-family: 'Noto Sans Sinhala', sans-serif;  
+    margin-top: 10px;  
+}  
+.btn-download:hover { background: #1b5e20; }  
+  
+.table-container {   
+    overflow: auto;   
+    max-height: 70vh;   
+    border: 1px solid #ccc;   
+    background: white;  
+}  
+  
+table{ width: 100%; border-collapse:collapse; font-size:12px; table-layout: fixed; }    
+  
+th, td{   
+    border:1px solid #ddd;   
+    padding:8px;   
+    text-align: left;   
+    word-wrap: break-word; /* වචන දිග වැඩි නම් කැඩීම */  
+    overflow-wrap: break-word;  
+    white-space: normal; /* පේළි කැඩීමට ඉඩ දීම */  
+    vertical-align: top;  
+}    
+  
+th{   
+    background:#2e7d32;   
+    color:white;   
+    position:sticky;   
+    top:0;   
+    font-weight: 600;  
+    z-index: 10;  
+}    
+  
+/* තීරුවල පළල පාලනය කිරීම */  
+th:nth-child(1), td:nth-child(1) { width: 120px; } /* කාර්යාලය */  
+th:nth-child(2), td:nth-child(2) { width: 100px; } /* උපදේශක කොට්ඨාශය */  
+th:nth-child(n+3), td:nth-child(n+3) { width: 100px; } /* අනෙකුත් තීරු */  
+  
+tr:nth-child(even){ background:#f9f9f9; }  
+tr:hover { background: #f1f1f1; }  
+  
+</style>    </head>    
+<body>    <div class="header">    
+    <h2>2023/24 මහ කන්න - කෘෂිකර්ම ප්‍රගති වාර්තාව</h2>    
+</div>    <div class="filters">    
+    <select id="officeFilter">    
+        <option value="">කාර්යාලය තෝරන්න</option>    
+    </select>    
+    <select id="advisorFilter" disabled>    
+        <option value="">කෘෂි උපදේශක කොට්ඨාශය තෝරන්න</option>    
+    </select>    
+    <select id="programFilter" disabled>    
+        <option value="">බෝගය / වැඩසටහන තෝරන්න</option>    
+    </select>    
+    <br>  
+    <button class="btn-download" onclick="downloadExcel()">Excel (Download)</button>  
+</div>    <div class="table-container">    
+    <table id="dataTable">    
+        <thead></thead>    
+        <tbody></tbody>    
+    </table>    
+</div>    <script>    
+const SHEET_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vR90nMLFyEAtmCd-pIkxWotKfFEE2Q-wVGqPyU4QfY8eUhEtWEYOqQuSGcCz3j_uNLDLu6qyNBvzyo8/pub?output=csv";  
+  
+let currentDataForExcel = [];   
+let globalRows = [];  
+  
+function parseCSVLine(line) {  
+    const result = [];  
+    let cur = "";  
+    let inQuote = false;  
+    for (let i = 0; i < line.length; i++) {  
+        let char = line[i];  
+        if (char === '"') {  
+            inQuote = !inQuote;  
+        } else if (char === ',' && !inQuote) {  
+            result.push(cur.trim());  
+            cur = "";  
+        } else {  
+            cur += char;  
+        }  
+    }  
+    result.push(cur.trim());  
+    return result;  
+}  
+
+fetch(SHEET_URL)    
+.then(res=>res.text())    
+.then(data=>{    
+    const allLines = data.split(/\r?\n/).filter(line => line.trim() !== "");  
+    globalRows = allLines.map(line => parseCSVLine(line));  
+      
+    const headers = globalRows[0];    
+    const officeTitle = "කාර්යාලය/සහකාර කෘෂිකර්ම අධ්‍යක්ෂ කොටස";    
+    const advisorTitle = "කෘෂි උපදේශක කොට්ඨාශය";    
+    const programTitle = "බෝගය / වැඩසටහන";    
+  
+    const officeIndex = headers.indexOf(officeTitle);    
+    const programIndex = headers.indexOf(programTitle);    
+    const advisorIndices = headers.reduce((acc, h, i) => (h === advisorTitle ? acc.concat(i) : acc), []);  
+  
+    const officeFilter = document.getElementById("officeFilter");    
+    const advisorFilter = document.getElementById("advisorFilter");    
+    const programFilter = document.getElementById("programFilter");    
+  
+    const offices = [...new Set(globalRows.slice(1).map(r => r[officeIndex]))].filter(o => o);    
+    offices.sort().forEach(o => {    
+        let opt = document.createElement("option");    
+        opt.value = o; opt.textContent = o;    
+        officeFilter.appendChild(opt);    
+    });    
+  
+    officeFilter.addEventListener("change", function(){    
+        advisorFilter.innerHTML = '<option value="">කෘෂි උපදේශක කොට්ඨාශය තෝරන්න</option>';    
+        programFilter.innerHTML = '<option value="">බෝගය / වැඩසටහන තෝරන්න</option>';    
+        programFilter.disabled = true;    
+        if(!this.value) { advisorFilter.disabled = true; applyFilters(); return; }    
+          
+        advisorFilter.disabled = false;    
+        let filteredAdvisors = new Set();  
+        globalRows.slice(1).filter(r => r[officeIndex] === this.value).forEach(r => {  
+            advisorIndices.forEach(idx => { if(r[idx]) filteredAdvisors.add(r[idx]); });  
+        });  
+  
+        [...filteredAdvisors].sort().forEach(a => {    
+            let opt = document.createElement("option");    
+            opt.value = a; opt.textContent = a;    
+            advisorFilter.appendChild(opt);    
+        });    
+        applyFilters();    
+    });    
+  
+    advisorFilter.addEventListener("change", function(){    
+        programFilter.innerHTML = '<option value="">බෝගය / වැඩසටහන තෝරන්න</option>';    
+        if(!this.value) { programFilter.disabled = true; applyFilters(); return; }    
+          
+        programFilter.disabled = false;    
+        const programs = [...new Set(    
+            globalRows.slice(1).filter(r => {  
+                const matchOffice = r[officeIndex] === officeFilter.value;  
+                const matchAdvisor = advisorIndices.some(idx => r[idx] === this.value);  
+                return matchOffice && matchAdvisor;  
+            }).map(r => r[programIndex])    
+        )].filter(p => p);    
+          
+        programs.sort().forEach(p => {    
+            let opt = document.createElement("option");    
+            opt.value = p; opt.textContent = p;    
+            programFilter.appendChild(opt);    
+        });    
+        applyFilters();    
+    });    
+  
+    programFilter.addEventListener("change", applyFilters);    
+  
+    function applyFilters(){    
+        const officeVal = officeFilter.value;    
+        const advisorVal = advisorFilter.value;    
+        const programVal = programFilter.value;    
+          
+        const filtered = globalRows.filter((r, i) => {    
+            if(i === 0) return true;    
+            const matchOffice = !officeVal || r[officeIndex] === officeVal;    
+            const matchAdvisor = !advisorVal || advisorIndices.some(idx => r[idx] === advisorVal);    
+            const matchProgram = !programVal || r[programIndex] === programVal;    
+            return matchOffice && matchAdvisor && matchProgram;    
+        });    
+        renderUnifiedTable(filtered, headers, officeIndex, advisorIndices, programIndex, officeTitle, advisorTitle);    
+    }    
+  
+    renderUnifiedTable(globalRows, headers, officeIndex, advisorIndices, programIndex, officeTitle, advisorTitle);    
+});    
+
+function renderUnifiedTable(dataRows, headers, officeIndex, advisorIndices, programIndex, officeTitle, advisorTitle) {  
+    const thead = document.querySelector("#dataTable thead");  
+    const tbody = document.querySelector("#dataTable tbody");  
+    thead.innerHTML = ""; tbody.innerHTML = "";  
+    currentDataForExcel = [];  
+  
+    let otherValidCols = [];  
+    headers.forEach((h, i) => {  
+        if (i !== 0 && h !== officeTitle && h !== advisorTitle) {  
+            let hasData = dataRows.some((row, idx) => idx > 0 && row[i] && row[i] !== "");  
+            if (hasData) otherValidCols.push(i);  
+        }  
+    });  
+  
+    let headerNames = [officeTitle, advisorTitle, ...otherValidCols.map(idx => headers[idx])];  
+    currentDataForExcel.push(headerNames);  
+  
+    let headerHtml = "<tr>" + headerNames.map(h => `<th>${h}</th>`).join("") + "</tr>";  
+    thead.innerHTML = headerHtml;  
+  
+    dataRows.slice(1).forEach(r => {  
+        let advisorValue = "";  
+        advisorIndices.forEach(idx => { if(r[idx]) advisorValue = r[idx]; });  
+          
+        let rowData = [r[officeIndex] || "", advisorValue, ...otherValidCols.map(idx => r[idx] || "")];  
+        currentDataForExcel.push(rowData);  
+  
+        let tr = document.createElement("tr");  
+        rowData.forEach(val => {  
+            let td = document.createElement("td");  
+            td.textContent = val;  
+            tr.appendChild(td);  
+        });  
+        tbody.appendChild(tr);  
+    });  
+}  
+  
+function downloadExcel() {  
+    if (currentDataForExcel.length <= 1) { alert("දත්ත නොමැත!"); return; }  
+    const wb = XLSX.utils.book_new();  
+    const ws = XLSX.utils.aoa_to_sheet(currentDataForExcel);  
+    XLSX.utils.book_append_sheet(wb, ws, "Progress_Report");  
+    XLSX.writeFile(wb, "Agriculture_Progress_Report.xlsx");  
+}  
+</script>    </body>    
+              </html>
