@@ -1,368 +1,162 @@
 <!DOCTYPE html>
-<html lang="si">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Agriculture Monitoring System</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Sinhala:wght@400;600&display=swap" rel="stylesheet">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+<title>Presentation</title>
 
 <style>
 body{
-    font-family:'Noto Sans Sinhala', sans-serif;
-    background:#eef3f7;
-    margin:0;
-    padding:15px;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #e8f5e9;
 }
 
-/* 🔐 LOGIN SCREEN */
-.login-container{
-    position:fixed;
-    inset:0;
-    background:linear-gradient(135deg,#1b5e20,#2e7d32);
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    z-index:9999;
+.container{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 25px;
+  padding: 30px;
+  max-width: 900px;
+  margin: auto;
 }
 
-.login-box{
-    background:white;
-    padding:30px;
-    border-radius:10px;
-    width:320px;
-    text-align:center;
-    box-shadow:0 5px 20px rgba(0,0,0,0.3);
+header{
+  background: green;
+  color: white;
+  text-align: center;
+  padding: 25px;
 }
 
-.login-box h2{
-    margin-bottom:20px;
-    color:#1b5e20;
-}
-
-.login-box input{
-    width:100%;
-    padding:10px;
-    margin-bottom:15px;
-    border-radius:5px;
-    border:1px solid #ccc;
-}
-
-.login-btn{
-    background:#2e7d32;
-    color:white;
-    border:none;
-    padding:10px;
-    width:100%;
-    border-radius:5px;
-    cursor:pointer;
-    font-weight:600;
-}
-
-.login-btn:hover{
-    background:#1b5e20;
-}
-
-.error-msg{
-    color:red;
-    font-size:13px;
-    margin-top:10px;
-}
-
-/* MAIN CONTENT */
-.main-content{
-    display:none;
-}
-
-.header{
-    text-align:center;
-    background:#1b5e20;
-    color:white;
-    padding:15px;
-    border-radius:8px;
-}
-
-.filters{
-    text-align:center;
-    margin:15px 0;
-}
-
-select{
-    padding:8px;
-    margin:5px;
-    border-radius:5px;
-    border:1px solid #ccc;
-    min-width:200px;
-}
-
-.btn-download {
-    background: #2e7d32;
-    color: white;
-    padding: 8px 15px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 10px;
-}
-.btn-download:hover { background: #1b5e20; }
-
-.table-container {
-    overflow: auto;
-    max-height: 70vh;
-    border: 1px solid #ccc;
-    background: white;
-}
-
-table{
+#seasonScreen {
+    display: none;
+    text-align: center;
     width: 100%;
-    border-collapse:collapse;
-    font-size:12px;
-    table-layout: fixed;
+}
+.card{
+  background: white;
+  border-radius: 10px;
+  padding: 30px 10px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  color: green;
+  text-decoration: none;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  transition: 0.3s;
 }
 
-th, td{
-    border:1px solid #ddd;
-    padding:8px;
-    text-align: left;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-    white-space: normal;
-    vertical-align: top;
+.card:hover{
+  background: green;
+  color: white;
+  transform: translateY(-5px);
+}
+/* Password Screen */
+#passwordScreen {
+    background: #ffffff;
+    padding: 40px 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    text-align: center;
 }
 
-th{
-    background:#2e7d32;
-    color:white;
-    position:sticky;
-    top:0;
-    font-weight: 600;
-    z-index: 10;
+#passwordScreen input[type="password"] {
+    padding: 10px 15px;
+    width: 80%;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    margin-top: 15px;
+    font-size: 16px;
 }
 
-th:nth-child(1), td:nth-child(1){ width:120px; }
-th:nth-child(2), td:nth-child(2){ width:100px; }
-th:nth-child(n+3), td:nth-child(n+3){ width:100px; }
+#passwordScreen button {
+    margin-top: 20px;
+    padding: 10px 25px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
 
-tr:nth-child(even){ background:#f9f9f9; }
-tr:hover { background:#f1f1f1; }
+#passwordScreen button:hover {
+    background-color: #45a049;
+}
+
+
+footer{
+  text-align: center;
+  background: #222;
+  color: white;
+  padding: 12px;
+}
 </style>
 </head>
 
 <body>
 
-<!-- 🔐 LOGIN -->
-<div class="login-container" id="loginScreen">
-    <div class="login-box">
-        <h2>🔐 Secure Login</h2>
-        <input type="password" id="passwordInput" placeholder="Enter Password">
-        <button class="login-btn" onclick="checkLogin()">Login</button>
-        <div class="error-msg" id="errorMsg"></div>
-    </div>
-</div>
-
-<div class="main-content" id="mainContent">
-
-<div class="header">
-    <h2>2023/24 මහ කන්න - කෘෂිකර්ම ප්‍රගති වාර්තාව</h2>
-</div>
-
-<div class="filters">
-    <select id="officeFilter">
-        <option value="">කාර්යාලය තෝරන්න</option>
-    </select>
-
-    <select id="advisorFilter" disabled>
-        <option value="">කෘෂි උපදේශක කොට්ඨාශය තෝරන්න</option>
-    </select>
-
-    <select id="programFilter" disabled>
-        <option value="">බෝගය / වැඩසටහන තෝරන්න</option>
-    </select>
+<!-- Password Screen -->
+<div id="passwordScreen">
+    <h2>Enter Password</h2>
+    <input type="password" id="passwordInput" placeholder="Password">
     <br>
-    <button class="btn-download" onclick="downloadExcel()">Excel (Download)</button>
+    <button onclick="checkPassword()">Submit</button>
+    <p id="errorMsg" style="color:red; margin-top:10px;"></p>
 </div>
+<div id="seasonScreen">
+<header>
+  <h1>Presentation</h1>
+  <p>Select a Crop Category</p>
+</header>
 
-<div class="table-container">
-    <table id="dataTable">
-        <thead></thead>
-        <tbody></tbody>
-    </table>
+<div class="container">
+
+  <a href="https://drive.google.com/drive/folders/1d5r22yhHXA_I0JXwQaUULjrKfR2lBc9b" class="card">🌾 Paddy</a>
+
+  <a href="vegetable" class="card">🥕 Vegetable</a>
+
+  <a href="https://drive.google.com/drive/folders/1eUJRBZ_Ok1Xy5vHgyKu6Mg9kD5L2ifYd" class="card">🌽 OFC</a>
+
+  <a href="https://drive.google.com/drive/folders/1h9rUMpGqaNIR1W-cJ5dILyMal0P7qDuL" class="card">🥔 Root Crop</a>
+
+  <a href="https://drive.google.com/drive/folders/1fb78rqkf1ECiJfeKlbHQL0UC9RTEmTKs" class="card">🍎 Fruits</a>
+
+  <a href="https://drive.google.com/drive/folders/1gkqtX8v5LfrRtYtDS574uxBcb_um6JWa" class="card">🥬 Leafy Vegetable</a>
+
+  <a href="leafy" class="card">Gap</a>
+  
+  <a href="https://drive.google.com/drive/folders/1hWz0VSSVIoVJi7rN8cB3Qzi3iDBarhCM" class="card">Soil conservation</a>
+
+  <a href="https://drive.google.com/drive/folders/1iduial4Fv_kIFjtTVFX1LobVel3cQJxp" class="card">Mushroom</a>
+  
+    <a href="https://drive.google.com/drive/folders/1fmtZ8PGApivcDTOsb9UY_4-x3RktTTvx" class="card">Seed Production</a>
+    
+    <a href="https://drive.google.com/drive/folders/1Pwe4fP1BDyEm-iHVDPfz1GiPi7bb0j4W" class="card">Polytunnel</a>
+
+  <a href="https://drive.google.com/drive/folders/1gmdMsXyIXJOgaVtSFYhTra6jm9GMp_tx" class="card">Pest & Disease</a>
+
 </div>
-
+<footer>
+© 2026 DK AGRI. All Rights Reserved.
+</footer>
 </div>
 
 <script>
-/* 🔐 LOGIN FUNCTION */
-var password = "dk2026";
+const correctPassword = "dk2026"; // Change password here
 
-function checkLogin(){
-    var userInput = document.getElementById("passwordInput").value;
-    if(userInput === password){
-        document.getElementById("loginScreen").style.display="none";
-        document.getElementById("mainContent").style.display="block";
-    }else{
-        document.getElementById("errorMsg").innerText="Incorrect Password! Access Denied.";
+function checkPassword() {
+    const input = document.getElementById('passwordInput').value;
+
+    if(input === correctPassword) {
+        document.getElementById('passwordScreen').style.display = 'none';
+        document.getElementById('seasonScreen').style.display = 'block';
+    } else {
+        document.getElementById('errorMsg').innerText = "Incorrect Password! Try again.";
     }
-}
-</script>
-
-<!-- YOUR ORIGINAL SCRIPT BELOW (UNCHANGED) -->
-
-<script>
-const SHEET_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vR90nMLFyEAtmCd-pIkxWotKfFEE2Q-wVGqPyU4QfY8eUhEtWEYOqQuSGcCz3j_uNLDLu6qyNBvzyo8/pub?output=csv";
-
-let currentDataForExcel = [];
-let globalRows = [];
-
-function parseCSVLine(line){
-    const result=[];
-    let cur="";
-    let inQuote=false;
-    for(let i=0;i<line.length;i++){
-        let char=line[i];
-        if(char==='"'){ inQuote=!inQuote; }
-        else if(char===',' && !inQuote){ result.push(cur.trim()); cur=""; }
-        else{ cur+=char; }
-    }
-    result.push(cur.trim());
-    return result;
-}
-
-fetch(SHEET_URL)
-.then(res=>res.text())
-.then(data=>{
-    const allLines=data.split(/\r?\n/).filter(line=>line.trim()!=="");
-    globalRows=allLines.map(line=>parseCSVLine(line));
-
-    const headers=globalRows[0];
-    const officeTitle="කාර්යාලය/සහකාර කෘෂිකර්ම අධ්‍යක්ෂ කොටස";
-    const advisorTitle="කෘෂි උපදේශක කොට්ඨාශය";
-    const programTitle="බෝගය / වැඩසටහන";
-
-    const officeIndex=headers.indexOf(officeTitle);
-    const programIndex=headers.indexOf(programTitle);
-    const advisorIndices=headers.reduce((acc,h,i)=>(h===advisorTitle?acc.concat(i):acc),[]);
-
-    const officeFilter=document.getElementById("officeFilter");
-    const advisorFilter=document.getElementById("advisorFilter");
-    const programFilter=document.getElementById("programFilter");
-
-    const offices=[...new Set(globalRows.slice(1).map(r=>r[officeIndex]))].filter(o=>o);
-    offices.sort().forEach(o=>{
-        let opt=document.createElement("option");
-        opt.value=o; opt.textContent=o;
-        officeFilter.appendChild(opt);
-    });
-
-    officeFilter.addEventListener("change",function(){
-        advisorFilter.innerHTML='<option value="">කෘෂි උපදේශක කොට්ඨාශය තෝරන්න</option>';
-        programFilter.innerHTML='<option value="">බෝගය / වැඩසටහන තෝරන්න</option>';
-        programFilter.disabled=true;
-        if(!this.value){ advisorFilter.disabled=true; applyFilters(); return;}
-        advisorFilter.disabled=false;
-
-        let filteredAdvisors=new Set();
-        globalRows.slice(1).filter(r=>r[officeIndex]===this.value)
-        .forEach(r=>{
-            advisorIndices.forEach(idx=>{ if(r[idx]) filteredAdvisors.add(r[idx]); });
-        });
-
-        [...filteredAdvisors].sort().forEach(a=>{
-            let opt=document.createElement("option");
-            opt.value=a; opt.textContent=a;
-            advisorFilter.appendChild(opt);
-        });
-        applyFilters();
-    });
-
-    advisorFilter.addEventListener("change",function(){
-        programFilter.innerHTML='<option value="">බෝගය / වැඩසටහන තෝරන්න</option>';
-        if(!this.value){ programFilter.disabled=true; applyFilters(); return;}
-        programFilter.disabled=false;
-
-        const programs=[...new Set(
-            globalRows.slice(1).filter(r=>{
-                const matchOffice=r[officeIndex]===officeFilter.value;
-                const matchAdvisor=advisorIndices.some(idx=>r[idx]===this.value);
-                return matchOffice && matchAdvisor;
-            }).map(r=>r[programIndex])
-        )].filter(p=>p);
-
-        programs.sort().forEach(p=>{
-            let opt=document.createElement("option");
-            opt.value=p; opt.textContent=p;
-            programFilter.appendChild(opt);
-        });
-        applyFilters();
-    });
-
-    programFilter.addEventListener("change",applyFilters);
-
-    function applyFilters(){
-        const officeVal=officeFilter.value;
-        const advisorVal=advisorFilter.value;
-        const programVal=programFilter.value;
-
-        const filtered=globalRows.filter((r,i)=>{
-            if(i===0) return true;
-            const matchOffice=!officeVal||r[officeIndex]===officeVal;
-            const matchAdvisor=!advisorVal||advisorIndices.some(idx=>r[idx]===advisorVal);
-            const matchProgram=!programVal||r[programIndex]===programVal;
-            return matchOffice && matchAdvisor && matchProgram;
-        });
-
-        renderUnifiedTable(filtered,headers,officeIndex,advisorIndices,programIndex,officeTitle,advisorTitle);
-    }
-
-    renderUnifiedTable(globalRows,headers,officeIndex,advisorIndices,programIndex,officeTitle,advisorTitle);
-});
-
-function renderUnifiedTable(dataRows,headers,officeIndex,advisorIndices,programIndex,officeTitle,advisorTitle){
-    const thead=document.querySelector("#dataTable thead");
-    const tbody=document.querySelector("#dataTable tbody");
-    thead.innerHTML=""; tbody.innerHTML="";
-    currentDataForExcel=[];
-
-    let otherValidCols=[];
-    headers.forEach((h,i)=>{
-        if(i!==0 && h!==officeTitle && h!==advisorTitle){
-            let hasData=dataRows.some((row,idx)=>idx>0 && row[i] && row[i]!=="");
-            if(hasData) otherValidCols.push(i);
-        }
-    });
-
-    let headerNames=[officeTitle,advisorTitle,...otherValidCols.map(idx=>headers[idx])];
-    currentDataForExcel.push(headerNames);
-
-    let headerHtml="<tr>"+headerNames.map(h=>`<th>${h}</th>`).join("")+"</tr>";
-    thead.innerHTML=headerHtml;
-
-    dataRows.slice(1).forEach(r=>{
-        let advisorValue="";
-        advisorIndices.forEach(idx=>{ if(r[idx]) advisorValue=r[idx]; });
-
-        let rowData=[r[officeIndex]||"",advisorValue,...otherValidCols.map(idx=>r[idx]||"")];
-        currentDataForExcel.push(rowData);
-
-        let tr=document.createElement("tr");
-        rowData.forEach(val=>{
-            let td=document.createElement("td");
-            td.textContent=val;
-            tr.appendChild(td);
-        });
-        tbody.appendChild(tr);
-    });
-}
-
-function downloadExcel(){
-    if(currentDataForExcel.length<=1){ alert("දත්ත නොමැත!"); return;}
-    const wb=XLSX.utils.book_new();
-    const ws=XLSX.utils.aoa_to_sheet(currentDataForExcel);
-    XLSX.utils.book_append_sheet(wb,ws,"Progress_Report");
-    XLSX.writeFile(wb,"Agriculture_Progress_Report.xlsx");
 }
 </script>
 
 </body>
- </html>
+    </html>
