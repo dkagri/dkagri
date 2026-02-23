@@ -1,0 +1,593 @@
+  {
+  "ofc": [
+     {"crop": "Chilli",
+    "pests": [
+    {
+      "pest_name": "Thrips, Aphids, Whiteflies",
+      "scientific_name": "",
+      "chemicals": [
+        {
+          "common_name": "Thiamethoxam 25% WG",
+          "trade_name": "",
+          "moa": "4",
+          "dilution_16l": "16g",
+          "phi_days": 14
+        },
+        {
+          "common_name": "Imidacloprid 200 g/l SL",
+          "trade_name": "",
+          "moa": "4",
+          "dilution_16l": "16ml",
+          "phi_days": 14
+        },
+        {
+          "common_name": "Abamectin 18 g/l EC",
+          "trade_name": "",
+          "moa": "6",
+          "dilution_16l": "10 ml",
+          "phi_days": 7
+        },
+        {
+          "common_name": "Pymetrozine 50% WG",
+          "trade_name": "",
+          "moa": "9",
+          "dilution_16l": "8g",
+          "phi_days": 7
+        },
+        {
+          "common_name": "Lufenuron 50 g/l EC",
+          "trade_name": "",
+          "moa": "15",
+          "dilution_16l": "32 ml",
+          "phi_days": 14
+        },
+        {
+          "common_name": "Fenobucarb 500 g/l EC",
+          "trade_name": "BPMC",
+          "moa": "1",
+          "dilution_16l": "32 ml",
+          "phi_days": 14
+        },
+        {
+          "common_name": "Acephate 75% SP",
+          "trade_name": "Harthene, Action, Nigro, Surrender, Oasis, AgStar , Asie, Ceypetco, Apollo, CG Acephate",
+          "moa": "1",
+          "dilution_16l": "16g",
+          "phi_days": 14
+        },
+        {
+          "common_name": "Profenophos 500 g/l EC",
+          "trade_name": "",
+          "moa": "1",
+          "dilution_16l": "32 ml",
+          "phi_days": 14
+        },
+        {
+          "common_name": "Chlorantraniliprole 20% +  Thiamethoxam 20% WG",
+          "trade_name": "",
+          "moa": "28+4",
+          "dilution_16l": "4g",
+          "phi_days": 14
+        },
+        {
+          "common_name": "Thiocyclam (Hydrogen Oxalate) 50% SP",
+          "trade_name": "",
+          "moa": "14",
+          "dilution_16l": "8g",
+          "phi_days": 14
+        },
+        {
+          "common_name": "Fipronil 50 g/l SC",
+          "trade_name": "Regent",
+          "moa": "2",
+          "dilution_16l": "16 ml",
+          "phi_days": 14
+        },
+        {
+          "common_name": "Azadirachtin-A 7.5% EC",
+          "trade_name": "",
+          "moa": "UN",
+          "dilution_16l": "80 ml",
+          "phi_days": 7
+        },
+        {
+          "common_name": "Buprofezin 250 g/l SC",
+          "trade_name": "",
+          "moa": "16",
+          "dilution_16l": "30 ml",
+          "phi_days": 14
+        },
+        {
+          "common_name": "Sulfoxaflor 50% WG",
+          "trade_name": "",
+          "moa": "4",
+          "dilution_16l": "5g",
+          "phi_days": 14
+        },
+        {
+          "common_name": "Azadirachtin 50 g/l EC",
+          "trade_name": "",
+          "moa": "UN",
+          "dilution_16l": "16 ml",
+          "phi_days": 7
+        },
+        {
+          "common_name": "Ethiprole 100 g/l SC",
+          "trade_name": "",
+          "moa": "2",
+          "dilution_16l": "20 ml",
+          "phi_days": 14
+        },
+        {
+          "common_name": "Carbosulfan 200 g/l SC",
+          "trade_name": "Marshal",
+          "moa": "1",
+          "dilution_16l": "48",
+          "phi_days": 14
+        }
+      ]
+    },
+
+    {
+      "pest_name": "Mites",
+      "scientific_name": "Hemitarsonemus latus",
+      "chemicals": [
+        {
+          "common_name": "Abamectin 18 g/l EC",
+          "trade_name": "",
+          "moa": "6",
+          "dilution_16l": "10 ml",
+          "phi_days": 7
+        },
+        {
+          "common_name": "Sulphur 80% WP",
+          "trade_name": "",
+          "moa": "UN",
+          "dilution_16l": "128 g",
+          "phi_days": 14
+        }
+      ]
+    },
+
+    {
+      "pest_name": "Pod borers",
+      "scientific_name": "Helicoverpa armigera, Spodoptera litura",
+      "chemicals": [
+        {
+          "common_name": "Chlorfluazuron 50 g/l EC",
+          "trade_name": "",
+          "moa": "15",
+          "dilution_16l": "16 ml",
+          "phi_days": 10
+        },
+        {
+          "common_name": "Chlorantraniliprole 20% +  Thiamethoxam 20% WG",
+          "trade_name": "",
+          "moa": "28+4",
+          "dilution_16l": "4",
+          "phi_days": 14
+        },
+        {
+          "common_name": "Thiodicarb 375 g/l SC",
+          "trade_name": "",
+          "moa": "1",
+          "dilution_16l": "24 ml",
+          "phi_days": 14
+        }
+     ]
+    }
+    ]
+   },
+  
+     {"crop": "MAIZE, FINGER MILLET AND SORGHUM",
+    "pests": [
+      {
+      "pest_name": "Stem borer",
+      "scientific_name": "Chilo partellus, Sesamia spp.",
+      "chemicals": [
+        {
+          "common_name": "Fipronil 0.3% GR",
+          "trade_name": "",
+          "moa": "2",
+          "dilution_16l": "12 kg/ha",
+          "phi_days": 14
+        },
+        {
+          "common_name": "Thiocyclam (Hydrogen Oxalate) 4% GR",
+          "trade_name": "",
+          "moa": "14",
+          "dilution_16l": "15 Kg/ha",
+          "phi_days": 14
+        },
+        {
+          "common_name": "Etofenprox 100 g/l EC",
+          "trade_name": "",
+          "moa": "3",
+          "dilution_16l": "24 ml",
+          "phi_days": 7
+        },
+        {
+          "common_name": "Novaluron 100 g/l EC",
+          "trade_name": "",
+          "moa": "15",
+          "dilution_16l": "16 ml",
+          "phi_days": 14
+        },
+        {
+          "common_name": "Thiodicarb 375 g/l SC",
+          "trade_name": "",
+          "moa": "1",
+          "dilution_16l": "32 ml",
+          "phi_days": 14
+        }
+      ]
+      },
+      {
+      "pest_name": "Cob borer",
+      "scientific_name": "Helicoverpa armigera",
+      "chemicals": [        
+        {
+          "common_name": "Etofenprox 100 g/l EC",
+          "trade_name": "Trebon",
+          "moa": "3",
+          "dilution_16l": "24 ml",
+          "phi_days": 14
+        },
+        {
+          "common_name": "Novaluron 100 g/l EC",
+          "trade_name": "",
+          "moa": "15",
+          "dilution_16l": "16 ml",
+          "phi_days": 14
+        },
+        {
+          "common_name": "Thiodicarb 375 g/l SC",
+          "trade_name": "Larvin",
+          "moa": "1",
+          "dilution_16l": "32 ml",
+          "phi_days": 14
+        }
+      ]
+      },
+      {
+      "pest_name": "Fall armyworm",
+      "scientific_name": "Spodoptera frugiperda",
+      "chemicals": [        
+        {
+          "common_name": "Spinetoram 25% WG",
+          "trade_name": "Radiant",
+          "moa": "5",
+          "dilution_16l": "8 g",
+          "phi_days": 14
+        },
+        {
+          "common_name": "Spinosad 25 g/l SC",
+          "trade_name": "Tracer",
+          "moa": "5",
+          "dilution_16l": "16 ml",
+          "phi_days": 14
+        },
+        {
+          "common_name": "Emamectin benzoate 5% SG",
+          "trade_name": "Proclaim, Sharpshooter",
+          "moa": "6",
+          "dilution_16l": "8 g",
+          "phi_days": 14
+        },
+        {
+          "common_name": "Chlorantraniliprole 20% +  Thiamethoxam 20% WG",
+          "trade_name": "",
+          "moa": "28+4",
+          "dilution_16l": "4 g",
+          "phi_days": 14
+        },
+        {
+          "common_name": "Chlorantraniliprole 200 g/l SC",
+          "trade_name": "Coragen",
+          "moa": "28",
+          "dilution_16l": "3 ml",
+          "phi_days": 14
+        }
+      ]
+  }
+  ]
+  },
+  
+     {"crop": "ONION",
+  "pests": [
+    {
+      "pest_name": "Thrips, Onion caterpillar",
+      "scientific_name": "Thrips - Scirtothrips dorsalis, Thrips palmi, Onion caterpillar - Spodoptera exigua",
+      "chemicals": [
+        {
+          "common_name": "Imidacloprid 70% WG",
+          "trade_name": "Admire, Rocco",
+          "moa": "4",
+          "dilution_16l": "2 g",
+          "phi_days": 14
+        },
+        {
+          "common_name": "Imidacloprid 200 g/l SL",
+          "trade_name": "Admire, Kobra",
+          "moa": "4",
+          "dilution_16l": "16 ml",
+          "phi_days": 14
+        },
+        {
+          "common_name": "Fipronil 50 g/l SC",
+          "trade_name": "Regent",
+          "moa": "2",
+          "dilution_16l": "16 ml",
+          "phi_days": 14
+        },
+        {
+          "common_name": "Pymetrozine 50% WG",
+          "trade_name": "Chess",
+          "moa": "9",
+          "dilution_16l": "8 g",
+          "phi_days": 14
+        },
+        {
+          "common_name": "Thiamethoxam 25% WG",
+          "trade_name": "Actara",
+          "moa": "4",
+          "dilution_16l": "5 g",
+          "phi_days": 14
+        },
+        {
+          "common_name": "Chlorantraniliprole 200 g/l SC",
+          "trade_name": "Coragen",
+          "moa": "28",
+          "dilution_16l": "3 ml",
+          "phi_days": 14
+        },
+        {
+          "common_name": "Flubendiamide 24% WG",
+          "trade_name": "Belt",
+          "moa": "28",
+          "dilution_16l": "6 g",
+          "phi_days": 7
+        }
+      ]
+    }
+  ]
+  },
+  
+     {
+  "crop": "GRAIN LEGUMES (Mung bean, Cowpea, Black gram)",
+  "pests": [
+  {
+          "pest_name": "Bean fly",
+          "scientific_name": "Ophiomyia phaseoli",
+          "chemicals": [
+            {
+              "common_name": "Thiamethoxam 70% WS",
+              "trade_name": "Cruiser",
+              "moa": "4",
+              "dilution_16l": "1.5g/kg seed",
+              "phi_days": 0
+            },
+            {
+              "common_name": "Carbosulfan 200 g/l SC",
+              "trade_name": "Marshal",
+              "moa": "1",
+              "dilution_16l": "48 ml",
+              "phi_days": 14
+            }
+          ]
+        },
+  {
+    "pest_name": "Legume pod borers",
+    "scientific_name": "Maruca vitrata, Helicoverpa armigera, Lampides boeticus",
+    "chemicals": [
+      {
+        "common_name": "Etofenprox 100 g/l EC",
+        "trade_name": "Not mentioned",
+        "moa": "3",
+        "dilution_16l": "24 ml",
+        "phi_days": 7
+      },
+      {
+        "common_name": "Novaluron 100 g/l EC",
+        "trade_name": "Not mentioned",
+        "moa": "15",
+        "dilution_16l": "16 ml",
+        "phi_days": 14
+      },
+      {
+        "common_name": "Chlorfluazuron 50 g/l EC",
+        "trade_name": "Not mentioned",
+        "moa": "15",
+        "dilution_16l": "16 ml",
+        "phi_days": 10
+      }
+    ]
+  },
+  {
+    "pest_name": "Pod sucking bugs",
+    "scientific_name": "Nezara viridula, Riptortus spp., Anoplocnemis spp.",
+    "chemicals": [
+      {
+        "common_name": "Imidacloprid 70% WG",
+        "trade_name": "Not mentioned",
+        "moa": "4",
+        "dilution_16l": "2.4 g",
+        "phi_days": 14
+      },
+      {
+        "common_name": "Thiacloprid 240 g/l SC",
+        "trade_name": "Not mentioned",
+        "moa": "4",
+        "dilution_16l": "16 ml",
+        "phi_days": 14
+      }
+    ]
+  },
+  {
+    "pest_name": "Mites",
+    "scientific_name": "Tetranychus spp.",
+    "chemicals": [
+      {
+        "common_name": "Azadirachtin 50 g/l EC",
+        "trade_name": "Not mentioned",
+        "moa": "UN",
+        "dilution_16l": "8 ml",
+        "phi_days": 7
+      },
+      {
+        "common_name": "Abamectin 18 g/l EC",
+        "trade_name": "Not mentioned",
+        "moa": "6",
+        "dilution_16l": "10 ml",
+        "phi_days": 7
+      }
+    ]
+  },
+  {
+    "pest_name": "Cutworm",
+    "scientific_name": "Spodoptera litura",
+    "chemicals": [
+      {
+        "common_name": "Etofenprox 100 g/l EC",
+        "trade_name": "Not mentioned",
+        "moa": "3",
+        "dilution_16l": "24 ml",
+        "phi_days": 7
+      },
+      {
+        "common_name": "Chlorfluazuron 50 g/l EC",
+        "trade_name": "Not mentioned",
+        "moa": "15",
+        "dilution_16l": "16 ml",
+        "phi_days": 10
+      }
+    ]
+  },
+  {
+    "pest_name": "Thrips",
+    "scientific_name": "Scirtothrips dorsalis, Thrips palmi",
+    "chemicals": [
+      {
+        "common_name": "Imidacloprid 70% WG",
+        "trade_name": "Not mentioned",
+        "moa": "4",
+        "dilution_16l": "2 g",
+        "phi_days": 14
+      },
+      {
+        "common_name": "Imidacloprid 200 g/l SL",
+        "trade_name": "Not mentioned",
+        "moa": "4",
+        "dilution_16l": "16 ml",
+        "phi_days": "Not mentioned"
+      },
+      {
+        "common_name": "Chlorantraniliprole 20% + Thiamethoxam 20% WG",
+        "trade_name": "Not mentioned",
+        "moa": "28+ 4",
+        "dilution_16l": "4 g",
+        "phi_days": 10
+      },
+      {
+        "common_name": "Thiocyclam (Hydrogen Oxalate) 50% SP",
+        "trade_name": "Not mentioned",
+        "moa": "14",
+        "dilution_16l": "40 g",
+        "phi_days": 14
+      }
+    ]
+  },
+  {
+    "pest_name": "Aphids",
+    "scientific_name": "Aphis gossypii, Aphis craccivora, Myzus persicae",
+    "chemicals": [
+      {
+        "common_name": "Chlorantraniliprole 20% + Thiamethoxam 20% WG",
+        "trade_name": "Not mentioned",
+        "moa": "28+ 4",
+        "dilution_16l": "4 g",
+        "phi_days": 10
+      },
+      {
+        "common_name": "Thiocyclam (Hydrogen Oxalate) 50% SP",
+        "trade_name": "Not mentioned",
+        "moa": "14",
+        "dilution_16l": "40 g",
+        "phi_days": 14
+      }
+    ]
+  },
+  {
+    "pest_name": "Whiteflies",
+    "scientific_name": "Bemisia tabaci, Trialeurodes vaporariorum",
+    "chemicals": [
+      {
+        "common_name": "Chlorantraniliprole 20% + Thiamethoxam 20% WG",
+        "trade_name": "Not mentioned",
+        "moa": "28 + 4",
+        "dilution_16l": "4 g",
+        "phi_days": 10
+      },
+      {
+        "common_name": "Thiocyclam (Hydrogen Oxalate) 50% SP",
+        "trade_name": "Not mentioned",
+        "moa": "14",
+        "dilution_16l": "40 g",
+        "phi_days": 14
+      },
+      {
+        "common_name": "Sulfoxaflor 50% WG",
+        "trade_name": "Not mentioned",
+        "moa": "4",
+        "dilution_16l": "5 g",
+        "phi_days": 14
+      },
+      {
+        "common_name": "Pymetrozine 50% WG",
+        "trade_name": "Not mentioned",
+        "moa": "9",
+        "dilution_16l": "8 g",
+        "phi_days": 14
+      },
+      {
+        "common_name": "Azadirachtin 50 g/l EC",
+        "trade_name": "Not mentioned",
+        "moa": "UN",
+        "dilution_16l": "16 ml",
+        "phi_days": 7
+      }
+    ]
+  },
+  {
+    "pest_name": "Storage pest (Pulse bruchids)",
+    "scientific_name": "Callosobruchus spp.",
+    "chemicals": [
+      {
+        "common_name": "Pirimiphos-methyl 500 g/l EC",
+        "trade_name": "Not mentioned",
+        "moa": "1",
+        "dilution_16l": "40 ml",
+        "phi_days": null
+      },
+      {
+        "common_name": "Acetamiprid 20% SP",
+        "trade_name": "Not mentioned",
+        "moa": "4",
+        "dilution_16l": "16 g",
+        "phi_days": 14
+      },
+      {
+        "common_name": "Novaluron 100 g/l EC",
+        "trade_name": "Not mentioned",
+        "moa": "15",
+        "dilution_16l": "16 ml",
+        "phi_days": 14
+      }
+    ]
+  }
+
+]
+
+}
+  ]
+  }

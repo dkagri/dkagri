@@ -1,0 +1,312 @@
+{
+  "category": "Fungicide",
+  "Fruits": [
+    {
+      "crop": "APPLE AND PEAR",
+      "diseases": [
+        {
+          "disease_name": "Bitter rot / Scab / Powdery mildew",
+          "chemicals": [
+            {
+              "common_name": "Captan 50% WP",
+              "trade_name": "Pentagan captan, CG Captan, Captaf Captan, Baurs Captan, Ceypetco Captan, ICS Captan, Captogon captan, Oasis captan, Zagro captan",
+              "moa": "MO4",
+              "dilution_16l": "32 g",
+              "phi_days": "14"
+            },
+            {
+              "common_name": "Captan 80% WG",
+              "trade_name": "Baur's captan",
+              "moa": "MO4",
+              "dilution_16l": "20 g",
+              "phi_days": "14"
+            },
+            {
+              "common_name": "Mancozeb 80% WP",
+              "trade_name": "Mancozeb, Hayleys Mancozeb, Dithane Mancozeb, Lankem Mancozeb, Farmers Mancozeb, Dynamic Mancozeb",
+              "moa": "MO3",
+              "dilution_16l": "32 g",
+              "phi_days": "14"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "crop": "AVOCADO",
+      "diseases": [
+        {
+          "disease_name": "Root rot",
+          "scientific_name": "Phytophthora cinnamomi",
+          "chemicals": [
+            {
+              "common_name": "Potassium phosphite 400 g/l SL",
+              "trade_name": "Specific trade name not in the provided 2021 list",
+              "dilution": "Refer label for trunk injection/soil drench",
+              "phi_days": "14"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "crop": "BANANA",
+      "diseases": [
+        {
+          "disease_name": "Sigatoka leaf spot",
+          "scientific_name": "Mycosphaerella musicola",
+          "chemicals": [
+            {
+              "common_name": "Propiconazole 250 g/l EC",
+              "trade_name": "Sira Propiconazole, Lankem Propiconazole, Oasis Propiconazole, Bumper Propiconazole",
+              "moa": "3",
+              "dilution_16l": "10 ml",
+              "phi_days": "14"
+            },
+            {
+              "common_name": "Tebuconazole 250 g/l EW",
+              "trade_name": "Folicur Tebuconazole, Lankem Tebuconazole, Orius Tebuconazole",
+              "moa": "3",
+              "dilution_16l": "10 ml",
+              "phi_days": "14"
+            },
+            {
+              "common_name": "Chlorothalonil 500 g/l SC",
+              "trade_name": "Ronil Chlorothalonil, Baurs Chlorothalonil, Daconil Chlorothalonil",
+              "moa": "MO5",
+              "dilution_16l": "48 ml",
+              "phi_days": "14"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "crop": "CITRUS",
+      "diseases": [
+        {
+          "disease_name": "Gummosis / Root rot",
+          "scientific_name": "Phytophthora spp.",
+          "chemicals": [
+            {
+              "common_name": "Copper oxychloride 50% WP",
+              "trade_name": "CIC Copper, Coblite Copper Oxychloride",
+              "moa": "MO1",
+              "dilution": "Paste application for gummosis / Soil drench for root rot",
+              "phi_days": "14"
+            },
+            {
+              "common_name": "Mancozeb 64% + Metalaxyl 8% WP",
+              "trade_name": "Ridol Metalaxyl+, CIC Mancozeb +, Mancozeb+Metalaxyl",
+              "moa": "MO3 + 4",
+              "dilution_16l": "40 g",
+              "phi_days": "14"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "crop": "GRAPE",
+      "diseases": [
+        {
+          "disease_name": "Downy mildew",
+          "scientific_name": "Plasmopara viticola",
+          "chemicals": [
+            {
+              "common_name": "Mancozeb 80% WP",
+              "trade_name": "Mancozeb, Hayleys Mancozeb, Dithane Mancozeb",
+              "moa": "MO3",
+              "dilution_16l": "32 g",
+              "phi_days": "14"
+            },
+            {
+              "common_name": "Propineb 70% WP",
+              "trade_name": "Protocol Propineb, Trazol Propineb, Antracol Propineb",
+              "moa": "MO3",
+              "dilution_16l": "32 g",
+              "phi_days": "14"
+            }
+          ]
+        },
+        {
+          "disease_name": "Powdery mildew",
+          "scientific_name": "Uncinula necator",
+          "chemicals": [
+            {
+              "common_name": "Sulphur 80% WG/WP",
+              "trade_name": "Vitasul Sulphur, Kumulus Sulphur, Sulmite Sulphur, Baurs Sulphur",
+              "moa": "MO2",
+              "dilution_16l": "32 g",
+              "phi_days": "14"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "crop": "GUAVA",
+      "diseases": [
+        {
+          "disease_name": "Anthracnose / Fruit rot",
+          "scientific_name": "Colletotrichum spp.",
+          "chemicals": [
+            {
+              "common_name": "Captan 50% WP",
+              "trade_name": "Pentagan captan, CG Captan, Captaf Captan",
+              "moa": "MO4",
+              "dilution_16l": "32 g",
+              "phi_days": "14"
+            },
+            {
+              "common_name": "Chlorothalonil 75% WP",
+              "trade_name": "Ole Chlorothalonil, Max Chlorothalonil, Bright Chlorothalonil",
+              "moa": "MO5",
+              "dilution_16l": "32 g",
+              "phi_days": "14"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "crop": "PAPAYA",
+      "diseases": [
+        {
+          "disease_name": "Anthracnose / Fruit rot",
+          "scientific_name": "Colletotrichum gloeosporioides",
+          "chemicals": [
+            {
+              "common_name": "Thiophanate-methyl 70% WP",
+              "trade_name": "Morison Thiophanate Methyl, Topsin M 70",
+              "moa": "1",
+              "dilution_16l": "16 g",
+              "phi_days": "14"
+            },
+            {
+              "common_name": "Chlorothalonil 500 g/l SC",
+              "trade_name": "Ronil Chlorothalonil, Baurs Chlorothalonil, Daconil Chlorothalonil",
+              "moa": "MO5",
+              "dilution_16l": "48 ml",
+              "phi_days": "14"
+            },
+            {
+              "common_name": "Chlorothalonil 75% WP",
+              "trade_name": "Ole Chlorothalonil, Max Chlorothalonil, Bright Chlorothalonil",
+              "moa": "MO5",
+              "dilution_16l": "32 g",
+              "phi_days": "14"
+            }
+          ]
+        },
+        {
+          "disease_name": "Powdery mildew",
+          "scientific_name": "Oidium caricae",
+          "chemicals": [
+            {
+              "common_name": "Sulphur 80% WG/WP",
+              "trade_name": "Vitasul Sulphur, Kumulus Sulphur, Sulmite Sulphur, Baurs Sulphur",
+              "moa": "MO2",
+              "dilution_16l": "32 g",
+              "phi_days": "14"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "crop": "PINEAPPLE",
+      "diseases": [
+        {
+          "disease_name": "Heart rot",
+          "scientific_name": "Phytophthora cinnamomi",
+          "chemicals": [
+            {
+              "common_name": "Copper oxychloride 50% WP",
+              "trade_name": "CIC Copper, Coblite Copper Oxychloride",
+              "moa": "MO1",
+              "dilution": "Refer label for sucker treatment",
+              "phi_days": "14"
+            },
+            {
+              "common_name": "Mancozeb 64% + Metalaxyl 8% WP",
+              "trade_name": "Ridol Metalaxyl+, CIC Mancozeb +, Mancozeb+Metalaxyl",
+              "moa": "MO3 + 4",
+              "dilution_16l": "40 g",
+              "phi_days": "14"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "crop": "POMEGRANATE",
+      "diseases": [
+        {
+          "disease_name": "Anthracnose / Fruit spot",
+          "scientific_name": "Colletotrichum spp.",
+          "chemicals": [
+            {
+              "common_name": "Captan 50% WP",
+              "trade_name": "Pentagan captan, CG Captan, Captaf Captan, Baurs Captan",
+              "moa": "MO4",
+              "dilution_16l": "32 g",
+              "phi_days": "14"
+            },
+            {
+              "common_name": "Mancozeb 80% WP",
+              "trade_name": "Mancozeb, Hayleys Mancozeb, Dithane Mancozeb, Lankem Mancozeb",
+              "moa": "MO3",
+              "dilution_16l": "32 g",
+              "phi_days": "14"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "crop": "RAMBUTAN",
+      "diseases": [
+        {
+          "disease_name": "Powdery mildew",
+          "scientific_name": "Oidium spp.",
+          "chemicals": [
+            {
+              "common_name": "Sulphur 80% WG/WP",
+              "trade_name": "Vitasul Sulphur, Kumulus Sulphur, Sulmite Sulphur, Baurs Sulphur",
+              "moa": "MO2",
+              "dilution_16l": "32 g",
+              "phi_days": "14"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "crop": "STRAWBERRY",
+      "diseases": [
+        {
+          "disease_name": "Gray mold",
+          "scientific_name": "Botrytis cinerea",
+          "chemicals": [
+            {
+              "common_name": "Captan 50% WP",
+              "trade_name": "Pentagan captan, CG Captan, Captaf Captan",
+              "moa": "MO4",
+              "dilution_16l": "32 g",
+              "phi_days": "14"
+            },
+            {
+              "common_name": "Thiophanate-methyl 70% WP",
+              "trade_name": "Morison Thiophanate Methyl, Topsin M 70",
+              "moa": "1",
+              "dilution_16l": "16 g",
+              "phi_days": "21"
+            }
+          ]
+        }
+      ]
+    }
+  
+  ]
+}

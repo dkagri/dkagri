@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Tuber Crops Information</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body{
+    font-family: Arial, sans-serif;
+    background:#f4f7f9;
+    margin:0;
+}
+header{
+    background:#6d4c41;
+    color:#fff;
+    padding:15px;
+    text-align:center;
+}
+.container{
+    max-width:900px;
+    margin:auto;
+    padding:20px;
+}
+select{
+    width:100%;
+    padding:10px;
+    font-size:16px;
+}
+table{
+    width:100%;
+    border-collapse:collapse;
+    margin-top:20px;
+    background:#fff;
+}
+th,td{
+    border:1px solid #ccc;
+    padding:10px;
+    text-align:left;
+}
+th{
+    background:#efebe9;
+    width:30%;
+}
+.buttons{
+    margin-top:20px;
+    display:flex;
+    justify-content: center;
+    gap:100px;
+}
+button{
+    padding:10px 20px;
+    border:none;
+    background:#6d4c41;
+    color:#fff;
+    cursor:pointer;
+    border-radius:5px;
+    
+}
+button:hover{
+    background:#4e342e;
+}
+footer{
+    text-align:center;
+    margin-top:30px;
+    color:#666;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h2>Tuber Crops – Cultivation Details</h2>
+    
+</header><div class="buttons">
+    <button onclick="location.reload()">Home</button>
+    <button onclick="history.back()">Back</button>
+</div>
+
+<div class="container">
+
+<select id="cropSelect" onchange="showCrop()">
+    <option value="">-- Select Tuber Crop --</option>
+    <option value="potato">Potato</option>
+    <option value="innala">Innala</option>
+    <option value="manioc">Manioc (Cassava)</option>
+    <option value="sweetpotato">Sweet Potato</option>
+    <option value="kiriala">Kiri Ala</option>
+    <option value="yam">Yams (Dioscorea)</option>
+</select>
+
+<div id="details"></div>
+
+
+</div>
+
+<footer>
+    © DK AGRI
+</footer>
+
+<script>
+const crops = {
+potato:{
+name:"Solanum tuberosum",
+variety:"Granola, Desiree",
+spacing:"60 cm × 20 cm",
+plants:"33000 plants/acre",
+special:"Seed tuber treatment, earthing-up, late blight control"
+},
+innala:{
+name:"Coleus rotundifollius /Solenastemon rotundifolius",
+variety:"Binari, Local selections",
+spacing:"90 cm × 90 cm",
+plants:"5000 plants/acre",
+special:"Mulching, good drainage, organic manure"
+},
+manioc:{
+name:"Manihot esculenta",
+variety:"Kirivella, MU 51",
+spacing:"1 m × 1 m",
+plants:"4000 plants/acre",
+special:"Stem cutting selection, weed control"
+},
+sweetpotato:{
+name:"Ipomoea batatas",
+variety:"CARI 09, Wariyapola Red",
+spacing:"90 cm × 30 cm",
+plants:"15000 plants/acre",
+special:"Vine cutting selection, ridge planting"
+},
+kiriala:{
+name:"Colocasia esculenta",
+variety:"Local",
+spacing:"60 cm × 60 cm",
+plants:"11000 plants/acre",
+special:"Standing water management, organic fertilizer"
+},
+yam:{
+name:"Dioscorea spp.",
+variety:"D. alata, D. esculenta",
+spacing:"1.2 m × 1.2 m",
+plants:"3000 plants/acre",
+special:"Staking, mulching, long duration crop care"
+}
+};
+
+function showCrop(){
+const c = document.getElementById("cropSelect").value;
+if(!c){
+    document.getElementById("details").innerHTML="";
+    return;
+}
+const d = crops[c];
+document.getElementById("details").innerHTML = `
+<table>
+<tr><th>Scientific Name</th><td><i>${d.name}</i></td></tr>
+<tr><th>Variety</th><td>${d.variety}</td></tr>
+<tr><th>Spacing</th><td>${d.spacing}</td></tr>
+<tr><th>Plants / Acre</th><td>${d.plants}</td></tr>
+<tr><th>Special Management Practices</th><td>${d.special}</td></tr>
+</table>`;
+}
+</script>
+
+</body>
+</html>

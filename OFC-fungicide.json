@@ -1,0 +1,363 @@
+{
+  "category": "Fungicide",
+  "OFCs": [
+  {
+  "crop": "CHILLI",
+  "diseases": [
+    {
+      "disease_name": "Foot rot/collar rot",
+      "scientific_name": "Sclerotium rolfsii, Fusarium solani",
+      "chemicals": [
+        {
+          "common_name": "Thiram 80% WP",
+          "trade_name": "Oasis Thiram, Plantchem Thiram, CG Thiram, Scope Thiram, Powersol Thiram",
+          "moa": "MO3",
+          "dilution_16l": "70 g/50 l/10 m2",
+          "phi_days": "14",
+          "remarks": "Soil drench. Drench the soil as spot application at the appearance of symptoms."
+        },
+        {
+          "common_name": "Thiophanate-methyl 70% WP",
+          "trade_name": "Morison Thiophanate Methyl, Topsin M 70",
+          "moa": "1",
+          "dilution_16l": "30 g/50 l/10 m2",
+          "phi_days": "14",
+          "remarks": "Soil drench. Drench the soil as spot application at the appearance of symptoms."
+        },
+        {
+          "common_name": "Thiophanate-methyl 50% + Thiram 30% WP",
+          "trade_name": "Homai",
+          "moa": "1 + MO3",
+          "dilution_16l": "50 g/50 l/10 m2",
+          "phi_days": "14",
+          "remarks": "Soil drench. Drench the soil as spot application at the appearance of symptoms."
+        }
+      ]
+    },
+    {
+      "disease_name": "Anthracnose",
+      "scientific_name": "Colletotrichum spp.",
+      "chemicals": [
+        {
+          "common_name": "Thiophanate-methyl 70% WP",
+          "trade_name": "Morison Thiophanate Methyl, Topsin M 70",
+          "moa": "1",
+          "dilution_16l": "16 g",
+          "phi_days": "21",
+          "remarks": "Alternate application of systemic fungicide with contact fungicide is recommended."
+        },
+        {
+          "common_name": "Metiram 55% + Pyraclostrobin 5% WG",
+          "trade_name": "Baurs Pyraclostrobin +, Cabrio Top, Lankem Cabrio Top",
+          "moa": "MO3 + 11",
+          "dilution_16l": "32 g",
+          "phi_days": "14"
+        },
+        {
+          "common_name": "Fluazinam 500 g/l SC",
+          "trade_name": "Tizca Fluazinam, Nando Fluazinam",
+          "moa": "29",
+          "dilution_16l": "16 ml",
+          "phi_days": "14",
+          "remarks": "Maximum number of applications per season must be limited to three."
+        },
+        {
+          "common_name": "Chlorothalonil 500 g/l SC",
+          "trade_name": "Ronil Chlorothalonil, Baurs Chlorothalonil, Daconil Chlorothalonil",
+          "moa": "MO5",
+          "dilution_16l": "48 ml",
+          "phi_days": "14"
+        },
+        {
+          "common_name": "Chlorothalonil 75% WP",
+          "trade_name": "Ole Chlorothalonil, Max Chlorothalonil, Bright Chlorothalonil, Agstar Chlorothalonil",
+          "moa": "MO5",
+          "dilution_16l": "32 g",
+          "phi_days": "14"
+        },
+        {
+          "common_name": "Tebuconazole 50% + Trifloxystrobin 25% WG",
+          "trade_name": "Nativo 75 WG",
+          "moa": "11 + 3",
+          "dilution_16l": "10 g",
+          "phi_days": "21"
+        }
+      ]
+    },
+    {
+      "disease_name": "Blossom blight",
+      "scientific_name": "Choanephora spp.",
+      "chemicals": [
+        {
+          "common_name": "Mancozeb 75% WG",
+          "trade_name": "Zeero Mancozeb, Mancozeb DF",
+          "moa": "MO3",
+          "dilution_16l": "32 g",
+          "phi_days": "14"
+        },
+        {
+          "common_name": "Mancozeb 80% WP",
+          "trade_name": "Mancozeb, Hayleys Mancozeb, Dithane Mancozeb, Lankem Mancozeb",
+          "moa": "MO3",
+          "dilution_16l": "32 g",
+          "phi_days": "14"
+        },
+        {
+          "common_name": "Maneb 80% WP",
+          "trade_name": "Mannar Maneb, Baurs Maneb",
+          "moa": "MO3",
+          "dilution_16l": "32 g",
+          "phi_days": "14"
+        },
+        {
+          "common_name": "Propineb 70% WP",
+          "trade_name": "Protocol Propineb, Trazol Propineb, Antracol Propineb",
+          "moa": "MO3",
+          "dilution_16l": "32 g",
+          "phi_days": "14"
+        },
+        {
+          "common_name": "Chlorothalonil 500 g/l SC",
+          "trade_name": "Ronil Chlorothalonil, Baurs Chlorothalonil, Daconil Chlorothalonil",
+          "moa": "MO5",
+          "dilution_16l": "48 ml",
+          "phi_days": "14"
+        },
+        {
+          "common_name": "Chlorothalonil 75% WP",
+          "trade_name": "Ole Chlorothalonil, Max Chlorothalonil, Bright Chlorothalonil, Agstar Chlorothalonil",
+          "moa": "MO5",
+          "dilution_16l": "32 g",
+          "phi_days": "14"
+        }
+      ]
+    },
+    {
+      "disease_name": "Powdery mildew",
+      "scientific_name": "Laveillula taurica",
+      "chemicals": [
+        {
+          "common_name": "Thiophanate-methyl 70% WP",
+          "trade_name": "Morison Thiophanate Methyl, Topsin M 70",
+          "moa": "1",
+          "dilution_16l": "16 g",
+          "phi_days": "21",
+          "remarks": "Alternate application of systemic fungicide with contact fungicide is recommended."
+        },
+        {
+          "common_name": "Chlorothalonil 500 g/l SC",
+          "trade_name": "Ronil Chlorothalonil, Baurs Chlorothalonil, Daconil Chlorothalonil",
+          "moa": "MO5",
+          "dilution_16l": "48 ml",
+          "phi_days": "14"
+        },
+        {
+          "common_name": "Chlorothalonil 75% WP",
+          "trade_name": "Ole Chlorothalonil, Max Chlorothalonil, Bright Chlorothalonil, Agstar Chlorothalonil",
+          "moa": "MO5",
+          "dilution_16l": "32 g",
+          "phi_days": "14"
+        }
+      ]
+    },
+    {
+      "disease_name": "Phytophthora blight",
+      "scientific_name": "Phytophthora capsici",
+      "chemicals": [
+        {
+          "common_name": "Mancozeb 75% WG",
+          "trade_name": "Zeero Mancozeb, Mancozeb DF",
+          "moa": "MO3",
+          "dilution_16l": "32 g",
+          "phi_days": "14"
+        },
+        {
+          "common_name": "Mancozeb 80% WP",
+          "trade_name": "Mancozeb, Hayleys Mancozeb, Dithane Mancozeb, Lankem Mancozeb",
+          "moa": "MO3",
+          "dilution_16l": "32 g",
+          "phi_days": "14"
+        },
+        {
+          "common_name": "Maneb 80% WP",
+          "trade_name": "Mannar Maneb, Baurs Maneb",
+          "moa": "MO3",
+          "dilution_16l": "32 g",
+          "phi_days": "14"
+        },
+        {
+          "common_name": "Propineb 70% WP",
+          "trade_name": "Protocol Propineb, Trazol Propineb, Antracol Propineb",
+          "moa": "MO3",
+          "dilution_16l": "32 g",
+          "phi_days": "14"
+        },
+        {
+          "common_name": "Mancozeb 64% + Metalaxyl 8% WP",
+          "trade_name": "Ridol Metalaxyl+, CIC Mancozeb +, Mancozeb+Metalaxyl",
+          "moa": "MO3 + 4",
+          "dilution_16l": "20 g",
+          "phi_days": "14"
+        },
+        {
+          "common_name": "Mancozeb 64% + Metalaxyl-M 4% WG",
+          "trade_name": "Ridomil Gold Metalaxyl+",
+          "moa": "MO3 + 4",
+          "dilution_16l": "20 g",
+          "phi_days": "14"
+        },
+        {
+          "common_name": "Chlorothalonil 500 g/l SC",
+          "trade_name": "Ronil Chlorothalonil, Baurs Chlorothalonil, Daconil Chlorothalonil",
+          "moa": "MO5",
+          "dilution_16l": "48 ml",
+          "phi_days": "14"
+        },
+        {
+          "common_name": "Chlorothalonil 75% WP",
+          "trade_name": "Ole Chlorothalonil, Max Chlorothalonil, Bright Chlorothalonil, Agstar Chlorothalonil",
+          "moa": "MO5",
+          "dilution_16l": "32 g",
+          "phi_days": "14"
+        }
+      ]
+    }
+  ]
+},
+
+  {
+  "crop": "ONION",
+  "diseases": [
+    {
+      "disease_name": "Bulb rot / Seedling blight",
+      "scientific_name": "Fusarium spp., Botrytis spp., Sclerotium spp., Pythium spp., Phytophthora spp.",
+      "chemicals": [
+        {
+          "common_name": "Captan 50% WP",
+          "trade_name": "Pentagan captan, CG Captan, Captaf Captan, Baurs Captan",
+          "moa": "MO4",
+          "application_method": "Bulb treatment",
+          "dilution": "5 g/kg",
+          "phi_days": "N/A",
+          "remarks": "Immerse bulbs for 1 hr in fungicide solution just before planting."
+        },
+        {
+          "common_name": "Captan 80% WG",
+          "trade_name": "Baur's captan",
+          "moa": "MO4",
+          "application_method": "Bulb treatment",
+          "dilution": "3 g/kg",
+          "phi_days": "N/A",
+          "remarks": "Immerse bulbs for 1 hr in fungicide solution just before planting."
+        },
+        {
+          "common_name": "Thiram 80% WP",
+          "trade_name": "Oasis Thiram, Plantchem Thiram, CG Thiram",
+          "moa": "MO3",
+          "application_method": "Bulb treatment",
+          "dilution": "5 g/kg",
+          "phi_days": "N/A",
+          "remarks": "Highly effective on Fusarium spp. and Sclerotium rolfsii."
+        },
+        {
+          "common_name": "Thiophanate-methyl 50% + Thiram 30% WP",
+          "trade_name": "Homai",
+          "moa": "1 + MO3",
+          "application_method": "Soil drench",
+          "dilution_per_10m2": "50 g/50 l",
+          "phi_days": "14",
+          "remarks": "Soil drenching in the field is recommended only as a spot application."
+        },
+        {
+          "common_name": "Thiophanate-methyl 70% WP",
+          "trade_name": "Morison Thiophanate Methyl, Topsin M 70",
+          "moa": "1",
+          "application_method": "Soil drench",
+          "dilution_per_10m2": "30 g/50 l",
+          "phi_days": "14",
+          "remarks": "Soil drenching in the field is recommended only as a spot application."
+        }
+      ]
+    },
+    {
+      "disease_name": "Purple blotch",
+      "scientific_name": "Alternaria porri",
+      "chemicals": [
+        {
+          "common_name": "Tebuconazole 250 g/l EW",
+          "trade_name": "Folicur Tebuconazole, Lankem Tebuconazole",
+          "moa": "3",
+          "dilution_16l": "6 ml",
+          "phi_days": "21",
+          "remarks": "Alternate application of systemic fungicide with contact fungicide is recommended."
+        },
+        {
+          "common_name": "Trifloxystrobin 25% + Tebuconazole 50% WG",
+          "trade_name": "Nativo 75 WG",
+          "moa": "11 + 3",
+          "dilution_16l": "10 g",
+          "phi_days": "21"
+        },
+        {
+          "common_name": "Azoxystrobin 250 g/l SC",
+          "trade_name": "Amistar 250 SC, Pole Azoxystrobin",
+          "moa": "11",
+          "dilution_16l": "16 ml",
+          "phi_days": "14"
+        },
+        {
+          "common_name": "Mancozeb 80% WP",
+          "trade_name": "Mancozeb, Dithane Mancozeb",
+          "moa": "MO3",
+          "dilution_16l": "32 g",
+          "phi_days": "14",
+          "remarks": "Maximum number of applications per season must be limited to three."
+        },
+        {
+          "common_name": "Chlorothalonil 500 g/l SC",
+          "trade_name": "Ronil Chlorothalonil, Daconil Chlorothalonil",
+          "moa": "MO5",
+          "dilution_16l": "48 ml",
+          "phi_days": "14"
+        },
+        {
+          "common_name": "Fluazinam 500 g/l SC",
+          "trade_name": "Tizca Fluazinam, Nando Fluazinam",
+          "moa": "29",
+          "dilution_16l": "16 ml",
+          "phi_days": "14"
+        }
+      ]
+    },
+    {
+      "disease_name": "Anthracnose",
+      "scientific_name": "Colletotrichum gloeosporioides",
+      "chemicals": [
+        {
+          "common_name": "Thiophanate-methyl 70% WP",
+          "trade_name": "Morison Thiophanate Methyl, Topsin M 70",
+          "moa": "1",
+          "dilution_16l": "10 g",
+          "phi_days": "14"
+        },
+        {
+          "common_name": "Metiram 55% + Pyraclostrobin 5% WG",
+          "trade_name": "Cabrio Top",
+          "moa": "MO3 + 11",
+          "dilution_16l": "32 g",
+          "phi_days": "14"
+        },
+        {
+          "common_name": "Chlorothalonil 75% WP",
+          "trade_name": "Ole Chlorothalonil, Max Chlorothalonil",
+          "moa": "MO5",
+          "dilution_16l": "32 g",
+          "phi_days": "14"
+        }
+      ]
+    }
+  ]
+}
+
+]
+}

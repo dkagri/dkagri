@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Fruit Fungicide Recommendation</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+<style>
+body{
+  font-family:Arial, sans-serif;
+  background:#f4f7f9;
+  margin:0;
+  padding:15px;
+}
+header{
+  background:#1b5e20;
+  color:#fff;
+  padding:15px;
+  text-align:center;
+}
+.buttons{
+  display:flex;
+  gap:10px;
+  margin:10px 0;
+}
+button{
+  flex:1;
+  padding:10px;
+  background:#1b5e20;
+  color:#fff;
+  border:none;
+  border-radius:5px;
+  cursor:pointer;
+}
+select{
+  width:100%;
+  padding:10px;
+  font-size:16px;
+  margin:10px 0;
+}
+table{
+  width:100%;
+  border-collapse:collapse;
+  background:#fff;
+}
+th,td{
+  border:1px solid #ccc;
+  padding:8px;
+  text-align:center;
+}
+th{
+  background:#c8e6c9;
+}
+footer{
+  text-align:center;
+  margin-top:20px;
+  color:#666;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h2>Fruit Fungicide Recommendation</h2>
+</header>
+
+<div class="buttons">
+  <button onclick="location.href='index.html'">Home</button>
+  <button onclick="history.back()">Back</button>
+  <button onclick="exportPDF()">Export PDF</button>
+</div>
+
+<select id="cropSelect">
+  <option value="">-- Select Crop --</option>
+</select>
+
+<select id="diseaseSelect" style="display:none;">
+  <option value="">-- Select Disease --</option>
+</select>
+
+<h3 id="scientificName"></h3>
+
+<table id="fungiTable" style="display:none;">
+<thead>
+<tr>
+  <th>#</th>
+  <th>Fungicide (Common name + formulation)</th>
+  <th>Trade name</th>
+  <th>MOA</th>
+  <th>Dose (16 L)</th>
+  <th>PHI (Days)</th>
+</tr>
+</thead>
+<tbody></tbody>
+</table>
+
+<footer>
+  © DK AGRI | Educational & Extension Use Only
+</footer>
+
+<script>
+let data;
+let currentDisease;
+
+fetch("Fruit-fungicide.json")
+.then(res => res.json())
+.then(json => {
+  data = json.Fruits;
+  const cropSelect = document.getElementById("cropSelect");
+  data.forEach((c, i) => {
+    const opt = document.createElement("option");
+    opt.value = i;
+    opt.textContent = c.crop;
+    cropSelect.appendChild(opt);
+  });
+});
+
+cropSelect.onchange = function(){
+  diseaseSelect.style.display = "none";
+  fungiTable.style.display = "none";
+  scientificName.innerText = "";
+  diseaseSelect.innerHTML = '<option value="">-- Select Disease --</option>';
+
+  if(this.value === "") return;
+
+  data[this.value].diseases.forEach((d, i) => {
+    diseaseSelect.innerHTML += `<option value="${i}">${d.disease_name}</option>`;
+  });
+  diseaseSelect.style.display = "block";
+}
+
+diseaseSelect.onchange = function(){
+  const crop = data[cropSelect.value];
+  currentDisease = crop.diseases[this.value];
+
+  scientificName.innerText = 
+    "Scientific Name: " + currentDisease.scientific_name;
+
+  const tbody = document.querySelector("#fungiTable tbody");
+  tbody.innerHTML = "";
+
+  currentDisease.chemicals.forEach((c, i) => {
+    tbody.innerHTML += `
+      <tr>
+        <td>${i+1}</td>
+        <td>${c.common_name}</td>
+        <td>${c.trade_name}</td>
+        <td>${c.moa}</td>
+        <td>${c.dilution_16l}</td>
+        <td>${c.phi_days}</td>
+      </tr>`;
+  });
+
+  fungiTable.style.display = "table";
+}
+
+function exportPDF(){
+  if(!currentDisease){
+    alert("Please select crop and disease");
+    return;
+  }
+
+  const { jsPDF } = window.jspdf;
+  const doc = new jsPDF();
+
+  // Watermark
+  doc.setFontSize(40);
+  doc.setTextColor(220);
+  doc.text("DK AGRI", 25, 150, {angle:45});
+
+  doc.setTextColor(0);
+  doc.setFontSize(14);
+  doc.text("Fruit Fungicide Recommendation", 20, 20);
+  doc.text("Disease: " + currentDisease.disease_name, 20, 30);
+  doc.text("Scientific: " + currentDisease.scientific_name, 20, 38);
+
+  let y = 50;
+  doc.setFontSize(9);
+
+  currentDisease.chemicals.forEach((c, i) => {
+    doc.text(
+      `${i+1}. ${c.common_name} | ${c.trade_name} | MOA:${c.moa} | ${c.dilution_16l} | PHI:${c.phi_days}`,
+      20, y
+    );
+    y += 6;
+  });
+
+  doc.save("Fruit_Fungicide.pdf");
+}
+</script>
+
+</body>
+</html>
