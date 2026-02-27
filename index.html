@@ -46,21 +46,18 @@ header p{ margin-top:10px; font-size:15px; opacity:0.9; }
   grid-template-columns:repeat(3,1fr);
   gap:25px;
 }
-
 .card{
   background:#fff;
   border-radius:14px;
   padding:35px 20px;
+  overflow:hidden;
   text-align:center;
-
-  display:flex;
-  align-items:center;
-  justify-content:center;
-
   box-shadow:0 8px 18px rgba(0,0,0,0.18);
   transition:0.35s;
 }
-
+.card-img{
+  display:none;
+}
 .card:hover{
   background:#1e88e5;
   transform:translateY(-8px);
@@ -110,7 +107,28 @@ header p{ margin-top:10px; font-size:15px; opacity:0.9; }
   header h1{ font-size:26px; }
   .infomation{ grid-template-columns:1fr; padding:20px; margin:20px; }
 }
+@media (min-width:992px){
 
+  .card{
+    padding:0;
+  }
+
+  .card-img{
+    display:block;
+    height:170px;
+    background-size:cover;
+    background-position:center;
+  }
+
+  .card a{
+    display:block;
+    padding:25px;
+  }
+/* ✅ Contact Us Center */
+  .infomation .card:last-child{
+    grid-column:2 / 3;
+  }
+}
 /* FOOTER */
 footer{
   margin-top:auto;
@@ -130,14 +148,40 @@ footer{
   <p>AGRICULTURE INFORMATION SYSTEM</p>
 </header>
 
-<section class="infomation">
-  <div class="card"><a href="crop.html">🌾 Crops</a></div>
-  <div class="card"><a href="pesticide.html">🐛 Pesticide</a></div>
-  <div class="card"><a href="spacing.html">📏 Crop Spacing Calculator</a></div>
-  <div class="card"><a href="area_converter.html">🚜 Area Converter</a></div>
-  <div class="card"><a href="presentation.html">📊 Presentation</a></div>
-  <div class="card"><a href="extention.html">🗃️ Extension</a></div>
-  <div class="card"><a href="contact.html">📞 Contact Us</a></div>
+<section class="infomation"><div class="card">
+  <div class="card-img" style="background-image:url('images/crops.jpg');"></div>
+  <a href="crop.html">🌾 Crops</a>
+</div>
+
+<div class="card">
+  <div class="card-img" style="background-image:url('images/pesticide.jpg');"></div>
+  <a href="pesticide.html">🐛 Pesticide</a>
+</div>
+
+<div class="card">
+  <div class="card-img" style="background-image:url('images/spacing.jpg');"></div>
+  <a href="spacing.html">📏 Crop Spacing Calculator</a>
+</div>
+
+<div class="card">
+  <div class="card-img" style="background-image:url('images/area.jpg');"></div>
+  <a href="area_converter.html">🚜 Area Converter</a>
+</div>
+
+<div class="card">
+  <div class="card-img" style="background-image:url('images/presentation.jpg');"></div>
+  <a href="presentation.html">📊 Presentation</a>
+</div>
+
+<div class="card">
+  <div class="card-img" style="background-image:url('images/extension.jpg');"></div>
+  <a href="extention.html">🗃️ Extension</a>
+</div>
+
+<div class="card">
+  <div class="card-img" style="background-image:url('images/contact.jpg');"></div>
+  <a href="contact.html">📞 Contact Us</a>
+</div>
 </section>
 
 <!-- ADVERTISEMENT -->
@@ -175,4 +219,4 @@ window.addEventListener('resize', ()=>{
 </script>
 
 </body>
-  </html>
+</html>
