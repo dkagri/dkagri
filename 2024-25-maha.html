@@ -90,7 +90,7 @@ tr:hover { background: #f1f1f1; }
     </select>
 
     <select id="extraFilter" disabled>
-        <option value="">අතිරේක පෙරහන් තෝරන්න</option>
+        <option value="">සීමාකාරී සාධකය</option>
     </select>
 
     <br>
@@ -169,7 +169,7 @@ fetch(SHEET_URL)
     officeFilter.addEventListener("change", function(){
         advisorFilter.innerHTML='<option value="">කෘෂි උපදේශක කොට්ඨාශය තෝරන්න</option>';
         programFilter.innerHTML='<option value="">බෝගය / වැඩසටහන තෝරන්න</option>';
-        extraFilter.innerHTML='<option value="">අතිරේක පෙරහන් තෝරන්න</option>';
+        extraFilter.innerHTML='<option value="">සීමාකාරී සාධකය</option>';
         programFilter.disabled=true;
         extraFilter.disabled=true;
 
@@ -193,7 +193,7 @@ fetch(SHEET_URL)
 
     advisorFilter.addEventListener("change", function(){
         programFilter.innerHTML='<option value="">බෝගය / වැඩසටහන තෝරන්න</option>';
-        extraFilter.innerHTML='<option value="">අතිරේක පෙරහන් තෝරන්න</option>';
+        extraFilter.innerHTML='<option value="">සීමාකාරී සාධකය</option>';
         extraFilter.disabled=true;
 
         if(!this.value){ programFilter.disabled=true; clearTable(); return; }
@@ -218,7 +218,7 @@ fetch(SHEET_URL)
     });
 
     programFilter.addEventListener("change", function(){
-        extraFilter.innerHTML='<option value="">අතිරේක පෙරහන් තෝරන්න</option>';
+        extraFilter.innerHTML='<option value="">සීමාකාරී සාධකය</option>';
         if(!this.value){ extraFilter.disabled=true; applyFilters(); return; }
 
         // 🔹 Program filter செய்யப்பட்ட rows மட்டும்
@@ -330,4 +330,4 @@ function downloadExcel(){
 </script>
 
 </body>
-        </html>
+    </html>
