@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Crop File Upload</title>
+
+<style>
+
+body{
+font-family: 'Segoe UI', Tahoma, sans-serif;
+background:linear-gradient(135deg,#4facfe,#00f2fe);
+margin:0;
+padding:0;
+display:flex;
+align-items:center;
+justify-content:center;
+height:100vh;
+}
+
+.container{
+background:#fff;
+padding:35px;
+width:380px;
+border-radius:12px;
+box-shadow:0 10px 25px rgba(0,0,0,0.2);
+text-align:center;
+}
+
+h2{
+margin-bottom:20px;
+color:#333;
+}
+
+label{
+display:block;
+text-align:left;
+margin-top:10px;
+font-weight:600;
+color:#555;
+}
+
+select,input[type=file]{
+width:100%;
+padding:10px;
+margin-top:5px;
+border-radius:6px;
+border:1px solid #ccc;
+}
+
+button{
+margin-top:20px;
+background:#28a745;
+color:white;
+padding:12px;
+border:none;
+border-radius:6px;
+width:100%;
+font-size:16px;
+cursor:pointer;
+transition:0.3s;
+}
+
+button:hover{
+background:#218838;
+}
+
+.preview{
+margin-top:15px;
+}
+
+.preview img{
+max-width:100%;
+border-radius:6px;
+}
+
+.message{
+margin-top:15px;
+font-weight:600;
+}
+
+.loader{
+display:none;
+margin-top:10px;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>Upload Crop File</h2>
+
+<label>Select Crop Category</label>
+
+<select id="crop">
+
+<option>Paddy</option>
+<option>Vegetable</option>
+<option>OFC</option>
+<option>Root Crop</option>
+<option>Fruits</option>
+<option>Leafy Vegetable</option>
+<option>Soil Conservation</option>
+<option>Mushroom</option>
+<option>Seed Production</option>
+<option>Polytunnel</option>
+<option>Pest & Disease</option>
+<option>Other</option>
+
+</select>
+
+<label>Select File</label>
+<input type="file" id="file" onchange="previewFile()">
+
+<div class="preview" id="preview"></div>
+
+<button onclick="uploadFile()">Upload File</button>
+
+<div class="loader" id="loader">Uploading...</div>
+
+<p class="message" id="msg"></p>
+
+</div>
+
+<script>
+
+function previewFile(){
+
+var file=document.getElementById("file").files[0];
+var preview=document.getElementById("preview");
+
+preview.innerHTML="";
+
+if(file && file.type.startsWith("image")){
+
+var reader=new FileReader();
+
+reader.onload=function(e){
+
+preview.innerHTML='<img src="'+e.target.result+'">';
+
+}
+
+reader.readAsDataURL(file);
+
+}
+
+}
+
+function uploadFile(){
+
+var file=document.getElementById("file").files[0];
+var crop=document.getElementById("crop").value;
+
+if(!file){
+
+document.getElementById("msg").innerText="Please select a file";
+return;
+
+}
+
+document.getElementById("loader").style.display="block";
+
+var reader=new FileReader();
+
+reader.onload=function(){
+
+var base64=reader.result.split(",")[1];
+
+fetch("YOUR_WEB_APP_URL",{
+
+method:"POST",
+
+body:new URLSearchParams({
+
+filename:file.name,
+type:file.type,
+file:base64,
+crop:crop
+
+})
+
+})
+
+.then(res=>res.text())
+
+.then(data=>{
+
+document.getElementById("loader").style.display="none";
+document.getElementById("msg").innerText=data;
+
+})
+
+.catch(err=>{
+
+document.getElementById("loader").style.display="none";
+document.getElementById("msg").innerText="Upload Failed";
+
+});
+
+};
+
+reader.readAsDataURL(file);
+
+}
+
+</script>
+
+</body>
+</html>

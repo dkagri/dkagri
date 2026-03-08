@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OFC Crop Information</title>
+
+<style>
+body{
+  font-family: Arial, sans-serif;
+  background: #f2f2f2;
+  padding: 20px;
+}
+
+h2{
+  text-align: center;
+  color: #2e7d32;
+}
+
+/* BUTTON BAR */
+.top-buttons{
+  max-width: 750px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.top-buttons button{
+  padding: 8px 16px;
+  border: none;
+  background: #2e7d32;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+select{
+  display: block;
+  margin: 20px auto;
+  padding: 10px;
+  font-size: 16px;
+  width: 100%;
+  max-width: 400px;
+}
+
+table{
+  width: 100%;
+  max-width: 750px;
+  margin: auto;
+  border-collapse: collapse;
+  background: #fff;
+}
+
+th, td{
+  border: 1px solid #000;
+  padding: 10px;
+}
+
+th{
+  background: #4caf50;
+  color: #fff;
+  width: 40%;
+  text-align: left;
+}
+/* DROPDOWN SECTIONS */
+.section{
+  max-width:900px;
+  margin:20px auto;
+  background:#fff;
+  border-radius:8px;
+  box-shadow:0 2px 6px rgba(0,0,0,0.1);
+}
+
+.section-header{
+  padding:14px;
+  background:#e8f5e9;
+  color:#2e7d32;
+  font-weight:bold;
+  cursor:pointer;
+  display:flex;
+  justify-content:space-between;
+}
+/* PESTICIDE BUTTONS */
+.pest-buttons{
+  display:flex;
+  justify-content:center;
+  gap:15px;
+  margin-top:15px;
+}
+
+.pest-buttons button{
+  background:#388e3c;
+  color: white;
+  padding: 18px;
+  font-size: 18px;
+}
+.section-content{
+  display:none;
+  padding:15px;
+}
+footer{
+  text-align: center;
+  margin-top: 30px;
+  color: #555;
+}
+</style>
+</head>
+
+<body>
+
+<h2>OFC Crop Details</h2>
+
+<div class="top-buttons">
+  <button onclick="location.href='index.html'">🏠 Home</button>
+  <button onclick="history.back()">🔙 Back</button>
+</div>
+
+<select onchange="showData(this.value)">
+  <option value="">-- Select Crop --</option>
+  <option value="bigonion">Big Onion</option>
+  <option value="redonion">Red Onion</option>
+  <option value="chilli">Chilli</option>
+  <option value="cowpea">Cowpea</option>
+  <option value="fingermillet">Finger Millet</option>
+  <option value="greengram">Green Gram</option>
+  <option value="blackgram">Black Gram</option>
+  <option value="soyabean">Soya Bean</option>
+  <option value="groundnut">Ground Nut</option>
+  <option value="maize">Maize</option>
+</select>
+
+<table>
+  <tbody id="tableData">
+    <tr>
+      <td colspan="2" style="text-align:center;">
+        Please select a crop
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="section">
+  <div class="section-header" onclick="toggleSection(this)">
+    Pesticide Recommendation <span>▼</span>
+  </div>
+  <div class="section-content">
+    <div class="pest-buttons">
+      <button onclick="location.href='ofc-insecticide.html'">Insecticide</button>
+      <button onclick="location.href='ofc-fungicide.html'">Fungicide</button>
+      <button onclick="location.href='ofc-herbicide.html'">Herbicide</button>
+    </div>
+  </div>
+</div>
+
+
+<footer>
+  DK Agri – Learning Project
+</footer>
+
+<script>
+const ACRE = 4046.86;
+
+const crops = {
+  bigonion:{
+    scientific:"Allium cepa",
+    variety:"Bombay Red",
+    seed:"8 – 10 kg/ha",
+    spacing:"15 × 10",
+    days:"90 – 120",
+    harvest:"20 – 25 mt/ha"
+  },
+  redonion:{
+    scientific:"Allium cepa",
+    variety:"Jaffna Local",
+    seed:"8 – 10 kg/ha",
+    spacing:"15 × 10",
+    days:"90 – 120",
+    harvest:"18 – 22 mt/ha"
+  },
+  chilli:{
+    scientific:"Capsicum annuum",
+    variety:"MI-2 / KA-2",
+    seed:"1 – 1.5 kg/ha",
+    spacing:"60 × 45",
+    days:"90 – 120",
+    harvest:"10 – 15 mt/ha"
+  },
+  cowpea:{
+    scientific:"Vigna unguiculata",
+    variety:"Waruni",
+    seed:"20 – 25 kg/ha",
+    spacing:"45 × 30",
+    days:"45 – 60",
+    harvest:"8 – 12 mt/ha"
+  },
+  fingermillet:{
+    scientific:"Eleusine coracana",
+    variety:"Ravi",
+    seed:"10 kg/ha",
+    spacing:"30 × 10",
+    days:"90 – 120",
+    harvest:"2 – 3 mt/ha"
+  },
+  greengram:{
+    scientific:"Vigna radiata",
+    variety:"MI-5",
+    seed:"15 – 20 kg/ha",
+    spacing:"30 × 10",
+    days:"60 – 70",
+    harvest:"1.5 – 2 mt/ha"
+  },
+  blackgram:{
+    scientific:"Vigna mungo",
+    variety:"MI-1",
+    seed:"15 – 20 kg/ha",
+    spacing:"30 × 10",
+    days:"70 – 80",
+    harvest:"1.5 – 2 mt/ha"
+  },
+  soyabean:{
+    scientific:"Glycine max",
+    variety:"Pb-1",
+    seed:"60 – 70 kg/ha",
+    spacing:"45 × 10",
+    days:"90 – 110",
+    harvest:"2 – 3 mt/ha"
+  },
+  groundnut:{
+    scientific:"Arachis hypogaea",
+    variety:"Tissa",
+    seed:"100 – 120 kg/ha",
+    spacing:"45 × 15",
+    days:"90 – 110",
+    harvest:"2 – 3 mt/ha"
+  },
+  maize:{
+    scientific:"Zea mays",
+    variety:"Pacific-999",
+    seed:"20 – 25 kg/ha",
+    spacing:"75 × 25",
+    days:"90 – 110",
+    harvest:"5 – 7 mt/ha"
+  }
+};
+
+function showData(crop){
+  if(!crops[crop]){
+    tableData.innerHTML="<tr><td colspan='2'>Select a crop</td></tr>";
+    return;
+  }
+
+  let c = crops[crop];
+  let [r,p] = c.spacing.split("×").map(v=>parseFloat(v)/100);
+  let plants = Math.round(ACRE/(r*p));
+
+  tableData.innerHTML = `
+    <tr><th>Scientific Name</th><td><i>${c.scientific}</i></td></tr>
+    <tr><th>Variety</th><td>${c.variety}</td></tr>
+    <tr><th>Seed Requirement</th><td>${c.seed}</td></tr>
+    <tr><th>Spacing</th><td>${c.spacing} cm</td></tr>
+    <tr><th>Plants / Acre</th><td><b>${plants.toLocaleString()}</b></td></tr>
+    <tr><th>Crop Duration</th><td>${c.days} days</td></tr>
+    <tr><th>Harvest</th><td>${c.harvest}</td></tr>
+  `;
+}
+function toggleSection(header){
+  const content = header.nextElementSibling;
+  const arrow = header.querySelector("span");
+  if(content.style.display === "block"){
+    content.style.display = "none";
+    arrow.innerHTML = "▼";
+  }else{
+    content.style.display = "block";
+    arrow.innerHTML = "▲";
+  }
+}
+
+</script>
+
+</body>
+</html>
