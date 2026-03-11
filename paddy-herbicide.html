@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+<meta charset="UTF-8">
+<title>DK AGRI – Paddy Weedicide Control</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+<style>
+    body{ font-family:Arial, sans-serif; margin:0; background:#f0fdf4; }
+    .header{ background:#15803d; color:white; padding:15px; text-align:center; font-size:22px; font-weight:bold; }
+    .container{ max-width:1200px; margin:auto; padding:20px; }
+    .card{ background:white; padding:20px; border-radius:10px; box-shadow:0 4px 15px rgba(0,0,0,0.1); margin-bottom:20px; }
+    .buttons{ display:flex; gap:10px; margin-bottom:15px; flex-wrap:wrap; }
+    button{ flex:1; padding:12px; font-size:16px; border:none; border-radius:6px; cursor:pointer; color:white; display:flex; align-items:center; justify-content:center; gap:6px; }
+    .home{background:#198754;} .back{background:#dc3545;} .pdf{background:#0d6efd;}
+    select{ width:100%; padding:12px; font-size:16px; margin-top:10px; border: 1px solid #22c55e; border-radius: 5px; }
+    #usageInfo{ margin-top:10px; color:#166534; font-weight: bold; background: #dcfce7; padding: 10px; border-radius: 5px; display: none;}
+    .table-box{ overflow-x:auto; margin-top:15px; }
+    table{ width:100%; border-collapse:collapse; background:white; min-width: 900px; }
+    th, td{ border:1px solid #ccc; padding:12px; text-align:left; font-size:13px; }
+    th{ background:#15803d; color: white; white-space: nowrap; }
+    tr:nth-child(even){ background: #f9fafb; }
+    .dilution-highlight{ color:#b91c1c; font-weight:bold; }
+    footer{ text-align:center; padding:20px; font-size:13px; color:#555; }
+</style>
+</head>
+
+<body>
+
+<div class="header">🌾 Paddy Weedicide Recommendation Guide</div>
+
+<div class="container">
+    <div class="card">
+        <div class="buttons">
+            <button class="home" onclick="location.href='index.html'">🏠 Home</button>
+            <button class="back" onclick="history.back()">Back</button>
+            <button class="pdf" onclick="exportPDF()">📄 Export PDF</button>
+        </div>
+
+        <label><b>Select Weedicide Category</b></label>
+        <select id="pestSelect">
+            <option value="">-- Select Category --</option>
+        </select>
+
+        <div id="usageInfo"></div>
+
+        <div class="table-box">
+            <table id="chemTable" style="display:none;">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Common Name & Strength</th>
+                        <th>MOA</th>
+                        <th>Dilution (16L Tank)</th>
+                        <th>Application Interval</th>
+                        <th>Trade Names </th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<footer>© 2026 DK AGRI </footer>
+
+<script>
+
+const weedicideData = {
+    categories: [
+        {
+            name: "Pre-planting Total Weed Control",
+            description: "Apply thoroughly to wet the green foliage when weeds are at active growth stage.",
+            chemicals: [
+                { common: "Glufosinate ammonium 280 g/l SL", moa: "H", dilution: "64 ml", interval: "BLP (Before Land Prep)", trade: "Lifeline" },
+                { common: "Glufosinate ammonium 150 g/l SL", moa: "H", dilution: "120 ml", interval: "BLP", trade: "Basta" },
+                { common: "Tiafenacil 50 g/l ME", moa: "E", dilution: "125 ml", interval: "BLP", trade: "Terado" },
+                { common: "Glyphosate 360 g/l SL", moa: "G", dilution: "150-200 ml", interval: "Pre-planting", trade: "Ceypetco Glyphosate" }
+            ]
+        },
+        {
+            name: "Post-planting Selective Pre-emergent (0-5 Days)",
+            description: "Apply on to wet/moist soil. Proper land levelling is important.",
+            chemicals: [
+                { common: "Pretilachlor 300 g/l EC", moa: "K3", dilution: "64 ml", interval: "0-4 DAS/DAP", trade: "Soit, Clear, Baurs, Set" },
+                { common: "Oxyfluorfen 480 g/l SC", moa: "E", dilution: "12 ml", interval: "0-5 DAS/DAP", trade: "Goal Tender" },
+                { common: "Oxyfluorfen 240 g/l EC", moa: "E", dilution: "20 ml", interval: "0-5 DAS/DAP", trade: "OxyGuard, Goal" }
+            ]
+        },
+        {
+            name: "Post-emergent Selective (Early: 5-15 Days)",
+            description: "Selective control for Grasses, Sedges & Broad-leaf weeds.",
+            chemicals: [
+                { common: "Pretilachlor 30% + Pyribenzoxim 2%", moa: "K3+B", dilution: "48 ml", interval: "6-10 DAS/DAP", trade: "Solito" },
+                { common: "Propanil 330g/l + Pretilachlor 170g/l", moa: "K3+C2", dilution: "80 ml", interval: "6-10 DAS", trade: "Profit 500 EC" },
+                { common: "Pyribenzoxim 50 g/l EC", moa: "B", dilution: "20 ml", interval: "7-18 DAS/DAP", trade: "Pyanchor" },
+                { common: "Azimsulfuron 50% WG", moa: "B", dilution: "2.4 g", interval: "7-15 DAS/DAP", trade: "Gulliver" },
+                { common: "Triafamone 200 g/l SC", moa: "B", dilution: "6 ml", interval: "7-12 DAS/DAP", trade: "Council Prime" }
+            ]
+        },
+        {
+            name: "Post-emergent (Late / Specific Control)",
+            description: "Control for Sedges and Broad-leaf weeds (Late Stage).",
+            chemicals: [
+                { common: "MCPA 600 g/l SL", moa: "O", dilution: "72 ml", interval: "21-28 DAS/DAP", trade: "ICS MCPA 60, Lankem M-50" },
+                { common: "Bentazone 480 g/l SL", moa: "C3", dilution: "100 ml", interval: "12-18 DAS", trade: "Ahura bentazone" },
+                { common: "Penoxsulam 240 g/l SL", moa: "B", dilution: "4 ml", interval: "10-18 DAS/DAP", trade: "Granite" },
+                { common: "Bispyribac-sodium 100 g/l SC", moa: "B", dilution: "20 ml", interval: "8-12 DAS/DAP", trade: "Nominee, Mikasa, Omega" }
+            ]
+        }
+    ]
+};
+
+let currentCategory;
+const select = document.getElementById("pestSelect");
+const infoDiv = document.getElementById("usageInfo");
+
+weedicideData.categories.forEach((cat, index) => {
+    const opt = document.createElement("option");
+    opt.value = index;
+    opt.textContent = cat.name;
+    select.appendChild(opt);
+});
+
+document.getElementById("pestSelect").addEventListener("change", function() {
+    const index = this.value;
+    const table = document.getElementById("chemTable");
+    const tbody = table.querySelector("tbody");
+    tbody.innerHTML = "";
+
+    if(index === "") {
+        table.style.display = "none";
+        infoDiv.style.display = "none";
+        return;
+    }
+
+    currentCategory = weedicideData.categories[index];
+    infoDiv.innerHTML = "💡 Usage Note: " + currentCategory.description;
+    infoDiv.style.display = "block";
+
+    currentCategory.chemicals.forEach((c, i) => {
+        tbody.innerHTML += `
+            <tr>
+                <td>${i+1}</td>
+                <td><b>${c.common}</b></td>
+                <td>${c.moa}</td>
+                <td class="dilution-highlight">${c.dilution}</td>
+                <td>${c.interval}</td>
+                <td><small>${c.trade}</small></td>
+            </tr>
+        `;
+    });
+
+    table.style.display = "table";
+});
+
+function exportPDF() {
+    if(!currentCategory) { alert("Please select a category"); return; }
+    const { jsPDF } = window.jspdf;
+    const doc = new jsPDF('l', 'mm', 'a4');
+
+    doc.setFontSize(18);
+    doc.setTextColor(21, 128, 61);
+    doc.text("DK AGRI - Paddy Weedicide Recommendation Guide", 14, 15);
+
+    doc.setFontSize(11);
+    doc.setTextColor(0);
+    doc.text("Category: " + currentCategory.name, 14, 25);
+
+    let y = 40;
+    doc.setFontSize(9);
+    doc.setFillColor(21, 128, 61);
+    doc.setTextColor(255);
+    doc.rect(14, 32, 270, 8, 'F');
+    doc.text("#   Common Name & Strength            MOA    Dilution(16L)   Interval         Trade Names", 16, 37);
+
+    doc.setTextColor(0);
+    currentCategory.chemicals.forEach((c, i) => {
+        if (y > 185) { doc.addPage(); y = 20; }
+        doc.text(`${i+1}`, 16, y);
+        doc.text(`${c.common}`, 25, y);
+        doc.text(`${c.moa}`, 85, y);
+        doc.text(`${c.dilution}`, 105, y);
+        doc.text(`${c.interval}`, 135, y);
+        doc.text(`${c.trade.substring(0, 50)}`, 165, y);
+        y += 8;
+        doc.setDrawColor(230);
+        doc.line(14, y-2, 284, y-2);
+    });
+
+    doc.save("DK_AGRI_Weed_Guide.pdf");
+}
+</script>
+
+</body>
+</html>
