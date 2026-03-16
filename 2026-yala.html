@@ -1,92 +1,133 @@
-<!DOCTYPE html>  <html lang="en">  
-<head>  
-<meta charset="UTF-8">  
-<meta name="viewport" content="width=device-width, initial-scale=1.0">  <title>Extension Progress System</title>  <style>  
-  
-body{  
-font-family:Arial;  
-background:#f3f6fb;  
-padding:20px;  
-}  
-  
-h2{  
-text-align:center;  
-}  
-  
-.kandy{  
-background:#2b6cb0;  
-color:white;  
-padding:12px;  
-border-radius:8px;  
-}  
-  
-.container{  
-max-width:1100px;  
-margin:20px auto;  
-padding:25px;  
-background:white;  
-border-radius:12px;  
-box-shadow:0 4px 10px rgba(0,0,0,0.08);  
-  
-display:grid;  
-grid-template-columns:repeat(3,1fr);  
-gap:15px;  
-}  
-  
-button{  
-padding:12px;  
-border:none;  
-background:#2b6cb0;  
-color:white;  
-border-radius:6px;  
-cursor:pointer;  
-}  
-  
-button:hover{  
-background:#1e4e86;  
-}  
-  
-.selected{  
-background:#2f855a !important;  
-}  
-  
-#resetBtn{  
-background:#ed8936;  
-display:block;  
-margin:auto;  
-}  
-  
-form{  
-max-width:600px;  
-margin:auto;  
-background:white;  
-padding:20px;  
-border-radius:8px;  
-border:1px solid #ddd;  
-}  
-  
-form input, textarea, select{  
-width:100%;  
-padding:8px;  
-margin-bottom:10px;  
-}  
-  
-@media(max-width:768px){  
-  
-.container{  
-grid-template-columns:1fr;  
-}  
-  
-}  
-  
-</style>  </head>  
-<body>  <h2 class="kandy">Kandy - 2026 Yala Extension Progress</h2>  <h2>Select AD Office</h2>  
-<div class="container" id="mainOfficeButtons"></div>  <h2>Select AI Office</h2>  
-<div class="container" id="subOfficeButtons"></div>  <h2>Select Work Plan</h2>  
-<div class="container" id="thirdFilterButtons"></div>  <h2>Select Sub Option</h2>  
-<div class="container" id="fourthFilterButtons"></div>  <button id="resetBtn" style="display:none;">Change Office</button>
+<!DOCTYPE html>
+<html lang="en">
+<head>
 
-<form id="dataForm" style="display:none;">  <label>AD Office</label>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+<title>Extension Progress System</title>
+
+<style>
+
+body{
+font-family:Arial,Helvetica,sans-serif;
+background:#f4f7fb;
+margin:0;
+padding:20px;
+}
+
+h1{
+text-align:center;
+background:#2b6cb0;
+color:white;
+padding:15px;
+border-radius:10px;
+}
+
+.section-title{
+margin-top:25px;
+font-weight:bold;
+}
+
+.container{
+max-width:1100px;
+margin:auto;
+background:white;
+padding:25px;
+border-radius:12px;
+box-shadow:0 4px 12px rgba(0,0,0,0.08);
+}
+
+.button-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:12px;
+margin-top:10px;
+}
+
+button{
+padding:12px;
+border:none;
+background:#2b6cb0;
+color:white;
+border-radius:6px;
+cursor:pointer;
+font-size:14px;
+}
+
+button:hover{
+background:#1e4e86;
+}
+
+.selected{
+background:#2f855a !important;
+}
+
+#resetBtn{
+background:#ed8936;
+margin-top:15px;
+display:none;
+}
+
+form{
+margin-top:20px;
+border-top:1px solid #ddd;
+padding-top:20px;
+display:none;
+}
+
+input,textarea,select{
+width:100%;
+padding:10px;
+margin-bottom:12px;
+border:1px solid #ccc;
+border-radius:6px;
+}
+
+.submitBtn{
+background:#2f855a;
+font-size:15px;
+}
+
+.loading{
+opacity:0.6;
+pointer-events:none;
+}
+
+@media(max-width:768px){
+
+.button-grid{
+grid-template-columns:1fr;
+}
+
+}
+
+</style>
+
+</head>
+<body>
+
+<h1>Kandy - 2026 Yala Extension Progress</h1>
+
+<div class="container">
+
+<div class="section-title">Select AD Office</div>
+<div id="mainOfficeButtons" class="button-grid"></div>
+
+<div class="section-title">Select AI Office</div>
+<div id="subOfficeButtons" class="button-grid"></div>
+
+<div class="section-title">Select Work Plan</div>
+<div id="planButtons" class="button-grid"></div>
+
+<div class="section-title">Select Sub Option</div>
+<div id="optionButtons" class="button-grid"></div>
+
+<button id="resetBtn">Change Office</button>
+
+<form id="dataForm">
+
+<label>AD Office</label>
 <input id="formMainOffice" readonly>
 
 <label>AI Office</label>
@@ -98,297 +139,295 @@ grid-template-columns:1fr;
 <label>Sub Option</label>
 <input id="formSubOption" readonly>
 
-<div id="dynamicFields"></div>  <button type="button" onclick="submitForm()">Submit</button>
+<div id="dynamicFields"></div>
 
-</form>  <script>  
-  
-// ===== OFFICE DATA =====  
-  
-const offices={  
-"කුණ්ඩසාලේ":["ගුන්නෑපාන","නමදගල"],  
-"මහනුවර":["Sub B1","Sub B2"],  
-"උඩුනුවර - යටිනුවර":["Sub C1","Sub C2"],  
-"හාරිස්පත්තුව":["Sub D1","Sub D2"]  
-};  
-  
-// ===== WORK PLAN =====  
-  
-const workPlans=["වී වගාව","Plan 2","Plan 3"];  
-  
-// ===== SUB OPTIONS =====  
-  
-const subOptions={  
-"වී වගාව":[  
-  "බිත්තර වී ගොවිපල් පිහිටුවීම",  
-  "ස්වයං බිත්තර වී නිෂ්පාදනයට හුරුකිරීම (ගොවීන්) -1100",  
-  "අත්හැරුණු කුඹුරු ඉඩම් නැවත වගාව (අක්කර) -48"  
-  ],  
-"Plan 2":["Task 2A"],  
-"Plan 3":["Task 3A"]  
-};  
-  
-// ===== ADVANCED FORM STRUCTURE =====  
-  
-const dynamicFields={  
-  
-"බිත්තර වී ගොවිපල් පිහිටුවීම":[  
-{label:"ගොවිපල පිහිටවූ දිනය",type:"date",name:"farm_date"},  
-{label:"ප්‍රභේදය",type:"select",name:"variety",  
-options:["Bg 300","Bg 352","Bg 366","At 362"]},  
-{label:"වපසරිය (ha)",type:"number",name:"extent"},  
-{label:"විශේෂ සටහන්",type:"textarea",name:"notes"}  
-],  
-"ස්වයං බිත්තර වී නිෂ්පාදනයට හුරුකිරීම (ගොවීන්) -1100":[  
-{label:"ප්‍රභේදය",type:"textarea",name:"notes"},  
-{label:"ගොවීන් සංඛ්‍යාව",type:"number",name:"number"},  
-{label:"විශේෂ සටහන්",type:"textarea",name:"notes"}  
-],  
-"අත්හැරුණු කුඹුරු ඉඩම් නැවත වගාව (අක්කර) -48":[  
-{label:"ගොවිපල පිහිටවූ දිනය",type:"date",name:"farm_date"},  
-{label:"ප්‍රභේදය",type:"select",name:"variety",  
-options:["Bg 300","Bg 352","Bg 366","At 362"]},  
-{label:"වපසරිය (ha)",type:"number",name:"extent"},  
-{label:"විශේෂ සටහන්",type:"textarea",name:"notes"}  
-],  
-  
-"Task 2A":[  
-  
-{label:"Description",type:"textarea",name:"desc"}  
-  
-],  
-  
-"Task 3A":[  
-  
-{label:"Remarks",type:"textarea",name:"remarks"}  
-  
-]  
-  
-};  
-  
-// ===== VARIABLES =====  
-  
-let mainOffice="";  
-let subOffice="";  
-let workPlan="";  
-let subOption="";  
-  
-const mainDiv=document.getElementById("mainOfficeButtons");  
-const subDiv=document.getElementById("subOfficeButtons");  
-const planDiv=document.getElementById("thirdFilterButtons");  
-const optDiv=document.getElementById("fourthFilterButtons");  
-const form=document.getElementById("dataForm");  
-const fieldsDiv=document.getElementById("dynamicFields");  
-  
-// ===== LOAD MAIN OFFICES =====  
-  
-function loadMain(){  
-  
-for(let o in offices){  
-  
-let b=document.createElement("button");  
-b.textContent=o;  
-  
-b.onclick=()=>{  
-  
-mainOffice=o;  
-mainDiv.innerHTML=`<button class="selected">${o}</button>`;  
-loadSub(o);  
-  
-};  
-  
-mainDiv.appendChild(b);  
-  
-}  
-  
-}  
-  
-// ===== LOAD AI OFFICES =====  
-  
-function loadSub(o){  
-  
-subDiv.innerHTML="";  
-  
-offices[o].forEach(s=>{  
-  
-let b=document.createElement("button");  
-b.textContent=s;  
-  
-b.onclick=()=>{  
-  
-subOffice=s;  
-  
-subDiv.innerHTML=`<button class="selected">${s}</button>`;  
-  
-document.getElementById("resetBtn").style.display="block";  
-  
-loadPlans();  
-  
-};  
-  
-subDiv.appendChild(b);  
-  
-});  
-  
-}  
-  
-// ===== LOAD WORK PLANS =====  
-  
-function loadPlans(){  
-  
-planDiv.innerHTML="";  
-  
-workPlans.forEach(p=>{  
-  
-let b=document.createElement("button");  
-b.textContent=p;  
-  
-b.onclick=()=>{  
-  
-workPlan=p;  
-  
-planDiv.innerHTML=`<button class="selected">${p}</button>`;  
-  
-loadOptions(p);  
-  
-};  
-  
-planDiv.appendChild(b);  
-  
-});  
-  
-}  
-  
-// ===== LOAD SUB OPTIONS =====  
-  
-function loadOptions(p){  
-  
-optDiv.innerHTML="";  
-  
-subOptions[p].forEach(o=>{  
-  
-let b=document.createElement("button");  
-b.textContent=o;  
-  
-b.onclick=()=>{  
-  
-subOption=o;  
-  
-optDiv.innerHTML=`<button class="selected">${o}</button>`;  
-  
-showForm();  
-  
-};  
-  
-optDiv.appendChild(b);  
-  
-});  
-  
-}  
-  
-// ===== GENERATE FORM =====  
-  
-function showForm(){  
-  
-form.style.display="block";  
-  
-formMainOffice.value=mainOffice;  
-formSubOffice.value=subOffice;  
-formWorkPlan.value=workPlan;  
-formSubOption.value=subOption;  
-  
-fieldsDiv.innerHTML="";  
-  
-dynamicFields[subOption].forEach(f=>{  
-  
-let label=document.createElement("label");  
-label.textContent=f.label;  
-  
-let input;  
-  
-if(f.type==="textarea"){  
-  
-input=document.createElement("textarea");  
-  
-}else if(f.type==="select"){  
-  
-input=document.createElement("select");  
-  
-f.options.forEach(opt=>{  
-  
-let op=document.createElement("option");  
-op.value=opt;  
-op.textContent=opt;  
-  
-input.appendChild(op);  
-  
-});  
-  
-}else{  
-  
-input=document.createElement("input");  
-input.type=f.type;  
-  
-}  
-  
-input.id=f.name;  
-  
-fieldsDiv.appendChild(label);  
-fieldsDiv.appendChild(input);  
-  
-});  
-  
-}  
-  
-// ===== SUBMIT FORM =====  
-  
-function submitForm(){  
-  
-let data={  
-time:new Date().toISOString(),  
-mainOffice,  
-subOffice,  
-workPlan,  
-subOption  
-};  
-  
-dynamicFields[subOption].forEach(f=>{  
-  
-data[f.name]=document.getElementById(f.name).value;  
-  
-});  
-  
-fetch("Yhttps://script.google.com/macros/s/AKfycbyLKBcSsEXfUmUht1XbvHSASFDJYziHjXb_CbSESRJ9tu19Yb25JDCTuK7woWGWS8jl/exec",{
-  method: "POST",
-  headers: {"Content-Type": "application/json"},
-  body: JSON.stringify(data)
+<button type="button" class="submitBtn" onclick="submitForm()">Submit</button>
+
+</form>
+
+</div>
+
+<script>
+
+// API URL
+const API_URL="https://script.google.com/macros/s/AKfycbyLKBcSsEXfUmUht1XbvHSASFDJYziHjXb_CbSESRJ9tu19Yb25JDCTuK7woWGWS8jl/exec";
+
+
+// DATA
+
+const offices={
+"කුණ්ඩසාලේ":["ගුන්නෑපාන","නමදගල"],
+"මහනුවර":["Sub B1","Sub B2"],
+"උඩුනුවර - යටිනුවර":["Sub C1","Sub C2"],
+"හාරිස්පත්තුව":["Sub D1","Sub D2"]
+};
+
+const workPlans=["වී වගාව","Plan 2","Plan 3"];
+
+const subOptions={
+"වී වගාව":[
+"බිත්තර වී ගොවිපල් පිහිටුවීම",
+"ස්වයං බිත්තර වී නිෂ්පාදනයට හුරුකිරීම (ගොවීන්) -1100",
+"අත්හැරුණු කුඹුරු ඉඩම් නැවත වගාව (අක්කර) -48"
+],
+"Plan 2":["Task 2A"],
+"Plan 3":["Task 3A"]
+};
+
+
+const dynamicFields={
+
+"බිත්තර වී ගොවිපල් පිහිටුවීම":[
+{label:"Date",type:"date",name:"date"},
+{label:"Variety",type:"select",name:"variety",options:["Bg300","Bg352","Bg366","At362"]},
+{label:"Extent (ha)",type:"number",name:"extent"},
+{label:"Notes",type:"textarea",name:"notes"}
+],
+
+"ස්වයං බිත්තර වී නිෂ්පාදනයට හුරුකිරීම (ගොවීන්) -1100":[
+{label:"Farmers Count",type:"number",name:"farmers"},
+{label:"Notes",type:"textarea",name:"notes"}
+],
+
+"අත්හැරුණු කුඹුරු ඉඩම් නැවත වගාව (අක්කර) -48":[
+{label:"Date",type:"date",name:"date"},
+{label:"Variety",type:"select",name:"variety",options:["Bg300","Bg352","Bg366","At362"]},
+{label:"Extent (ha)",type:"number",name:"extent"},
+{label:"Notes",type:"textarea",name:"notes"}
+],
+
+"Task 2A":[
+{label:"Description",type:"textarea",name:"desc"}
+],
+
+"Task 3A":[
+{label:"Remarks",type:"textarea",name:"remarks"}
+]
+
+};
+
+
+// VARIABLES
+
+let mainOffice=""
+let subOffice=""
+let workPlan=""
+let subOption=""
+
+const mainDiv=document.getElementById("mainOfficeButtons")
+const subDiv=document.getElementById("subOfficeButtons")
+const planDiv=document.getElementById("planButtons")
+const optDiv=document.getElementById("optionButtons")
+const fieldsDiv=document.getElementById("dynamicFields")
+const form=document.getElementById("dataForm")
+
+
+// CREATE BUTTONS
+
+function createButtons(container,list,callback){
+
+container.innerHTML=""
+
+list.forEach(item=>{
+
+let btn=document.createElement("button")
+btn.textContent=item
+
+btn.onclick=()=>{
+callback(item)
+}
+
+container.appendChild(btn)
+
 })
+
+}
+
+
+// MAIN OFFICE
+
+function loadMain(){
+
+createButtons(mainDiv,Object.keys(offices),(o)=>{
+
+mainOffice=o
+mainDiv.innerHTML=`<button class="selected">${o}</button>`
+loadSub(o)
+
+})
+
+}
+
+
+// SUB OFFICE
+
+function loadSub(o){
+
+createButtons(subDiv,offices[o],(s)=>{
+
+subOffice=s
+subDiv.innerHTML=`<button class="selected">${s}</button>`
+document.getElementById("resetBtn").style.display="block"
+
+loadPlans()
+
+})
+
+}
+
+
+// WORK PLAN
+
+function loadPlans(){
+
+createButtons(planDiv,workPlans,(p)=>{
+
+workPlan=p
+planDiv.innerHTML=`<button class="selected">${p}</button>`
+
+loadOptions(p)
+
+})
+
+}
+
+
+// OPTIONS
+
+function loadOptions(p){
+
+createButtons(optDiv,subOptions[p],(o)=>{
+
+subOption=o
+optDiv.innerHTML=`<button class="selected">${o}</button>`
+
+showForm()
+
+})
+
+}
+
+
+// FORM
+
+function showForm(){
+
+form.style.display="block"
+
+formMainOffice.value=mainOffice
+formSubOffice.value=subOffice
+formWorkPlan.value=workPlan
+formSubOption.value=subOption
+
+fieldsDiv.innerHTML=""
+
+dynamicFields[subOption].forEach(f=>{
+
+let label=document.createElement("label")
+label.textContent=f.label
+
+let input
+
+if(f.type==="textarea"){
+
+input=document.createElement("textarea")
+
+}else if(f.type==="select"){
+
+input=document.createElement("select")
+
+f.options.forEach(o=>{
+
+let opt=document.createElement("option")
+opt.value=o
+opt.textContent=o
+input.appendChild(opt)
+
+})
+
+}else{
+
+input=document.createElement("input")
+input.type=f.type
+
+}
+
+input.id=f.name
+
+fieldsDiv.appendChild(label)
+fieldsDiv.appendChild(input)
+
+})
+
+}
+
+
+// SUBMIT
+
+function submitForm(){
+
+let data={
+time:new Date().toISOString(),
+mainOffice,
+subOffice,
+workPlan,
+subOption
+}
+
+dynamicFields[subOption].forEach(f=>{
+data[f.name]=document.getElementById(f.name).value
+})
+
+form.classList.add("loading")
+
+fetch(API_URL,{
+method:"POST",
+headers:{"Content-Type":"application/json"},
+body:JSON.stringify(data)
+})
+
 .then(res=>res.text())
+
 .then(res=>{
-  alert(res); // will show "success"
+
+alert("Data Submitted Successfully")
+
+form.reset()
+form.style.display="none"
+planDiv.innerHTML=""
+optDiv.innerHTML=""
+
+loadPlans()
+
 })
+
 .catch(err=>{
-  alert("Error: "+err);
-});
-  
-alert("Submitted");  
-  
-form.reset();  
-form.style.display="none";  
-  
-planDiv.innerHTML="";  
-optDiv.innerHTML="";  
-  
-loadPlans();  
-  
-}  
-  
-// ===== RESET =====  
-  
-resetBtn.onclick=()=>location.reload();  
-  
-// ===== INIT =====  
-  
-loadMain();  
-  
-</script>  </body>  
+
+alert("Error : "+err)
+
+})
+
+.finally(()=>{
+
+form.classList.remove("loading")
+
+})
+
+}
+
+
+// RESET
+
+document.getElementById("resetBtn").onclick=()=>{
+location.reload()
+}
+
+
+// INIT
+
+loadMain()
+
+</script>
+
+</body>
 </html>
