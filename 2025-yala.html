@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="si">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Agriculture Monitoring System</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Sinhala:wght@400;600&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+
+<style>
+body{ font-family:'Noto Sans Sinhala', sans-serif; background:#eef3f7; margin:0; padding:15px; }
+.header{ text-align:center; background:#1b5e20; color:white; padding:15px; border-radius:8px; }
+.filters{ text-align:center; margin:15px 0; }
+select{ padding:8px; margin:5px; border-radius:5px; border:1px solid #ccc; min-width:200px; }
+
+.btn-download, .btn-load {
+    background: #2e7d32;
+    color: white;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Noto Sans Sinhala', sans-serif;
+    margin: 10px 5px;
+}
+.btn-download:hover, .btn-load:hover { background: #1b5e20; }
+
+.table-container {
+    overflow: auto;
+    max-height: 70vh;
+    border: 1px solid #ccc;
+    background: white;
+}
+
+table{ width: 100%; border-collapse:collapse; font-size:12px; table-layout: fixed; }
+
+th, td{
+    border:1px solid #ddd;
+    padding:8px;
+    text-align: left;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
+    vertical-align: top;
+}
+
+th{
+    background:#2e7d32;
+    color:white;
+    position:sticky;
+    top:0;
+    font-weight: 600;
+    z-index: 10;
+}
+
+th:nth-child(1), td:nth-child(1) { width: 120px; }
+th:nth-child(2), td:nth-child(2) { width: 100px; }
+th:nth-child(n+3), td:nth-child(n+3) { width: 100px; }
+
+tr:nth-child(even){ background:#f9f9f9; }
+tr:hover { background: #f1f1f1; }
+
+.loading{
+    text-align:center;
+    font-weight:bold;
+    color:#2e7d32;
+    padding:10px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="header">
+    <h2>2025 yala කන්න - කෘෂිකර්ම ප්‍රගති වාර්තාව</h2>
+</div>
+
+<div class="filters">
+    <select id="officeFilter">
+        <option value="">කාර්යාලය තෝරන්න</option>
+    </select>
+
+    <select id="advisorFilter">
+        <option value="">කෘෂි උපදේශක කොට්ඨාශය තෝරන්න</option>
+    </select>
+
+    <select id="programFilter">
+        <option value="">බෝගය / වැඩසටහන තෝරන්න</option>
+    </select>
+
+    <select id="extraFilter">
+        <option value="">සීමාකාරී සාධකය</option>
+    </select>
+
+    <br>
+    <button class="btn-download" onclick="downloadExcel()">Excel (Download)</button>
+</div>
+
+<div class="table-container">
+    <div id="loading" class="loading">Loading Data...</div>
+    <table id="dataTable">
+        <thead></thead>
+        <tbody></tbody>
+    </table>
+</div>
+
+<div style="text-align:center;">
+    <button id="loadMoreBtn" class="btn-load" style="display:none;">Load More</button>
+</div>
+
+<script>
+const SHEET_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRKr63-_Po4EMrYtUKPBvHPm6PbazFCf7oWvpc4pWYtaWjWkcKwhZ5LVlQFMPSi4Put7I9wUCeCsKVS/pub?output=csv";
+let globalRows = [];
+let headers = [];
+let filteredData = [];
+let currentDataForExcel = [];
+let renderIndex = 0;
+let visibleColumns = [];
+const batchSize = 100;
+
+const extraColumnStart = 15;
+const extraColumnEnd = 25;
+
+let officeIndex;
+let programIndex;
+let advisorIndices=[];
+
+function parseCSVLine(line) {
+    const result = [];
+    let cur = "";
+    let inQuote = false;
+    for (let i = 0; i < line.length; i++) {
+        let char = line[i];
+        if (char === '"') inQuote = !inQuote;
+        else if (char === ',' && !inQuote) { result.push(cur.trim()); cur = ""; }
+        else cur += char;
+    }
+    result.push(cur.trim());
+    return result;
+}
+
+fetch(SHEET_URL)
+.then(res=>res.text())
+.then(data=>{
+document.getElementById("loading").style.display="none";
+
+const allLines = data.split(/\r?\n/).filter(line => line.trim() !== "");
+globalRows = allLines.map(line => parseCSVLine(line));
+headers = globalRows[0];
+
+const officeTitle = "කාර්යාලය/සහකාර කෘෂිකර්ම අධ්‍යක්ෂ කොටස";
+const advisorTitle = "කෘෂි උපදේශක කොට්ඨාශය";
+const programTitle = "බෝගය / වැඩසටහන";
+
+officeIndex = headers.indexOf(officeTitle);
+programIndex = headers.indexOf(programTitle);
+advisorIndices = headers.reduce((acc, h, i) => (h === advisorTitle ? acc.concat(i) : acc), []);
+
+initFilters();
+
+});
+
+const officeFilter = document.getElementById("officeFilter");
+const advisorFilter = document.getElementById("advisorFilter");
+const programFilter = document.getElementById("programFilter");
+const extraFilter = document.getElementById("extraFilter");
+
+function initFilters(){
+
+let offices=new Set();
+let advisors=new Set();
+let programs=new Set();
+let extras=new Set();
+
+globalRows.slice(1).forEach(r=>{
+
+if(r[officeIndex]) offices.add(r[officeIndex]);
+
+advisorIndices.forEach(i=>{
+if(r[i]) advisors.add(r[i]);
+});
+
+if(r[programIndex]) programs.add(r[programIndex]);
+
+for(let i=extraColumnStart;i<=extraColumnEnd;i++){
+if(r[i]) extras.add(r[i]);
+}
+
+});
+
+fill(officeFilter,offices);
+fill(advisorFilter,advisors);
+fill(programFilter,programs);
+fill(extraFilter,extras);
+
+}
+
+function fill(select,set){
+
+const label = select.options[0].text;
+
+select.innerHTML='<option value="">'+label+'</option>';
+
+[...set].sort().forEach(v=>{
+let opt=document.createElement("option");
+opt.value=v;
+opt.textContent=v;
+select.appendChild(opt);
+});
+
+}
+
+officeFilter.addEventListener("change",applyFilters);
+advisorFilter.addEventListener("change",applyFilters);
+programFilter.addEventListener("change",applyFilters);
+extraFilter.addEventListener("change",applyFilters);
+
+function updateFilters(){
+
+const officeVal=officeFilter.value;
+const advisorVal=advisorFilter.value;
+const programVal=programFilter.value;
+const extraVal=extraFilter.value;
+
+let offices=new Set();
+let advisors=new Set();
+let programs=new Set();
+let extras=new Set();
+
+globalRows.slice(1).forEach(r=>{
+
+const matchOffice=!officeVal || r[officeIndex]===officeVal;
+const matchAdvisor=!advisorVal || advisorIndices.some(idx=>r[idx]===advisorVal);
+const matchProgram=!programVal || r[programIndex]===programVal;
+const matchExtra=!extraVal || r.slice(extraColumnStart,extraColumnEnd+1).includes(extraVal);
+
+if(matchOffice && matchAdvisor && matchProgram && matchExtra){
+
+if(r[officeIndex]) offices.add(r[officeIndex]);
+
+advisorIndices.forEach(i=>{
+if(r[i]) advisors.add(r[i]);
+});
+
+if(r[programIndex]) programs.add(r[programIndex]);
+
+for(let i=extraColumnStart;i<=extraColumnEnd;i++){
+if(r[i]) extras.add(r[i]);
+}
+
+}
+
+});
+
+refill(officeFilter,offices,"කාර්යාලය තෝරන්න");
+refill(advisorFilter,advisors,"කෘෂි උපදේශක කොට්ඨාශය තෝරන්න");
+refill(programFilter,programs,"බෝගය / වැඩසටහන තෝරන්න");
+refill(extraFilter,extras,"සීමාකාරී සාධකය");
+
+}
+
+function refill(select,set,label){
+
+const current=select.value;
+
+select.innerHTML='<option value="">'+label+'</option>';
+
+[...set].sort().forEach(v=>{
+let opt=document.createElement("option");
+opt.value=v;
+opt.textContent=v;
+select.appendChild(opt);
+});
+
+select.value=current;
+
+}
+
+function applyFilters(){
+
+updateFilters();
+
+const officeVal=officeFilter.value;
+const advisorVal=advisorFilter.value;
+const programVal=programFilter.value;
+const extraVal=extraFilter.value;
+
+filteredData=globalRows.filter((r,i)=>{
+
+if(i===0) return true;
+
+const matchOffice=!officeVal || r[officeIndex]===officeVal;
+const matchAdvisor=!advisorVal || advisorIndices.some(idx=>r[idx]===advisorVal);
+const matchProgram=!programVal || r[programIndex]===programVal;
+const matchExtra=!extraVal || r.slice(extraColumnStart,extraColumnEnd+1).includes(extraVal);
+
+return matchOffice && matchAdvisor && matchProgram && matchExtra;
+
+});
+
+detectVisibleColumns();
+renderIndex=1;
+renderTableHeader();
+renderNextBatch();
+
+}
+
+function detectVisibleColumns(){
+
+visibleColumns=[];
+
+headers.forEach((h,index)=>{
+
+if(index===0) return;
+
+let hasData=filteredData.slice(1).some(row=>row[index] && row[index].trim()!=="");
+
+if(hasData) visibleColumns.push(index);
+
+});
+
+}
+
+function renderTableHeader(){
+
+const thead=document.querySelector("#dataTable thead");
+
+thead.innerHTML="<tr>"+visibleColumns.map(i=>`<th>${headers[i]}</th>`).join("")+"</tr>";
+
+document.querySelector("#dataTable tbody").innerHTML="";
+
+currentDataForExcel=[visibleColumns.map(i=>headers[i])];
+
+}
+
+function renderNextBatch(){
+
+const tbody=document.querySelector("#dataTable tbody");
+
+let end=Math.min(renderIndex+batchSize,filteredData.length);
+
+for(let i=renderIndex;i<end;i++){
+
+let tr=document.createElement("tr");
+let rowData=[];
+
+visibleColumns.forEach(colIndex=>{
+
+let td=document.createElement("td");
+td.textContent=filteredData[i][colIndex] || "";
+tr.appendChild(td);
+
+rowData.push(filteredData[i][colIndex] || "");
+
+});
+
+tbody.appendChild(tr);
+currentDataForExcel.push(rowData);
+
+}
+
+renderIndex=end;
+
+document.getElementById("loadMoreBtn").style.display =
+renderIndex<filteredData.length ? "inline-block" : "none";
+
+}
+
+document.getElementById("loadMoreBtn").addEventListener("click", renderNextBatch);
+
+function downloadExcel(){
+
+if(currentDataForExcel.length<=1){
+alert("දත්ත නොමැත!");
+return;
+}
+
+const wb=XLSX.utils.book_new();
+const ws=XLSX.utils.aoa_to_sheet(currentDataForExcel);
+
+XLSX.utils.book_append_sheet(wb, ws, "Progress_Report");
+XLSX.writeFile(wb, "Agriculture_Progress_Report.xlsx");
+
+}
+// LIVE AUTO UPDATE (Every 60 seconds)
+
+setInterval(() => {
+
+fetch(SHEET_URL)
+.then(res => res.text())
+.then(data => {
+
+const allLines = data.split(/\r?\n/).filter(line => line.trim() !== "");
+globalRows = allLines.map(line => parseCSVLine(line));
+
+applyFilters();
+
+console.log("Live data updated");
+
+});
+
+}, 60000); // 60000 ms = 1 minute
+</script>
+
+</body>
+</html>
