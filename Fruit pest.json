@@ -1,0 +1,174 @@
+{
+  "Fruit crops": [
+    {
+      "crop": "Banana",
+      "pests": [
+        {
+          "pest_name": "Banana Stem Weevil",
+          "scientific_name": "Cosmopolites sordidus, Odoiporus longicollis",
+          "chemicals": [
+            {
+              "common_name": "Fipronil 0.3% GR",
+              "trade_name": ["Regent 0.3 GR", "Mortar 0.3 GR"],
+              "moa": "2",
+              "dilution_16l": "10 g/trap",
+              "phi_days": "14"
+            },
+            {
+              "common_name": "Thiocyclam (Hydrogen Oxalate) 4% GR",
+              "trade_name": ["Evisect 4 GR"],
+              "moa": "14",
+              "dilution_16l": "10 g/trap",
+              "phi_days": "14"
+            },
+            {
+              "common_name": "Chlorantraniliprole 0.4% GR",
+              "trade_name": ["Ferterra"],
+              "moa": "28",
+              "dilution_16l": "10 g/trap",
+              "phi_days": "14"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "crop": "Citrus",
+      "pests": [
+        {
+          "pest_name": "Leaf miner",
+          "scientific_name": "Phyllocnistis citrella",
+          "chemicals": [
+            {
+              "common_name": "Phenthoate 500 g/l EC",
+              "trade_name": ["Cidial 50 EC", "Elsan 50 EC"],
+              "moa": "1",
+              "dilution_16l": "16 ml",
+              "phi_days": "14"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "crop": "Guava",
+      "pests": [
+        {
+          "pest_name": "Root knot nematodes",
+          "scientific_name": "Meloidogyne spp.",
+          "chemicals": [
+            {
+              "common_name": "Abamectin 20 g/l SC",
+              "trade_name": ["Promectin 2 SC", "Abacin 2 SC"],
+              "moa": "6",
+              "dilution_16l": "9 ml/plant",
+              "phi_days": "0"
+            },
+            {
+              "common_name": "Fluopyram 400 g/l SC",
+              "trade_name": ["Velum Prime"],
+              "moa": "7",
+              "dilution_16l": "1.5 ml/plant or 3 ml/plant",
+              "phi_days": "0"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "crop": "Mango",
+      "pests": [
+        {
+          "pest_name": "Leaf hopper",
+          "scientific_name": "Idioscopus spp., Amritodus spp.",
+          "chemicals": [
+            {
+              "common_name": "Imidacloprid 200 g/l SL",
+              "trade_name": ["Admire 200 SL", "Imida 20 SL"],
+              "moa": "4",
+              "dilution_16l": "16 ml",
+              "phi_days": "14"
+            },
+            {
+              "common_name": "Thiamethoxam 25% WG",
+              "trade_name": ["Actara 25 WG"],
+              "moa": "4",
+              "dilution_16l": "16 g",
+              "phi_days": "14"
+            }
+          ]
+        },
+        {
+          "pest_name": "Fruit fly",
+          "scientific_name": "Bactrocera spp.",
+          "chemicals": [
+            {
+              "common_name": "Spinosad 25 g/l SC",
+              "trade_name": ["Success 2.5 SC", "Tracer"],
+              "moa": "5",
+              "dilution_16l": "20 ml + 400 ml of protein bait",
+              "phi_days": "07"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "crop": "Papaya",
+      "pests": [
+        {
+          "pest_name": "Mealy bug",
+          "scientific_name": "Paracoccus marginatus",
+          "chemicals": [
+            {
+              "common_name": "Thiamethoxam 25% WG",
+              "trade_name": ["Actara 25 WG"],
+              "moa": "4",
+              "dilution_16l": "16 g",
+              "phi_days": "14"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "crop": "Pineapple",
+      "pests": [
+        {
+          "pest_name": "Mealy bug",
+          "scientific_name": "Dysmicoccus brevipes",
+          "chemicals": [
+            {
+              "common_name": "Carbosulfan 200 g/l SC",
+              "trade_name": ["Marshal 20 SC"],
+              "moa": "1",
+              "dilution_16l": "48 ml",
+              "phi_days": "14"
+            },
+            {
+              "common_name": "Acetamiprid 200 g/l SP",
+              "trade_name": ["Mospilan 20 SP"],
+              "moa": "4",
+              "dilution_16l": "16 g",
+              "phi_days": "14"
+            },
+            {
+              "common_name": "Thiamethoxam 25% WG",
+              "trade_name": ["Actara 25 WG"],
+              "moa": "4",
+              "dilution_16l": "8 g",
+              "phi_days": "14"
+            },
+            {
+              "common_name": "Profenofos 500 g/l EC",
+              "trade_name": ["Selecron 500 EC", "Curacron 500 EC"],
+              "moa": "1",
+              "dilution_16l": "48 ml",
+              "phi_days": "14"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

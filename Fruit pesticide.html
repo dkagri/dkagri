@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Fruit Crop Pest – Pesticide Recommendation</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+<style>
+body{font-family:Arial;background:#f4f6f8;padding:15px}
+select,button{padding:18px;margin:10px;width:100%;font-size:20px}
+table{width:100%;border-collapse:collapse;margin-top:10px}
+th,td{border:1px solid #999;padding:6px;font-size:14px}
+th{background:#2e7d32;color:#fff}
+.footer{text-align:center;margin-top:20px;font-size:12px;color:#555}
+
+.buttons{
+    margin:15px 0;
+    display:flex;
+    gap:10px;
+}
+button{
+    flex:1;
+    padding:12px;
+    font-size:16px;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+}
+.home{background:#28a745;color:#fff;}
+.back{background:#dc3545;color:#fff;}
+.pdf{background:#0d6efd;color:#fff;}
+.h2{
+  background: #6d4c41;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+</style>
+</head>
+
+<body>
+
+<h2 class="h2"> Fruit Crop Pest – Chemical Control Chart</h2>
+<div class="buttons">
+    <button class="home" onclick="location.href='index.html'">Home</button>
+    <button class="back" onclick="goBack()">Back</button>
+    <button class="pdf" onclick="exportPDF()">Export PDF</button>
+</div>
+
+<select id="cropSelect">
+  <option value="">Select Crop</option>
+</select>
+
+<select id="pestSelect" style="display:none;">
+  <option value="">Select Pest</option>
+</select>
+
+<table id="chemTable" style="display:none;">
+<thead>
+<tr>
+<th>No</th>
+<th>Common name</th>
+<th>Trade name</th>
+<th>MOA</th>
+<th>Dilution (16 L)</th>
+<th>PHI (Days)</th>
+</tr>
+</thead>
+<tbody></tbody>
+</table>
+
+
+<div class="footer">
+   © 2026 DK AGRI. All Rights Reserved.
+</div>
+
+<script>
+let data,currentPest;
+
+fetch("Fruit pest.json")
+.then(res=>res.json())
+.then(json=>{
+  data=json["Fruit crops"];
+  const cropSelect=document.getElementById("cropSelect");
+  data.forEach((c,i)=>{
+    cropSelect.innerHTML+=`<option value="${i}">${c.crop}</option>`;
+  });
+});
+
+cropSelect.onchange=function(){
+  pestSelect.style.display="none";
+  chemTable.style.display="none";
+  pestSelect.innerHTML='<option value="">Select Pest</option>';
+  if(this.value==="") return;
+
+  data[this.value].pests.forEach((p,i)=>{
+    pestSelect.innerHTML+=`<option value="${i}">${p.pest_name}</option>`;
+  });
+  pestSelect.style.display="block";
+}
+
+pestSelect.onchange=function(){
+  const crop=data[cropSelect.value];
+  currentPest=crop.pests[this.value];
+  const tbody=document.querySelector("#chemTable tbody");
+  tbody.innerHTML="";
+  currentPest.chemicals.forEach((c,i)=>{
+    tbody.innerHTML+=`
+      <tr>
+        <td>${i+1}</td>
+        <td>${c.common_name}</td>
+        <td>${c.trade_name}</td>
+        <td>${c.moa}</td>
+        <td>${c.dilution_16l}</td>
+        <td>${c.phi_days}</td>
+      </tr>`;
+  });
+  chemTable.style.display="table";
+}
+
+function exportPDF(){
+  if(!currentPest){alert("Select pest");return;}
+  const {jsPDF}=window.jspdf;
+  const doc=new jsPDF();
+
+  doc.setFontSize(40);
+  doc.setTextColor(220);
+  doc.text("DOA",30,150,{angle:45});
+
+  doc.setTextColor(0);
+  doc.setFontSize(14);
+  doc.text("Vegetable Pest Recommendation",20,20);
+  doc.text("Pest: "+currentPest.pest_name,20,30);
+  doc.text("Scientific: "+currentPest.scientific_name,20,38);
+
+  let y=50;
+  currentPest.chemicals.forEach((c,i)=>{
+    doc.text(`${i+1}. ${c.common_name} | ${c.trade_name} | MOA:${c.moa} | ${c.dilution_16l} | PHI:${c.phi_days}`,20,y);
+    y+=7;
+  });
+
+  doc.save("Root crop_Pest_DOA.pdf");
+}
+</script>
+
+</body>
+</html>
