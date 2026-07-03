@@ -1,0 +1,327 @@
+{
+  "Root crops": [
+    {
+      "crop": "potato",
+      "pests": [
+        {
+          "pest_name": "Thrips",
+          "scientific_name": "Scirtothrips dorsalis, Thrips palmi",
+          "chemicals": [
+            {
+              "common_name": "Imidacloprid 200 g/l SC",
+              "trade_name": ["Admire Imidacloprid", "Sun Agro Imidacloprid", "Imida Imidacloprid", "Kohinoor Imidacloprid", "Imidan Imidacloprid", "Grand Imidacloprid", "Imidacloprid 200 g/l SL", "Ceypetco Imidacloprid 200 g/l SL", "Gramida Imidacloprid", "Premio Imidacloprid", "Vat Imidacloprid"],
+              "moa": "4",
+              "dilution_16l": "8 ml",
+              "phi_days": 14
+            },
+            {
+              "common_name": "Imidacloprid 70% WG",
+              "trade_name": ["Rocco Imidacloprid", "Admire Imidacloprid", "Provado Imidacloprid", "Mega Power Imidacloprid"],
+              "moa": "4",
+              "dilution_16l": "2 g",
+              "phi_days": 14
+            },
+            {
+              "common_name": "Chlorantraniliprole 20% + Thiamethoxam 20% WG",
+              "trade_name": ["Virtako 40 WG"],
+              "moa": "28+4",
+              "dilution_16l": "5 g",
+              "phi_days": 10
+            },
+            {
+              "common_name": "Thiocyclam (Hydrogen Oxalate) 50% SP",
+              "trade_name": ["Evisect S"],
+              "moa": "14",
+              "dilution_16l": "40 g",
+              "phi_days": 7
+            },
+            {
+              "common_name": "Pymetrozine 50% WG",
+              "trade_name": ["Chess Pymetrozine 50% WG"],
+              "moa": "9",
+              "dilution_16l": "8 g",
+              "phi_days": 14
+            },
+            {
+              "common_name": "Buprofezin 25% SC",
+              "trade_name": [],
+              "moa": "16",
+              "dilution_16l": "45 ml",
+              "phi_days": 14
+            },
+            {
+              "common_name": "Fipronil 50 g/l SC",
+              "trade_name": ["Bairs Fipronil", "Grand Fipronil", "Viper Fipronil", "Arrears Fipronil", "Fiprogen Fipronil", "Fipronil 5% SC", "Raygant Fipronil", "Sanil Fipronil", "Reverse Fipronil", "Ceypetco Fipronil", "Legent Fipronil", "ICS Fipronil", "Hayleys Fipronil", "Zeus Fipronil", "Star Fipronil", "Recon Fipronil", "Aureus Fipronil", "Fitgrow Fipronil", "Miracle Fipronil", "Recent Fipronil", "Tuga Fipronil", "Browns Fipronil", "CIC Fipronil", "Depender Fipronil"],
+              "moa": "2",
+              "dilution_16l": "16 ml",
+              "phi_days": 14
+            },
+            {
+              "common_name": "Ethiprole 100 g/l SC",
+              "trade_name": ["Curbix Ethiprole", "Curbix"],
+              "moa": "2",
+              "dilution_16l": "20 ml",
+              "phi_days": 14
+            },
+            {
+              "common_name": "Thiacloprid 240 g/l SC",
+              "trade_name": ["Calypso Thiacloprid", "Alanto 240 SC"],
+              "moa": "4",
+              "dilution_16l": "4 ml",
+              "phi_days": 14
+            },
+            {
+              "common_name": "Carbosulfan 200 g/l SL",
+              "trade_name": ["Marshal 20 SC"],
+              "moa": "1",
+              "dilution_16l": "32 ml",
+              "phi_days": 14
+            }
+          ]
+        },
+        {
+          "pest_name": "Aphids",
+          "scientific_name": "Aphis gossypii, Aphis craccivora, Myzus persicae",
+          "chemicals": [
+            {
+              "common_name": "Imidacloprid 200 g/l SL",
+              "trade_name": ["Admire Imidacloprid", "Sun Agro Imidacloprid", "Imida Imidacloprid", "Kohinoor Imidacloprid", "Imidan Imidacloprid", "Grand Imidacloprid", "Imidacloprid 200 g/l SL", "Ceypetco Imidacloprid 200 g/l SL", "Gramida Imidacloprid", "Premio Imidacloprid", "Vat Imidacloprid"],
+              "moa": "4",
+              "dilution_16l": "8 ml",
+              "phi_days": 14
+            },
+            {
+              "common_name": "Imidacloprid 70% WG",
+              "trade_name": ["Rocco Imidacloprid", "Admire Imidacloprid", "Provado Imidacloprid", "Mega Power Imidacloprid"],
+              "moa": "4",
+              "dilution_16l": "2 g",
+              "phi_days": 14
+            },
+            {
+              "common_name": "Thiacloprid 240 g/l SC",
+              "trade_name": ["Calypso Thiacloprid", "Alanto 240 SC"],
+              "moa": "4",
+              "dilution_16l": "4 ml",
+              "phi_days": 14
+            },
+            {
+              "common_name": "Thiamethoxam 25% WG",
+              "trade_name": ["Actara Thiamethoxam", "Dhora Thiamethoxam", "Sakura Thiamethoxam", "SSAU Thiamethoxam", "Rocket Thiamethoxam", "Actor Thiamethoxam", "Appara Thiamethoxam", "Hunter Thiamethoxam"],
+              "moa": "4",
+              "dilution_16l": "5 g",
+              "phi_days": 14
+            },
+            {
+              "common_name": "Chlorantraniliprole 20% + Thiamethoxam 20% WG",
+              "trade_name": ["Virtako 40 WG"],
+              "moa": "28+4",
+              "dilution_16l": "5 g",
+              "phi_days": 10
+            },
+            {
+              "common_name": "Thiocyclam (Hydrogen Oxalate) 50% SP",
+              "trade_name": ["Evisect S"],
+              "moa": "14",
+              "dilution_16l": "40 g",
+              "phi_days": 14
+            },
+            {
+              "common_name": "Pymetrozine 50% WG",
+              "trade_name": ["Chess Pymetrozine 50% WG"],
+              "moa": "9",
+              "dilution_16l": "8 g",
+              "phi_days": 14
+            },
+            {
+              "common_name": "Carbosulfan 200 g/l SC",
+              "trade_name": ["Marshal 20 SC"],
+              "moa": "1",
+              "dilution_16l": "32 ml",
+              "phi_days": 14
+            },
+            {
+              "common_name": "Ethiprole 100 g/l SC",
+              "trade_name": ["Curbix Ethiprole", "Curbix"],
+              "moa": "2",
+              "dilution_16l": "20 ml",
+              "phi_days": 14
+            },
+            {
+              "common_name": "Quinalphos 250 g/l EC",
+              "trade_name": ["Queen Quinalphos", "Sucker Quinalphos", "Quick Quinalphos", "Quintox quinalphos", "Baurs Quinalphos", "Quinal Quinalphos", "Flyfox Quinalphos"],
+              "moa": "1",
+              "dilution_16l": "32 ml",
+              "phi_days": 14
+            },
+            {
+              "common_name": "Carboxylic Acids (C14-C20) Potassium salts 479.8 g/l EW",
+              "trade_name": ["Flipper"],
+              "moa": "UN",
+              "dilution_16l": "160 ml",
+              "phi_days": 0
+            }
+          ]
+        },
+        {
+          "pest_name": "Whiteflies",
+          "scientific_name": "Bemisia tabaci, Trialeurodes vaporariorum",
+          "chemicals": [
+            {
+              "common_name": "Thiacloprid 240 g/l SC",
+              "trade_name": ["Calypso Thiacloprid", "Alanto 240 SC"],
+              "moa": "4",
+              "dilution_16l": "4 ml",
+              "phi_days": 14
+            },
+            {
+              "common_name": "Chlorantraniliprole 20% + Thiamethoxam 20% WG",
+              "trade_name": ["Virtako 40 WG"],
+              "moa": "28+4",
+              "dilution_16l": "5 g",
+              "phi_days": 10
+            },
+            {
+              "common_name": "Thiocyclam (Hydrogen Oxalate) 50% SP",
+              "trade_name": ["Evisect S"],
+              "moa": "14",
+              "dilution_16l": "40 g",
+              "phi_days": 14
+            },
+            {
+              "common_name": "Pymetrozine 50% WG",
+              "trade_name": ["Chess Pymetrozine 50% WG"],
+              "moa": "9",
+              "dilution_16l": "8 g",
+              "phi_days": 14
+            }
+          ]
+        },
+        {
+          "pest_name": "Leaf miner",
+          "scientific_name": "Liriomyza huidobrensis",
+          "chemicals": [
+            {
+              "common_name": "Neem Seed Water Extract",
+              "trade_name": [],
+              "moa": "UN",
+              "dilution_16l": "640 g",
+              "phi_days": 7
+            },
+            {
+              "common_name": "Abamectin 18 g/l EC",
+              "trade_name": ["Misu Abamectin", "CIC Abamectin", "Abu Abamectin", "CG Abamectin", "ICS Abamectin", "Baurs Abamectin", "Narita Abamectin", "Zoro Abamectin", "Mightee Abamectin", "Mig Abamectin Agstar Abamectin", "Ceypetco Abamectine", "Akito Abamectin", "Amber Abamectin", "Macky Abamectin", "Mee Abamectin", "Arow Abamectin", "Miracle Abamectin", "Amae Abamectin", "Hayleys Abamectin", "Nitro Abamectin", "Zero Abamectin", "Browns Abamectin", "Grandin Abamectin"],
+              "moa": "6",
+              "dilution_16l": "10 ml",
+              "phi_days": 14
+            },
+            {
+              "common_name": "Azadirachtin 50 g/l EC",
+              "trade_name": ["NeemAzal F"],
+              "moa": "UN",
+              "dilution_16l": "32 ml",
+              "phi_days": 7
+            }
+          ]
+        },
+        {
+          "pest_name": "White grub",
+          "scientific_name": "Melolontha spp., Anomala spp., Apogonia spp.",
+          "chemicals": [
+            {
+              "common_name": "Chlorantraniliprole 20% + Thiamethoxam 20% WG",
+              "trade_name": ["Virtako 40 WG"],
+              "moa": "28+4",
+              "dilution_16l": "5 g",
+              "phi_days": 14
+            }
+          ]
+        },
+        {
+          "pest_name": "Tuber moth (Stores)",
+          "scientific_name": "Phthorimaea operculella",
+          "chemicals": [
+            {
+              "common_name": "Pirimiphos-methyl 500 g/l EC",
+              "trade_name": ["Actellic 50 EC"],
+              "moa": "1",
+              "dilution_16l": "64 ml",
+              "phi_days": 0
+            },
+            {
+              "common_name": "Acetamiprid 20% SP",
+              "trade_name": ["Mospilan Acetamiprid", "Azeta Acetamiprid", "Harrier Acetamiprid", "Rider Acetamiprid", "Actimo Acetamiprid", "Gut20 Acetamiprid", "Holiyaster Acetamiprid"],
+              "moa": "4",
+              "dilution_16l": "16 g",
+              "phi_days": 14
+            },
+            {
+              "common_name": "Novaluron 100 g/l EC",
+              "trade_name": ["Rimon 10 EC"],
+              "moa": "15",
+              "dilution_16l": "16 ml",
+              "phi_days": 14
+            }
+          ]
+        },
+        {
+          "pest_name": "Tuber moth (Seed potato)",
+          "scientific_name": "Phthorimaea operculella",
+          "chemicals": [
+            {
+              "common_name": "Thiocyclam (Hydrogen Oxalate) 50% SP",
+              "trade_name": ["Evisect S"],
+              "moa": "14",
+              "dilution_16l": "40 g / 100 kg seeds",
+              "phi_days": 14
+            }
+          ]
+        },
+        {
+          "pest_name": "Tuber moth (Field)",
+          "scientific_name": "Phthorimaea operculella",
+          "chemicals": [
+            {
+              "common_name": "Chlorantraniliprole 20% + Thiamethoxam 20% WG",
+              "trade_name": ["Virtako 40 WG"],
+              "moa": "28+4",
+              "dilution_16l": "5 g",
+              "phi_days": 14
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "crop": "cassava",
+      "pests": [
+        {
+          "pest_name": "Cassava Lace bug",
+          "scientific_name": "Vatiga illudens",
+          "chemicals": [
+            {
+              "common_name": "Sulfoxaflor 50% WG",
+              "trade_name": ["Transform"],
+              "moa": "4",
+              "dilution_16l": "5 g",
+              "phi_days": 7
+            },
+            {
+              "common_name": "Pymetrozine 50% WG",
+              "trade_name": ["Chess Pymetrozine 50% WG"],
+              "moa": "9",
+              "dilution_16l": "8 g",
+              "phi_days": 14
+            },
+            {
+              "common_name": "Chlorantraniliprole 20% + Thiamethoxam 20% WG",
+              "trade_name": ["Virtako 40 WG"],
+              "moa": "28+4",
+              "dilution_16l": "4 g",
+              "phi_days": 10
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
